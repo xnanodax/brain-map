@@ -3,7 +3,10 @@ import { Link, Route } from 'react-router-dom';
 
 import SessionFormContainer from './session/session_form_container';
 import NavBarContainer from './navbar/navbar_container';
-import { AuthRoute } from '../utils/route_util';
+import {
+  AuthRoute,
+  ProtectedRoute
+} from '../utils/route_util';
 
 const App = () => (
   <div>
@@ -12,7 +15,12 @@ const App = () => (
 
     <AuthRoute path="/login" component={SessionFormContainer} />
     <AuthRoute path="/signup" component={SessionFormContainer} />
+    <ProtectedRoute exact path="/home" component={SessionFormContainer} />
+
   </div>
 );
 
 export default App;
+
+// NOTES
+// UPDATE LINK 19
