@@ -7,7 +7,18 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+
+    <script type="text/javascript">
+      <% if logged_in? %>
+        window.currentUser = <%= render(
+          "api/users/user.json.jbuilder",
+          user: current_user
+        ).html_safe %>
+      <% end %>
+    </script>
+
   </head>
 
   <body>

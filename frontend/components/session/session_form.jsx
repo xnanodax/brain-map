@@ -19,7 +19,8 @@ class SessionForm extends React.Component {
   handleSubmit() {
     return (e) => {
       e.preventDefault();
-      this.props.action(this.state);
+      this.props.action(this.state)
+        .then(() => this.props.history.push('/home'));
     };
   }
 
@@ -57,7 +58,7 @@ class SessionForm extends React.Component {
 
           <label>Password:
             <input
-              type="text"
+              type="password"
               onChange= {this.handleTyping('password')}
               value={this.state.password}
               />
