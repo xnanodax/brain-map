@@ -5,10 +5,7 @@ export const signup = user => (
     data: { user }
   })
 );
-// data: {
-  // user :
-  //   {username: "useruser", password: "useruser", email:"useruser"}
-  // }
+
 
 export const login = user => (
   $.ajax({
@@ -24,3 +21,8 @@ export const logout = () => (
     url: '/api/session'
   })
 );
+
+// data: {
+  // user :
+  //   {username: "useruser", password: "useruser", email:"useruser"}
+  // }
