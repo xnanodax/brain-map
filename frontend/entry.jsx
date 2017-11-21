@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
-
-// import { signup, login, logout } from './utils/session_util';
-import { signup, login, logout } from './actions/session';
+import Root from './components/root';
+import { signup, login, logout } from './utils/session_util';
+// import { signup, login, logout } from './actions/session';
 //testing
 window.signup = signup;
 window.login = login;
@@ -24,5 +24,5 @@ document.addEventListener("DOMContentLoaded", () => {
   window.getState = store.getState;
 
 
-  ReactDOM.render(<h1>Work In Progress</h1>, root);
+  ReactDOM.render(<Root store={store} />, root);
 });
