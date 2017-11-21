@@ -1,0 +1,21 @@
+<main id="root">
+  <h1>Oi</h2>
+
+    <script>
+      const imageList = ["cats", "dogs", "puppies", "you_can_do_it"]
+      var randomImage = imageList[Math.floor(Math.random()*imageList.length)];
+
+      const convertURLToPic = (picture) => (
+        $('#gif').attr("src", picture.data.fixed_height_downsampled_url)
+      )
+
+      document.addEventListener("DOMContentLoaded", () => {
+        $.ajax({
+          method: 'GET',
+          url: `http://api.giphy.com/v1/gifs/random?tag=${randomImage}&api_key=dc6zaTOxFJmzC&limit=2`
+        }).then(picture => convertURLToPic(picture))
+      })
+    </script>
+
+  <img id="gif">
+</main>
