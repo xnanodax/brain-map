@@ -21,7 +21,7 @@ class SessionForm extends React.Component {
     return (e) => {
       e.preventDefault();
       this.props.action(this.state)
-        .then(() => this.props.history.push('/home'));
+        .then(() => this.props.history.push('/deck_feed'));
     };
   }
 

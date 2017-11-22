@@ -11,12 +11,17 @@ class Api::DecksController < ApplicationController
     if @deck.save
       render :show
     else
-      render json: @deck.errors.full_messages
+      render json: @deck.errors.full_messages, status: 422
     end
   end
 
   def show
     @deck = Deck.find_by(id: params[:id])
+    if @deck
+      render :show
+    else
+      render json: ["this deck does not exist"], status: 422
+    end
   end
 
   def edit

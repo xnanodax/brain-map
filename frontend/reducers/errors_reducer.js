@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import SessionErrorReducer from './session_errors_reducer';
+import session from './session_errors_reducer';
+import DecksErrorReducer from './decks_error_reducer';
 
 const errorsReducer = combineReducers({
-  session: SessionErrorReducer
+  session,
+  decks: DecksErrorReducer
 });
 
 export default errorsReducer;

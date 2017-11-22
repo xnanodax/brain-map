@@ -50,8 +50,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //testing
 // import { signup, login, logout } from './utils/session_util';
-// import { signup, login, logout } from './actions/session';
+import { signup, login, logout } from './actions/session';
 // window.signup = signup;
 // window.login = login;
-// window.logout = logout;
+window.logout = logout;
 //testing
