@@ -30,7 +30,7 @@ class SessionForm extends React.Component {
     const { formType, action, errors, loggedIn, logout } = this.props;
     return (
 
-      <div class="full-width">
+      <div className="full-width">
         <div className="control-nav-bar-width">
           <nav className="navbar-home">
           <div className="nav-logo"><Link to="/">brainMap</Link></div>
@@ -74,7 +74,7 @@ class SessionForm extends React.Component {
                       <input
                         type="text"
                         onChange= {this.handleTyping('username')}
-                        value={this.state.username}
+                        value={this.state.username.trim()}
                         placeholder="Username"
                         />
                     </label>
@@ -86,7 +86,7 @@ class SessionForm extends React.Component {
                         <input
                           type="text"
                           onChange= {this.handleTyping('email')}
-                          value={this.state.email}
+                          value={this.state.email.trim()}
                           placeholder="Email"
                           />
                       </label>
@@ -98,7 +98,7 @@ class SessionForm extends React.Component {
                       <input
                         type="password"
                         onChange= {this.handleTyping('password')}
-                        value={this.state.password}
+                        value={this.state.password.trim()}
                         placeholder="Password"
                         />
                     </label>

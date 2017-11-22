@@ -46,8 +46,12 @@ button {
 	border-radius: 5px;
 }
 
+button:hover {
+	background: $dark-green;
+}
+
 input {
-	border: 1px solid $lightest-gray;
+	border: 5px transparent;
 	background-color: $lightest-gray;
 	border-radius: 5px;
 	padding: 10px 10px

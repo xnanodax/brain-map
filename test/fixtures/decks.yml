@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: decks
+#
+#  id                 :integer          not null, primary key
+#  title              :string           not null
+#  author_id          :integer          not null
+#  mastery_percentage :integer          default(0)
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  author_id: 1
+  mastery_percentage: 1
+
+two:
+  title: MyString
+  author_id: 1
+  mastery_percentage: 1
