@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100px;
+  width: 75px;
   height: 600px;
   border: 1px solid $green;
   // background-color: $green;
@@ -10,6 +10,11 @@
 
 .navbar a {
   color: $green;
+}
+
+.navbar-links {
+  font-size: 18px;
+  padding: 10px 10px 20px 10px;
 }
 
 .navbar-icon-list-top i {
@@ -26,6 +31,7 @@
 }
 
 .navbar-icons-all {
+  padding: 10px;
   height: 100%;
   display: flex;
   flex-direction: column;

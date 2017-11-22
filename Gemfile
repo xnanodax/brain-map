@@ -39,7 +39,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
-  gem 'jquery-rails'
+  # gem 'jquery-rails'
   gem 'annotate'
   gem 'binding_of_caller'
   gem 'better_errors'
