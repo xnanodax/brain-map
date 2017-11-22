@@ -11,9 +11,6 @@ import {
 const App = () => (
   <div className="app">
 
-    <Route path="/" component={NavBarContainer} />
-
-
     <AuthRoute path="/login" component={SessionFormContainer} />
     <AuthRoute path="/signup" component={SessionFormContainer} />
     <ProtectedRoute exact path="/home" component={SessionFormContainer} />
@@ -22,6 +19,8 @@ const App = () => (
 );
 
 export default App;
+
+// <Route path="/" component={NavBarContainer} />
 
 // NOTES
 //ADD

@@ -27,76 +27,115 @@ class SessionForm extends React.Component {
 
 
   render() {
-    const { formType, action, errors, loggedIn } = this.props;
+    const { formType, action, errors, loggedIn, logout } = this.props;
     return (
-      <div className="session-form-container">
-        { formType === "Sign Up" ? <h1>{formType} for free</h1> : <h1>{ formType }</h1> }
-        <form onSubmit={this.handleSubmit()}>
 
-            <ul className="session-errors">
-              {
-                errors.map((error,idx) => <li key={idx}>{ error }</li>)
-              }
-            </ul>
+      <div class="full-width">
+        <div className="control-nav-bar-width">
+          <nav className="navbar-home">
+          <div className="nav-logo"><Link to="/">brainMap</Link></div>
 
-            <ul className="session-form">
+            {
+              loggedIn ? (
+                <div className="navbar-loggedin">
+                  <button onClick={logout}>Log Out</button>
+                </div>
+              ) : (
+                <ul className="navbar-loggedout">
+                  <li><Link to="/signup">Sign Up</Link></li>
+                  <li><Link to="/login">Log In</Link></li>
+                  <li><button>Demo</button></li>
+                </ul>
+              )
+            }
+        </nav>
+        </div>
 
-            <li>
-              <label>
-              <input
-                type="text"
-                onChange= {this.handleTyping('username')}
-                value={this.state.username}
-                placeholder="Username"
-                />
-              </label>
-            </li>
+        <ul className="session-form-container">
+          <div className="intro-ad">
+            <h1>Get smarter, faster.</h1>
+            <div className="intro-ad-small-text">
+              Learn new concepts, review old things, track your progress with our online flashcards.
+            </div>
+          </div>
 
-            { formType === "Sign Up" ? (
-              <li>
-                <label>
-                <input
-                  type="text"
-                  onChange= {this.handleTyping('email')}
-                  value={this.state.email}
-                  placeholder="Email"
-                  />
-                </label>
-              </li>
-            ) : ( "" ) }
+          <div className="session-form">
+            { formType === "Sign Up" ? <h1>{formType} for free</h1> : <h1>{ formType }</h1> }
+            <form onSubmit={this.handleSubmit()} >
 
-            <li>
-              <label>
-              <input
-                type="password"
-                onChange= {this.handleTyping('password')}
-                value={this.state.password}
-                placeholder="Password"
-                />
-              </label>
-            </li>
+              <ul className="session-errors">
+                {errors.map((error,idx) => <li key={idx}>{ error }</li>)}
+              </ul>
 
-            <li>
-              <button>
-                { formType }
-              </button>
+                <ul className="session-form-login-box">
 
-            </li>
+                  <li>
+                    <label>
+                      <input
+                        type="text"
+                        onChange= {this.handleTyping('username')}
+                        value={this.state.username}
+                        placeholder="Username"
+                        />
+                    </label>
+                  </li>
 
-            { formType === "Sign Up" ? (
-              <li>
-                Have an account? <Link to="/login">Log In</Link>
-              </li>
-            ) : (
-              <li>
-                Haven't signed up? <Link to="/signup">Sign Up</Link>
-              </li>
-            ) }
+                  { formType === "Sign Up" ? (
+                    <li>
+                      <label>
+                        <input
+                          type="text"
+                          onChange= {this.handleTyping('email')}
+                          value={this.state.email}
+                          placeholder="Email"
+                          />
+                      </label>
+                    </li>
+                  ) : ( "" ) }
 
-          </ul>
-        </form>
+                  <li>
+                    <label>
+                      <input
+                        type="password"
+                        onChange= {this.handleTyping('password')}
+                        value={this.state.password}
+                        placeholder="Password"
+                        />
+                    </label>
+                  </li>
+
+                  { formType === "Sign Up" ? (
+                    <li>
+                      <div className="disclosure">
+                        By clicking Sign up, I agree to the Terms of Service and Privacy Policy.
+                      </div>
+                    </li>
+
+                  ) : ( "" )
+                  }
+
+                  <li>
+                    <button>
+                      { formType }
+                    </button>
+
+                  </li>
+
+                  { formType === "Sign Up" ? (
+                    <li>
+                      Have an account? <Link to="/login">Log In</Link>
+                    </li>
+                  ) : (
+                    <li>
+                      Need an account? <Link to="/signup">Sign Up</Link>
+                    </li>
+                  ) }
+                </ul>
+
+            </form>
+          </div>
+        </ul>
       </div>
-
 
     );
   }

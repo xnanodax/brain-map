@@ -10,23 +10,6 @@ const NavBar = ({ loggedIn, logout }) => (
       </Link>
     </div>
 
-    <div className="navbar-links">
-      {
-        loggedIn ? (
-          <div className="navbar-loggedin">
-            <button onClick={logout}>Log Out</button>
-          </div>
-        ) : (
-          <nav>
-            <ul className="navbar-loggedout">
-              <li><Link to="/signup">Sign Up</Link></li>
-              <li><Link to="/login">Log In</Link></li>
-            </ul>
-          </nav>
-        )
-      }
-    </div>
-
     <div className="navbar-icons-all">
       <ul className="navbar-icon-list-top">
         <i className="fa fa-plus" aria-hidden="true"></i>

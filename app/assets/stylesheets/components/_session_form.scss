@@ -1,11 +1,92 @@
+.full-width {
+  height: 70px;
+  border-bottom: 1px solid $light-gray;
+}
+
+.control-nav-bar-width {
+  margin: 0 auto;
+  width: 70vw;
+  height: 100%;
+}
+
+.navbar-home {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%
+  // padding: 20px;
+}
+
+.nav-logo a{
+  color: $green;
+  font-size: 20px;
+}
+
+.navbar-links {
+  font-size: 18px;
+  padding: 10px 10px 20px 10px;
+  display: flex;
+  flex-direction: row;
+
+}
+
+.navbar-loggedout {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  width: 300px;
+  font-size: 15px;
+}
+
+
+
 .session-form-container {
-  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 80%;
+  margin: 0 auto;
+  align-items: center;
+  height: 500px;
+}
+
+.intro-ad {
+  width: 450px;
+  border-right: 1px solid $gray
+}
+
+.intro-ad-small-text {
   width: 400px;
 }
 
 .session-form {
+  width: 400px;
+  padding: 20px 20px 20px 20px;
+
+}
+
+.session-form form input, button {
+  width: 100%;
+}
+
+.session-form button {
+  text-align: center;
+}
+
+.session-form-login-box {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   height: 300px;
+}
+
+
+
+
+.disclosure {
+  color: $gray;
+  font-size: 14px;
 }
