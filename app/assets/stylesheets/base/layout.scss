@@ -1,0 +1,41 @@
+html {
+	position: relative;
+	height: 100%;
+}
+
+//font awesome
+i {
+	color: $green
+}
+
+a {
+	font-weight: bold;
+	color: $dark-gray;
+}
+
+.logo a{
+	font-family: $serif;
+	color: $green;
+	font-size: 50px;
+}
+
+body {
+	width: 100%;
+	margin: 0 auto;
+	font-family: $san-serif;
+	font-size: 20px;
+}
+
+button {
+	padding: 10px 20px;
+	background: $green;
+	color: white;
+	border-radius: 2px;
+}
+
+input {
+	border: 1px solid $lightest-gray;
+	background-color: $lightest-gray;
+	border-radius: 5px;
+	padding: 10px 10px
+}

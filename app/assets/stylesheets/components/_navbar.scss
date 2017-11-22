@@ -1,0 +1,37 @@
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100px;
+  height: 600px;
+  border: 1px solid $green;
+  // background-color: $green;
+}
+
+.navbar a {
+  color: $green;
+}
+
+.navbar-icon-list-top i {
+  display: inline-block;
+  border-radius: 60px;
+  box-shadow: 0px 0px 2px #888;
+  padding: 0.2em 0.3em;
+}
+
+.navbar-icon-list-middle i {
+  display: flex;
+  flex-direction: column;
+  height: 40px;
+}
+
+.navbar-icons-all {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.logo i, .nav-bar-icon-list-bottom i {
+  color: $gray;
+}

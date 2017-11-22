@@ -7,13 +7,13 @@ const mapStateToProps = (state, ownProps) => ({
   // currentUser: state.session.currentUser,
   loggedIn: Boolean(state.session.currentUser),
   errors: state.errors.session,
-  formType: (ownProps.location.pathname === "/signup") ? "Sign Up" : "Login"
+  formType: (ownProps.match.path === "/signup") ? "Sign Up" : "Login"
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   // const signup = (user) => dispatch(signup(user));
   // const login = (user) => dispatch(login(user));
-  const action = (ownProps.location.pathname === "/signup") ? signup : login;
+  const action = (ownProps.match.path === "/signup") ? signup : login;
   return { action: (user) => dispatch(action(user)) };
 };
 

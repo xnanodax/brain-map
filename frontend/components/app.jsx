@@ -9,9 +9,10 @@ import {
 } from '../utils/route_util';
 
 const App = () => (
-  <div>
-    <Link to="/">brainMap</Link>
+  <div className="app">
+
     <Route path="/" component={NavBarContainer} />
+
 
     <AuthRoute path="/login" component={SessionFormContainer} />
     <AuthRoute path="/signup" component={SessionFormContainer} />
@@ -23,4 +24,5 @@ const App = () => (
 export default App;
 
 // NOTES
-// UPDATE LINK 19
+//ADD
+// UPDATE LINK 19 component={DeckIndex}

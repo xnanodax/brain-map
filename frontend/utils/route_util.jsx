@@ -15,8 +15,6 @@ const Auth = ({loggedIn, path, component: Component}) => (
   />
 );
 
-export const AuthRoute = withRouter(connect(mapStateToProps, null)(Auth));
-
 const Protected = ({loggedIn, path, component: Component}) => (
   <Route
     path={path}
@@ -26,4 +24,5 @@ const Protected = ({loggedIn, path, component: Component}) => (
   />
 );
 
+export const AuthRoute = withRouter(connect(mapStateToProps, null)(Auth));
 export const ProtectedRoute = withRouter(connect(mapStateToProps, null)(Protected));

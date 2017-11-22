@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -28,46 +29,71 @@ class SessionForm extends React.Component {
   render() {
     const { formType, action, errors, loggedIn } = this.props;
     return (
-      <div className="session-form">
-        <h1>{ formType }</h1>
+      <div className="session-form-container">
+        { formType === "Sign Up" ? <h1>{formType} for free</h1> : <h1>{ formType }</h1> }
         <form onSubmit={this.handleSubmit()}>
 
-          <ul className="session-errors">
-            {
-              errors.map((error,idx) => <li key={idx}>{ error }</li>)
-            }
-          </ul>
+            <ul className="session-errors">
+              {
+                errors.map((error,idx) => <li key={idx}>{ error }</li>)
+              }
+            </ul>
 
-          <label>Username:
-            <input
-              type="text"
-              onChange= {this.handleTyping('username')}
-              value={this.state.username}
-              />
-          </label>
+            <ul className="session-form">
 
-          { formType === "Sign Up" ? (
-            <label>Email:
+            <li>
+              <label>
               <input
                 type="text"
-                onChange= {this.handleTyping('email')}
-                value={this.state.email}
+                onChange= {this.handleTyping('username')}
+                value={this.state.username}
+                placeholder="Username"
                 />
-            </label>
-          ) : ( "" ) }
+              </label>
+            </li>
 
-          <label>Password:
-            <input
-              type="password"
-              onChange= {this.handleTyping('password')}
-              value={this.state.password}
-              />
-          </label>
+            { formType === "Sign Up" ? (
+              <li>
+                <label>
+                <input
+                  type="text"
+                  onChange= {this.handleTyping('email')}
+                  value={this.state.email}
+                  placeholder="Email"
+                  />
+                </label>
+              </li>
+            ) : ( "" ) }
 
-          <input
-            type="submit"
-            value={ formType }/>
+            <li>
+              <label>
+              <input
+                type="password"
+                onChange= {this.handleTyping('password')}
+                value={this.state.password}
+                placeholder="Password"
+                />
+              </label>
+            </li>
 
+            <li>
+              <button>
+                { formType }
+              </button>
+
+            </li>
+
+            { formType === "Sign Up" ? (
+              <li>
+                Have an account? <Link to="/login">Log In</Link>
+              </li>
+            ) : (
+              <li>
+                Haven't signed up? <Link to="/signup">Sign Up</Link>
+              </li>
+            ) }
+
+          </ul>
         </form>
       </div>
 
