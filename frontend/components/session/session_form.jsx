@@ -25,6 +25,18 @@ class SessionForm extends React.Component {
     };
   }
 
+  handleDemoLogin() {
+    return (e) => {
+      e.preventDefault();
+      const demoUser = {
+        username: "password",
+        password: "password",
+      };
+      this.props.login(demoUser)
+        .then(() => this.props.history.push('/deck_feed'));
+    };
+  }
+
 
   render() {
     const { formType, action, errors, loggedIn, logout } = this.props;
@@ -44,7 +56,7 @@ class SessionForm extends React.Component {
                 <ul className="navbar-loggedout">
                   <li><Link to="/signup">Sign Up</Link></li>
                   <li><Link to="/login">Log In</Link></li>
-                  <li><button>Demo</button></li>
+                  <li><button onClick={this.handleDemoLogin()}>Demo</button></li>
                 </ul>
               )
             }

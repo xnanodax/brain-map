@@ -1,4 +1,74 @@
-.deck_index_container {
-  border: 1px solid black;
+.deck-index-container {
+  background: $lightest-gray;
+  border: 1px solid $light-gray;
   position: absolute;
+  left: 60px;
+  height: 100vh;
+  width: 300px;
+  font-size: 15px;
+  color: $light-gray;
+}
+
+.list-title{
+  font-weight: bold;
+  letter-spacing: 0.09em;
+  padding-bottom: 0.5em;
+  text-transform: uppercase;
+}
+
+.deck-header-box-item1{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.deck-header-box-item2 {
+  padding-left: 80px;
+  margin: 0 auto;
+}
+
+.deck-header-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: white;
+  // justify-content: space-around;
+}
+
+.deck-header-font{
+  font-size: 20px;
+  padding-bottom: 30px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: $gray;
+}
+
+.deck-index-item-outer-title {
+  background: white;
+  // border: solid 1px black;
+  // padding-right: 10px;
+  border-bottom: 1px solid $light-gray;
+  height: 120px;
+}
+
+.deck-index-item-outer {
+  background: white;
+  // border: solid 1px black;
+  // padding-right: 10px;
+  border-bottom: 1px solid $light-gray;
+  height: 120px;
+}
+
+.deck-index-item-outer:hover {
+  background: $green;
+  color: white;
+}
+
+.deck_index_item_border {
+  padding: 20px 20px 20px 20px;
+}
+
+.deck-index-container a {
+  font-weight: normal;
 }

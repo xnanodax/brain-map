@@ -1,1 +1,1 @@
-json.extract! deck, :id, :title, :author_id
+json.extract! deck, :id, :title, :author_id, :mastery_percentage

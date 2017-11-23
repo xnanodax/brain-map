@@ -4,6 +4,7 @@ import { Link, Route } from 'react-router-dom';
 import SessionFormContainer from './session/session_form_container';
 import NavBarContainer from './navbar/navbar_container';
 import DeckContainer from './decks/deck_container';
+import DeckShowContainer from './decks/deck_show_container';
 
 import {
   AuthRoute,
@@ -12,19 +13,21 @@ import {
 
 const App = () => (
   <div className="app">
-
     <AuthRoute path="/login" component={SessionFormContainer} />
     <AuthRoute path="/signup" component={SessionFormContainer} />
-    <Route exact path="/deck_feed" component={DeckContainer} />
-    <Route exact path="/deck_feed" component={NavBarContainer} />
+    <Route path="/deck_feed" component={DeckContainer} />
+    <Route path="/deck_feed" component={NavBarContainer} />
     <ProtectedRoute exact path="/home" component={SessionFormContainer} />
-
+    <ProtectedRoute path="/deck_feed/:deckId" component={DeckShowContainer} />
   </div>
 );
 
 export default App;
 
 // <Route path="/" component={NavBarContainer} />
+// <ProtectedRoute path="/deck_feed" component={SessionFormContainer} />
+
+
 
 // NOTES
 //ADD
