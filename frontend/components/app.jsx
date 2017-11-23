@@ -2,7 +2,11 @@ import React from 'react';
 import { Link, Route, Redirect } from 'react-router-dom';
 
 import SessionFormContainer from './session/session_form_container';
-import NavBarContainer from './navbar/navbar_container';
+import HomePageNotLoggedInContainer from './homepage/homepage_not_logged_in_container';
+
+
+
+import NavBarLoggedInContainer from './navbar_log/navbar_logged_in_container';
 import DeckContainer from './decks/deck_container';
 import DeckShowContainer from './decks/deck_show_container';
 
@@ -14,23 +18,21 @@ import {
 // <Redirect to ="/deck_feed" from="/" / >
 const App = () => (
   <div className="app">
-    <Redirect to="/signup" from='/' />
+    <Redirect to="/login" from='/' />
 
-    <AuthRoute path="/login" component={SessionFormContainer} />
-    <AuthRoute path="/signup" component={SessionFormContainer} />
-
-
+    <AuthRoute path="/login" component={HomePageNotLoggedInContainer} />
+    <AuthRoute path="/signup" component={HomePageNotLoggedInContainer} />
 
     <Route path="/deck_feed" component={DeckContainer} />
-    <Route path="/deck_feed" component={NavBarContainer} />
-
-    <Route path="/deck_feed/:deckId" component={DeckShowContainer} />
+    <Route path="/deck_feed" component={NavBarLoggedInContainer} />
+    <Route exact path="/deck_feed/:deckId" component={DeckShowContainer} />
   </div>
 );
 
 export default App;
 
 // <ProtectedRoute path="/deck_feed" component={SessionFormContainer} />
+
 // <Route path="/" component={NavBarContainer} />
 // <ProtectedRoute path="/deck_feed" component={SessionFormContainer} />
 
@@ -41,7 +43,7 @@ export default App;
 // UPDATE LINK 19 component={DeckIndex}
 
 
-// make 2
+// make 2 routes
 // route render = {}
 //
 // make a master component

@@ -3,7 +3,7 @@
   border-bottom: 1px solid $light-gray;
 }
 
-.control-nav-bar-width {
+.top-navbar {
   margin: 0 auto;
   width: 70vw;
   height: 100%;
@@ -31,7 +31,7 @@
 
 }
 
-.navbar-loggedout {
+.navbar-links {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -59,7 +59,7 @@
 }
 
 .intro-ad-small-text {
-  width: 400px;
+  width: 30vw;
 }
 
 .session-form {
