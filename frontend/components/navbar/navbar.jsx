@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const NavBar = ({ loggedIn, logout }) => (
+const NavBar = ({ loggedIn, logout, props }) => (
   <nav className="navbar">
     <div className="logo">
-      <Link to="/">
+      <Link to="/deck_feed">
         <i className="fa fa-lightbulb-o " aria-hidden="true">
         </i>
       </Link>
@@ -23,7 +23,7 @@ const NavBar = ({ loggedIn, logout }) => (
 
 
       <ul className="nav-bar-icon-list-bottom">
-        <i className="fa fa-sign-out" aria-hidden="true"></i>
+        <i className="fa fa-sign-out" aria-hidden="true" onClick={logout}></i>
       </ul>
     </div>
   </nav>

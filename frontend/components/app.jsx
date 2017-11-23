@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Route } from 'react-router-dom';
+import { Link, Route, Redirect } from 'react-router-dom';
 
 import SessionFormContainer from './session/session_form_container';
 import NavBarContainer from './navbar/navbar_container';
@@ -11,19 +11,26 @@ import {
   ProtectedRoute
 } from '../utils/route_util';
 
+// <Redirect to ="/deck_feed" from="/" / >
 const App = () => (
   <div className="app">
+    <Redirect to="/signup" from='/' />
+
     <AuthRoute path="/login" component={SessionFormContainer} />
     <AuthRoute path="/signup" component={SessionFormContainer} />
+
+
+
     <Route path="/deck_feed" component={DeckContainer} />
     <Route path="/deck_feed" component={NavBarContainer} />
-    <ProtectedRoute exact path="/home" component={SessionFormContainer} />
-    <ProtectedRoute path="/deck_feed/:deckId" component={DeckShowContainer} />
+
+    <Route path="/deck_feed/:deckId" component={DeckShowContainer} />
   </div>
 );
 
 export default App;
 
+// <ProtectedRoute path="/deck_feed" component={SessionFormContainer} />
 // <Route path="/" component={NavBarContainer} />
 // <ProtectedRoute path="/deck_feed" component={SessionFormContainer} />
 
