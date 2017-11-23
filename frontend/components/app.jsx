@@ -20,12 +20,12 @@ const App = () => (
   <div className="app">
     <Redirect to="/login" from='/' />
 
-    <AuthRoute path="/login" component={HomePageNotLoggedInContainer} />
-    <AuthRoute path="/signup" component={HomePageNotLoggedInContainer} />
+    <Route path="/login" component={HomePageNotLoggedInContainer} />
+    <Route path="/signup" component={HomePageNotLoggedInContainer} />
 
     <Route path="/deck_feed" component={DeckContainer} />
     <Route path="/deck_feed" component={NavBarLoggedInContainer} />
-    <Route exact path="/deck_feed/:deckId" component={DeckShowContainer} />
+    <Route path="/deck/:deckId" component={DeckShowContainer} />
   </div>
 );
 

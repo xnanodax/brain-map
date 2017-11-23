@@ -12,7 +12,7 @@ import {
 const mapStateToProps = (state, ownProps) => {
   let formType = "new";
   let deck = { title: "" };
-  if (ownProps.match.path === '/:deckId/edit') {
+  if (ownProps.match.path === '/deck/:deckId/edit') {
     formType = "edit";
     deck = state.posts[ownProps.match.params.deckId];
   }
@@ -20,12 +20,12 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  // let action = (ownProps.match.path === '/:deckId/edit') ? updateDeck : createDeck;
-  // return {
-  //   fetchDeck: (id) => dispatch(fetchDeck(id)),
-  //   action: (deck) => dispatch(action(deck))
-  //  };
-  return {};
+  let action = (ownProps.match.path === '/:deckId/edit') ? updateDeck : createDeck;
+  return {
+    fetchDeck: (id) => dispatch(fetchDeck(id)),
+    action: (deck) => dispatch(action(deck))
+   };
+  // return {};
 };
 
 export default withRouter(

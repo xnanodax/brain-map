@@ -1,0 +1,42 @@
+.full-width {
+  height: 70px;
+  border-bottom: 1px solid $light-gray;
+}
+
+.top-navbar {
+  margin: 0 auto;
+  width: 70vw;
+  height: 100%;
+}
+
+.navbar-home {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%
+  // padding: 20px;
+}
+
+.nav-logo a{
+  color: $green;
+  font-size: 20px;
+}
+
+.navbar-links {
+  font-size: 18px;
+  padding: 10px 10px 20px 10px;
+  display: flex;
+  flex-direction: row;
+
+}
+
+.navbar-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  width: 300px;
+  font-size: 15px;
+}
