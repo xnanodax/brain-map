@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { signup, login, logout } from '../../actions/session';
+import { signup, login, logout, clearErrors } from '../../actions/session';
 import SessionForm from './session_form';
 
 const mapStateToProps = (state, ownProps) => ({
@@ -17,7 +17,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     login: (user) => dispatch(login(user)),
     action: (user) => dispatch(action(user)).then(() => this.props.history.push('/deck_feed')),
-    logout: (user) => dispatch(logout(user))
+    logout: (user) => dispatch(logout(user)),
+    clearErrors: (errors) => dispatch(clearErrors(errors))
   };
 };
 
