@@ -10,13 +10,16 @@ import {
 } from '../../actions/deck_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  let formType = "new";
-  let deck = { title: "" };
-  if (ownProps.match.path === '/deck/:deckId/edit') {
-    formType = "edit";
-    deck = state.posts[ownProps.match.params.deckId];
-  }
-  return { deck, formType };
+  // let formType = "new";
+  // let deck = { title: "" };
+  // if (ownProps.match.path === '/deck/:deckId/') {
+  //   formType = "edit";
+  // console.log(ownProps.match.params.deckId)
+  //   let deck = state.posts[ownProps.match.params.deckId];
+  // // }
+  // return { deck };
+  const deck = state.entities.decks[ownProps.match.params.deckId];
+  return { deck };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {

@@ -1,5 +1,6 @@
 import React from 'react';
-import DeckIndexItem from './deck_list_item';
+import DeckIndexItem from './deck_index_list_item';
+import { Link } from 'react-router-dom';
 
 class DeckIndex extends React.Component {
   componentDidMount() {
@@ -22,7 +23,9 @@ class DeckIndex extends React.Component {
             </div>
 
             <div className="deck-header-box-item2">
-              <i className="fa fa-plus fa-2x" aria-hidden="true"></i>
+              <Link to="/deck_form">
+               <i className="fa fa-plus fa-2x" aria-hidden="true"></i>
+              </Link>
             </div>
 
           </div>

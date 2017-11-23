@@ -7,8 +7,9 @@ import HomePageNotLoggedInContainer from './homepage/homepage_not_logged_in_cont
 
 
 import NavBarLoggedInContainer from './navbar_log/navbar_logged_in_container';
-import DeckContainer from './decks/deck_container';
+import DeckContainer from './decks/deck_index_container';
 import DeckShowContainer from './decks/deck_show_container';
+import DeckFormContainer from './decks//deck_form/deck_form_container';
 
 import {
   AuthRoute,
@@ -16,16 +17,17 @@ import {
 } from '../utils/route_util';
 
 // <Redirect to ="/deck_feed" from="/" / >
+// <Redirect to="/login" from='/' />
 const App = () => (
   <div className="app">
-    <Redirect to="/login" from='/' />
 
     <Route path="/login" component={HomePageNotLoggedInContainer} />
     <Route path="/signup" component={HomePageNotLoggedInContainer} />
 
     <Route path="/deck_feed" component={DeckContainer} />
     <Route path="/deck_feed" component={NavBarLoggedInContainer} />
-    <Route path="/deck/:deckId" component={DeckShowContainer} />
+    <Route exact path="/deck/:deckId" component={DeckShowContainer} />
+    <Route path="/deck_form/" component={DeckFormContainer} />
   </div>
 );
 

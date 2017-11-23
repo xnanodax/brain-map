@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const DeckIndexItem = ({deck}) => (
-  <Link to={`/deck_feed/${deck.id}`}>
+const DeckListIndexItem = ({deck}) => (
+  <Link to={`/deck/${deck.id}`}>
     <li className="deck-index-item-outer">
       <ul className="deck_index_item_border">
         <li className="list-title">{deck.title}</li>
@@ -14,4 +14,4 @@ const DeckIndexItem = ({deck}) => (
 
 );
 
-export default DeckIndexItem;
+export default DeckListIndexItem;

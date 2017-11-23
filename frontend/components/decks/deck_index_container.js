@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 import { fetchDecks, fetchDeck } from '../../actions/deck_actions';
 
 const mapStateToProps = (state, ownProps) => ({
-  decks: Object.values(state.entities.decks)
+  decks: Object.values(state.entities.decks).reverse()
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

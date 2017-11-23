@@ -10,11 +10,12 @@
 
 .intro-ad {
   width: 450px;
-  border-right: 1px solid $gray
+  width: 30vw;
+  border-right: 1px solid $gray;
+  padding-right: 50px;
 }
 
 .intro-ad-small-text {
-  width: 30vw;
 }
 
 .session-form {
