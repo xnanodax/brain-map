@@ -16,30 +16,25 @@ import {
   ProtectedRoute
 } from '../utils/route_util';
 
-// <Redirect to ="/deck_feed" from="/" / >
-// <Redirect to="/login" from='/' />
+
+//Auth Route is for when you login, what you shouldn't see.
 const App = () => (
   <div className="app">
 
-    <Route path="/login" component={HomePageNotLoggedInContainer} />
-    <Route path="/signup" component={HomePageNotLoggedInContainer} />
+    <Route exact path="/" component={HomePageNotLoggedInContainer} />
+    <AuthRoute path="/login" component={HomePageNotLoggedInContainer} />
+    <AuthRoute path="/signup" component={HomePageNotLoggedInContainer} />
 
     <Route path="/deck_feed" component={DeckContainer} />
     <Route path="/deck_feed" component={NavBarLoggedInContainer} />
     <Route exact path="/deck_feed/:deckId" component={DeckShowContainer} />
 
 
-
-    <Route path="/deck_form/" component={DeckFormContainer} />
+    <Route path="/deck_feed/deck_form/" component={DeckFormContainer} />
   </div>
 );
 
 export default App;
-
-// <ProtectedRoute path="/deck_feed" component={SessionFormContainer} />
-
-// <Route path="/" component={NavBarContainer} />
-// <ProtectedRoute path="/deck_feed" component={SessionFormContainer} />
 
 
 
