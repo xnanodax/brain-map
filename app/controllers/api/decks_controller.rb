@@ -42,7 +42,7 @@ class Api::DecksController < ApplicationController
     @deck = current_user.decks.find_by(id: params[:id])
     if @deck
       @deck.destroy
-      render :show
+      render :delete
     else
       render json: ["cannot delete card, it is not yours"], status: 422
     end

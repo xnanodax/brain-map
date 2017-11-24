@@ -14,11 +14,15 @@ class DeckShow extends React.Component {
   }
 
   render() {
-    const { deck } = this.props;
+    const { deck, deleteDeck, fetchDecks } = this.props;
     return (
-      <div>
+      <div className="deck-show-container">
         hello i'm the deck show
-        <DeckDetail deck={ deck } />
+        <DeckDetail
+          deck={ deck }
+          deleteDeck={ deleteDeck }
+          fetchDecks={ fetchDecks }
+           />
       </div>
     );
   }

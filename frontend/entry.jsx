@@ -3,21 +3,21 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 
-// import {
-//   fetchDecks,
-//   fetchDeck,
-//   createDeck,
-//   updateDeck,
-//   deleteDeck
-// } from './utils/deck_util';
-
 import {
   fetchDecks,
   fetchDeck,
   createDeck,
   updateDeck,
   deleteDeck
-} from './actions/deck_actions';
+} from './utils/deck_util';
+
+// import {
+//   fetchDecks,
+//   fetchDeck,
+//   createDeck,
+//   updateDeck,
+//   deleteDeck
+// } from './actions/deck_actions';
 
 window.fetchDecks = fetchDecks;
 window.fetchDeck = fetchDeck;

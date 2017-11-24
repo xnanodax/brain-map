@@ -26,7 +26,10 @@ const App = () => (
 
     <Route path="/deck_feed" component={DeckContainer} />
     <Route path="/deck_feed" component={NavBarLoggedInContainer} />
-    <Route exact path="/deck/:deckId" component={DeckShowContainer} />
+    <Route exact path="/deck_feed/:deckId" component={DeckShowContainer} />
+
+
+
     <Route path="/deck_form/" component={DeckFormContainer} />
   </div>
 );

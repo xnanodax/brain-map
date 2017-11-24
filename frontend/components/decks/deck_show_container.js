@@ -6,7 +6,8 @@ import {
   fetchDecks,
   fetchDeck,
   createDeck,
-  updateDeck
+  updateDeck,
+  deleteDeck
 } from '../../actions/deck_actions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -25,8 +26,10 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   let action = (ownProps.match.path === '/:deckId/edit') ? updateDeck : createDeck;
   return {
+    fetchDecks: () => dispatch(fetchDecks()),
     fetchDeck: (id) => dispatch(fetchDeck(id)),
-    action: (deck) => dispatch(action(deck))
+    action: (deck) => dispatch(action(deck)),
+    deleteDeck: (deck_id) => dispatch(deleteDeck(deck_id))
    };
   // return {};
 };
