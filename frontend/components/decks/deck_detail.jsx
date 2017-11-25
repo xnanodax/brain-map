@@ -53,11 +53,13 @@ class DeckDetail extends React.Component {
               <ClickToEdit
                 className='deck-show-item-header-text'
                 field='title'
-                endEditing={(value) => {
+                endEditing={
+                  (value) => {
                   this.props.deck.title = value;
                   this.props.updateDeck(this.props.deck);
                   }
-                }>
+                }
+              >
                 {deck.title}
               </ClickToEdit>
 

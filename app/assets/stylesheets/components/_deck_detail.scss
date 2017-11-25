@@ -18,6 +18,11 @@
   padding-right: 20px;
 }
 
+
+.deck-show-item-header-text input {
+  width: 80vh;
+}
+
 .deck-show-header-links {
   display: flex;
   flex-direction: row;
@@ -42,7 +47,6 @@
 }
 
 .deck-show-attributes-button{
-
   width: 100px;
 }
 
@@ -81,14 +85,14 @@ h1 {
 }
 
 .text-short {
-  width: 180px;
+  width: 20vw;
 }
 
 .text-long {
-  width: 500px;
+  width: 20vw;
 }
 
 .card-container {
   padding-left: 20px;
-  width: 70vh;
+  width: 60vw;
 }

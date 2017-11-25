@@ -13,7 +13,6 @@ export const fetchDeck = id => (
 );
 
 export const createDeck = deck => {
-  console.log(deck);
   return $.ajax({
     method: 'POST',
     url: `/api/decks/`,

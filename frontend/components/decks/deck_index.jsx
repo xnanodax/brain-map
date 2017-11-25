@@ -8,36 +8,43 @@ class DeckIndex extends React.Component {
     fetchDecks();
   }
 
+  componentWillReceiveProps(newProps) {
+    const { fetchDecks } = newProps;
+    fetchDecks();
+  }
+
   render() {
-    const { decks } = this.props;
+    const { decks, count } = this.props;
 
     return (
-      <div className="deck-index-container">
+      <div>
+        { count ? (
+          <div className="deck-index-container">
+            <ul className="deck_index_item_border deck-index-item-outer-title">
+              <div className="deck-header-box">
+                <div className="deck-header-box-item1">
+                  <li className="deck-header-font">Decks</li>
+                  <li> { count } { count === 1 ? (<p>Deck</p>) : (<p>Decks</p>) }</li>
+                </div>
 
-        <ul className="deck_index_item_border deck-index-item-outer-title">
+                <div className="deck-header-box-item2">
+                  <Link to="/deck/new">
+                   <i className="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </Link>
+                </div>
 
-          <div className="deck-header-box">
-            <div className="deck-header-box-item1">
-              <li className="deck-header-font">Decks</li>
-              <li> __Decks</li>
-            </div>
+              </div>
+            </ul>
 
-            <div className="deck-header-box-item2">
-              <Link to="/deck/new">
-               <i className="fa fa-plus fa-2x" aria-hidden="true"></i>
-              </Link>
-            </div>
-
+            <ul>
+              {
+                decks.map((deck, idx) =>
+                  <DeckIndexListItem key={idx} deck={deck} />
+                )
+              }
+            </ul>
           </div>
-        </ul>
-
-        <ul>
-          {
-            decks.map((deck =>
-              <DeckIndexListItem key={deck.id} deck={deck} />
-            ))
-          }
-        </ul>
+        ) : ( "" ) }
       </div>
     );
   }

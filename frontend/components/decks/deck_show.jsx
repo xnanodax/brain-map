@@ -15,7 +15,6 @@ class DeckShow extends React.Component {
 
 
   render() {
-    const { deck, deleteDeck, fetchDecks, updateDeck, fetchDeck } = this.props;
     return (
       <div className="deck-show-container">
         <DeckDetail {...this.props} />

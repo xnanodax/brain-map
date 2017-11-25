@@ -9,7 +9,8 @@ import {
 } from '../../actions/deck_actions';
 
 const mapStateToProps = (state, ownProps) => ({
-  decks: Object.values(state.entities.decks).reverse()
+  decks: Object.values(state.entities.decks).reverse(),
+  count: Object.values(state.entities.decks).length - 1
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
