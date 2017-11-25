@@ -8,10 +8,12 @@ class DeckForm extends React.Component {
     };
   }
 
+
+
   handleSubmit() {
     return(e) => {
       e.preventDefault();
-      this.props.createDeck(this.state).then(() => this.props.history.push('/deck_feed'));
+      this.props.createDeck(this.state).then(() => this.props.history.push('/deck'));
     };
   }
 
@@ -25,10 +27,11 @@ class DeckForm extends React.Component {
     const { createDeck } = this.props;
     return (
       <div className="deck-form-container">
-
+        <h1>Create Deck</h1>
         <form onSubmit={this.handleSubmit()}>
           <label>
             <input
+              autoFocus
               type="text"
               placeholder="title"
               onChange={this.handleUpdating('title')}

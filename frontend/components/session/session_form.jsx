@@ -24,7 +24,8 @@ class SessionForm extends React.Component {
   handleSubmit() {
     return (e) => {
       e.preventDefault();
-      this.props.action(this.state);
+      this.props.action(this.state)
+        .then(() => this.props.history.push('/deck'));
     };
   }
 

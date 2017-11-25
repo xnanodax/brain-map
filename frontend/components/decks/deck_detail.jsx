@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { BarLoader } from 'react-spinners';
-
+import CardIndexContainer from './../cards/index/card_index_container';
 // const cardList = () => (
 //
 // );
@@ -14,15 +14,17 @@ class DeckDetail extends React.Component {
     };
   }
 
+
   handleDeleteAfterRedirect(id) {
     return (e) => {
-      this.props.deleteDeck(id).then(()=>this.props.history.push("/deck_feed"));
+      this.props.deleteDeck(id).then(()=>this.props.history.push("/deck"));
     };
   }
 
 
+
   render() {
-    const { deck, deleteDeck } = this.props;
+    const { deck } = this.props;
     return (
       <div className="deck-show">
         { deck ? (
@@ -48,6 +50,7 @@ class DeckDetail extends React.Component {
               <li>Cards: __</li>
               <ul className="card-list">
                 Card List:
+                  <CardIndexContainer />
               </ul>
             </ul>
           </div>
@@ -67,3 +70,9 @@ class DeckDetail extends React.Component {
 }
 
 export default DeckDetail;
+
+// {
+//   deck.cards.map(card =>
+//     <li key={card.id}>{card.keyword}</li>
+//   )
+// }

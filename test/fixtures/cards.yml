@@ -1,0 +1,29 @@
+# == Schema Information
+#
+# Table name: cards
+#
+#  id          :integer          not null, primary key
+#  keyword     :string           not null
+#  body        :text             not null
+#  user_rating :integer          default(0)
+#  author_id   :integer          not null
+#  deck_id     :integer          not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  keyword: MyString
+  body: MyText
+  user_rating: 1
+  author_id: 1
+  deck_id: 1
+
+two:
+  keyword: MyString
+  body: MyText
+  user_rating: 1
+  author_id: 1
+  deck_id: 1

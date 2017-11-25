@@ -1,15 +1,16 @@
 import React from 'react';
-import DeckIndexItem from './deck_index_list_item';
+import DeckIndexListItem from './deck_index_list_item';
 import { Link } from 'react-router-dom';
 
 class DeckIndex extends React.Component {
   componentDidMount() {
     const { fetchDecks } = this.props;
+    console.log(this.props.fetchDecks);
     fetchDecks();
   }
 
   render() {
-    const { decks, fetchDeck } = this.props;
+    const { decks } = this.props;
 
     return (
       <div className="deck-index-container">
@@ -23,7 +24,7 @@ class DeckIndex extends React.Component {
             </div>
 
             <div className="deck-header-box-item2">
-              <Link to="/deck_form">
+              <Link to="/deck/new">
                <i className="fa fa-plus fa-2x" aria-hidden="true"></i>
               </Link>
             </div>
@@ -34,7 +35,7 @@ class DeckIndex extends React.Component {
         <ul>
           {
             decks.map((deck =>
-              <DeckIndexItem key={deck.id} deck={deck} />
+              <DeckIndexListItem key={deck.id} deck={deck} />
             ))
           }
         </ul>

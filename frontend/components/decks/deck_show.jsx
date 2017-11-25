@@ -9,15 +9,15 @@ class DeckShow extends React.Component {
   //   super(props);
   // }
   componentDidMount(){
-    console.log(this.props.deck);
     this.props.fetchDeck(this.props.match.params.deckId);
   }
+
+
 
   render() {
     const { deck, deleteDeck, fetchDecks } = this.props;
     return (
       <div className="deck-show-container">
-        hello i'm the deck show
         <DeckDetail
           deck={ deck }
           deleteDeck={ deleteDeck }

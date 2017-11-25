@@ -10,22 +10,22 @@ import {
   deleteDeck
 } from '../../actions/deck_actions';
 
+import {
+  fetchCards,
+  fetchCard
+} from './../../actions/card_actions';
+
 const mapStateToProps = (state, ownProps) => {
-  // let formType = "new";
-  // let deck = { title: "" };
-  // if (ownProps.match.path === '/deck/:deckId/') {
-  //   formType = "edit";
-  // console.log(ownProps.match.params.deckId)
-  //   let deck = state.posts[ownProps.match.params.deckId];
-  // // }
-  // return { deck };
+
   const deck = state.entities.decks[ownProps.match.params.deckId];
+  // const card = state.entities.cards
   return { deck };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   let action = (ownProps.match.path === '/:deckId/edit') ? updateDeck : createDeck;
   return {
+    // fetchCards: (deckId) => dispatch(fetchCards(deckId)),
     fetchDecks: () => dispatch(fetchDecks()),
     fetchDeck: (id) => dispatch(fetchDeck(id)),
     action: (deck) => dispatch(action(deck)),

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const NavBar = ({ loggedIn, logout, props }) => (
   <nav className="navbar">
     <div className="logo">
-      <Link to="/deck_feed">
+      <Link to="/deck">
           <i className="fa fa-lightbulb-o " aria-hidden="true">
           </i>
       </Link>
@@ -13,7 +13,7 @@ const NavBar = ({ loggedIn, logout, props }) => (
 
     <div className="navbar-icons-all">
       <ul className="navbar-icon-list-top">
-          <i className="fa fa-plus" aria-hidden="true"></i>
+        <i className="fa fa-compress" aria-hidden="true"></i>
       </ul>
 
       <ul className="navbar-icon-list-middle">

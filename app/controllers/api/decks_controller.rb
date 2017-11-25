@@ -44,7 +44,7 @@ class Api::DecksController < ApplicationController
       @deck.destroy
       render :delete
     else
-      render json: ["cannot delete card, it is not yours"], status: 422
+      render json: ["cannot delete deck, it is not yours"], status: 422
     end
   end
 

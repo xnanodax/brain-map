@@ -29,4 +29,45 @@ deck2 = Deck.create({
   title: "Chemistry",
   author_id: user2.id
 })
-#
+
+card1 = Card.create({
+  keyword: ".select",
+  body: "body1",
+  author_id: user1.id,
+  deck_id: deck1.id
+  })
+
+card2 = Card.create({
+  keyword: ".reject",
+  body: "body2",
+  author_id: user1.id,
+  deck_id: deck1.id
+  })
+
+card3 = Card.create({
+  keyword: ".uniq",
+  body: "body2",
+  author_id: user1.id,
+  deck_id: deck1.id
+  })
+
+card4 = Card.create({
+  keyword: "electron",
+  body: "negatively charged particles",
+  author_id: user2.id,
+  deck_id: deck2.id
+  })
+
+card5 = Card.create({
+  keyword: "protons",
+  body: "postively charged particles found in the nucleus",
+  author_id: user2.id,
+  deck_id: deck2.id
+  })
+
+card6 = Card.create({
+  keyword: "neutrons",
+  body: "neutral charged particles found in the nucleus",
+  author_id: user2.id,
+  deck_id: deck2.id
+  })

@@ -10,7 +10,7 @@ const Auth = ({loggedIn, path, component: Component}) => (
   <Route
     path={path}
     render={(props) =>
-      loggedIn ? <Redirect to="/deck_feed" />: <Component {...props}/>
+      loggedIn ? <Redirect to="/deck" />: <Component {...props}/>
     }
   />
 );

@@ -9,7 +9,9 @@ import HomePageNotLoggedInContainer from './homepage/homepage_not_logged_in_cont
 import NavBarLoggedInContainer from './navbar_log/navbar_logged_in_container';
 import DeckContainer from './decks/deck_index_container';
 import DeckShowContainer from './decks/deck_show_container';
-import DeckFormContainer from './decks//deck_form/deck_form_container';
+import DeckFormContainer from './decks/deck_form/deck_form_container';
+
+import CardIndexContainer from './cards/index/card_index_container';
 
 import {
   AuthRoute,
@@ -25,15 +27,16 @@ const App = () => (
     <AuthRoute path="/login" component={HomePageNotLoggedInContainer} />
     <AuthRoute path="/signup" component={HomePageNotLoggedInContainer} />
 
-    <Route path="/deck_feed" component={DeckContainer} />
-    <Route path="/deck_feed" component={NavBarLoggedInContainer} />
-    <Route exact path="/deck_feed/:deckId" component={DeckShowContainer} />
+    <Route path="/deck" component={NavBarLoggedInContainer} />
+    <Route path="/deck" component={DeckContainer} />
+    <Route exact path="/deck/:deckId" component={DeckShowContainer} />
 
 
-    <Route path="/deck_feed/deck_form/" component={DeckFormContainer} />
+    <Route path="/deck/new" component={DeckFormContainer} />
   </div>
 );
 
+// <Route path="/deck_test/:deckId/card_index_test" component={CardIndexContainer} />
 export default App;
 
 

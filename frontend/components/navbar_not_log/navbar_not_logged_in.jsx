@@ -18,7 +18,7 @@ class NavBarNotLoggedIn extends React.Component {
       console.log(this.props);
       console.log(demoUser);
       this.props.login(demoUser)
-        .then(() => this.props.history.push('/deck_feed'));
+        .then(() => this.props.history.push('/deck'));
     };
   }
 

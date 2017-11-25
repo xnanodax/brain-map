@@ -26,6 +26,8 @@
 
 .session-form form input, button {
   width: 100%;
+  box-sizing: border-box;
+  height: 45px;
 }
 
 .session-form button {
