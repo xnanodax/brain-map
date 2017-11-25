@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 class DeckIndex extends React.Component {
   componentDidMount() {
     const { fetchDecks } = this.props;
-    console.log(this.props.fetchDecks);
     fetchDecks();
   }
 

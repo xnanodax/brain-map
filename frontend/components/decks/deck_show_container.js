@@ -16,7 +16,6 @@ import {
 } from './../../actions/card_actions';
 
 const mapStateToProps = (state, ownProps) => {
-
   const deck = state.entities.decks[ownProps.match.params.deckId];
   // const card = state.entities.cards
   return { deck };
@@ -28,6 +27,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     // fetchCards: (deckId) => dispatch(fetchCards(deckId)),
     fetchDecks: () => dispatch(fetchDecks()),
     fetchDeck: (id) => dispatch(fetchDeck(id)),
+    updateDeck: (deck)=> dispatch(updateDeck(deck)),
     action: (deck) => dispatch(action(deck)),
     deleteDeck: (deck_id) => dispatch(deleteDeck(deck_id))
    };

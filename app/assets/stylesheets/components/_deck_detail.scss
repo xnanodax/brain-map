@@ -1,9 +1,21 @@
+.deck-show {
+  padding-top: 30px;
+}
+
 .deck-show-item-header {
   display: flex;
   flex-direction: row;
   align-items: center;
   // width: 50vh;
   // justify-content: space-between;
+}
+
+
+.deck-show-item-header-text {
+  font-size: 2em;
+  padding-bottom: 1em;
+  padding-top: 1em;
+  padding-right: 20px;
 }
 
 .deck-show-header-links {

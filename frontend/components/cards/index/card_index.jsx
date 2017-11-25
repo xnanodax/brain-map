@@ -29,10 +29,10 @@ class CardIndex extends React.Component {
     return (
       <div>
         <h3>Card:</h3>
-          <div class="card-container">
-            <div class="table-row header wrapper">
-              <div class="text-short">Question</div>
-              <div class="text-long">Answer</div>
+          <div className="card-container">
+            <div className="table-row header wrapper">
+              <div className="text-short">Question</div>
+              <div className="text-long">Answer</div>
             </div>
 
             <ul>

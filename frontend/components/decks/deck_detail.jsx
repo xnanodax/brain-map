@@ -2,18 +2,37 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { BarLoader } from 'react-spinners';
 import CardIndexContainer from './../cards/index/card_index_container';
-// const cardList = () => (
-//
-// );
+// import ClickToEdit from 'react-click-to-edit';
+import ClickToEdit from './../click_to_edit/index.js';
 
 class DeckDetail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: true
+      loading: true,
+      deck: this.props.deck
     };
   }
 
+
+  // componentWillReceiveProps(newProps){
+  //   console.log("component will receive new props", this.state);
+  //   const newState = {
+  //     loading: true,
+  //     deck: {title: newProps}
+  //   };
+  //   console.log("newState", newState);
+  //   this.setState(newState);
+  // }
+
+  // componentWillReceiveProps(newProps) {
+  //   const { fetchDeck } = this.props;
+  //   const currDeckId = this.props.match.params.deckId;
+  //   const newDeckId = newProps.match.params.deckId;
+  //   if (currDeckId !== newDeckId) {
+  //     fetchDeck(newDeckId);
+  //   }
+  // }
 
   handleDeleteAfterRedirect(id) {
     return (e) => {
@@ -30,7 +49,18 @@ class DeckDetail extends React.Component {
         { deck ? (
           <div className="deck-show-item">
             <ul className="deck-show-item-header">
-              <h1>{deck.title}</h1>
+
+              <ClickToEdit
+                className='deck-show-item-header-text'
+                field='title'
+                endEditing={(value) => {
+                  this.props.deck.title = value;
+                  this.props.updateDeck(this.props.deck);
+                  }
+                }>
+                {deck.title}
+              </ClickToEdit>
+
               <div className="deck-show-header-links">
                 <i
                   className="fa fa-trash-o"
@@ -46,7 +76,7 @@ class DeckDetail extends React.Component {
 
             <ul className ="deck-show-attributes">
               <li>
-                <button className="deck-show-attributes-button"><i class="fa fa-play" aria-hidden="true"></i>&nbsp;&nbsp;Study</button>
+                <button className="deck-show-attributes-button"><i className="fa fa-play" aria-hidden="true"></i>&nbsp;&nbsp;Study</button>
               </li>
 
               <li>
