@@ -7,7 +7,7 @@ const DeckListIndexItem = ({deck}) => (
       <ul className="deck_index_item_border">
         <li className="list-title">{deck.title}</li>
         <li> __ Cards</li>
-        <li>Mastery: {deck.mastery_percentage}%</li>
+        <li>Mastery: <div className="green">{deck.mastery_percentage}%</div></li>
       </ul>
     </li>
   </Link>

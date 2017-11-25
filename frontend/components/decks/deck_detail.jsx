@@ -31,7 +31,6 @@ class DeckDetail extends React.Component {
           <div className="deck-show-item">
             <ul className="deck-show-item-header">
               <h1>{deck.title}</h1>
-              {deck.id}
               <div className="deck-show-header-links">
                 <i
                   className="fa fa-trash-o"
@@ -46,10 +45,21 @@ class DeckDetail extends React.Component {
             </ul>
 
             <ul className ="deck-show-attributes">
-              <li>Mastery: {deck.mastery_percentage}%</li>
-              <li>Cards: __</li>
+              <li>
+                <button className="deck-show-attributes-button"><i class="fa fa-play" aria-hidden="true"></i>&nbsp;&nbsp;Study</button>
+              </li>
+
+              <li>
+                <ul className="attributes-side-by-side1">
+                  <h3>Mastery:</h3>
+                  <div className="percentageColor">{deck.mastery_percentage}%</div>
+                </ul>
+              </li>
+              <li>
+                <h3>Tags:</h3>
+              </li>
+
               <ul className="card-list">
-                Card List:
                   <CardIndexContainer />
               </ul>
             </ul>
@@ -70,6 +80,11 @@ class DeckDetail extends React.Component {
 }
 
 export default DeckDetail;
+
+// <li>
+//     <h3>Description:</h3>
+//     havent made this yet.
+// </li>
 
 // {
 //   deck.cards.map(card =>

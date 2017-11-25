@@ -11,7 +11,6 @@ class CardIndex extends React.Component {
   componentDidMount() {
     const { fetchCards } = this.props;
     const currDeckId = this.props.match.params.deckId;
-    console.log("current deck Id", currDeckId);
     fetchCards(currDeckId);
   }
 
@@ -29,11 +28,20 @@ class CardIndex extends React.Component {
 
     return (
       <div>
-        "this is the card index."
-        {
-          cards.map(card => <li>{card.keyword}</li>)
-        }
+        <h3>Card:</h3>
+          <div class="card-container">
+            <div class="table-row header wrapper">
+              <div class="text-short">Question</div>
+              <div class="text-long">Answer</div>
+            </div>
 
+            <ul>
+              {
+                cards.map(card => <CardIndexListItem card = { card } />)
+              }
+            </ul>
+
+          </div>
       </div>
     );
   }

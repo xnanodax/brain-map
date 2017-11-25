@@ -39,6 +39,11 @@ h1 {
 	padding: 20px 0px 20px 0px;
 }
 
+h3 {
+	font-size: 1.4em;
+	font-weight: bold;
+}
+
 button {
 	padding: 10px 20px;
 	background: $green;
@@ -60,4 +65,13 @@ input {
 
 input:hover {
 	border-bottom: 2px solid lightblue;
+}
+
+.green {
+	display: inline-block;
+	color: $green
+}
+
+.green:hover {
+	color: white;
 }
