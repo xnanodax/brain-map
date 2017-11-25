@@ -24,7 +24,7 @@ class CardIndex extends React.Component {
   }
 
   render() {
-    const { cards } = this.props;
+    const { cards, deckId, updateCard } = this.props;
 
     return (
       <div>
@@ -37,7 +37,7 @@ class CardIndex extends React.Component {
 
             <ul>
               {
-                cards.map(card => <CardIndexListItem card = { card } />)
+                cards.map(card => <CardIndexListItem card = {card} deckId={deckId} updateCard={updateCard}/>)
               }
             </ul>
 

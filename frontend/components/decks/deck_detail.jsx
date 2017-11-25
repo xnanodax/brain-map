@@ -14,26 +14,6 @@ class DeckDetail extends React.Component {
     };
   }
 
-
-  // componentWillReceiveProps(newProps){
-  //   console.log("component will receive new props", this.state);
-  //   const newState = {
-  //     loading: true,
-  //     deck: {title: newProps}
-  //   };
-  //   console.log("newState", newState);
-  //   this.setState(newState);
-  // }
-
-  // componentWillReceiveProps(newProps) {
-  //   const { fetchDeck } = this.props;
-  //   const currDeckId = this.props.match.params.deckId;
-  //   const newDeckId = newProps.match.params.deckId;
-  //   if (currDeckId !== newDeckId) {
-  //     fetchDeck(newDeckId);
-  //   }
-  // }
-
   handleDeleteAfterRedirect(id) {
     return (e) => {
       this.props.deleteDeck(id).then(()=>this.props.history.push("/deck"));
@@ -61,6 +41,7 @@ class DeckDetail extends React.Component {
                 }
               >
                 {deck.title}
+
               </ClickToEdit>
 
               <div className="deck-show-header-links">

@@ -8,17 +8,11 @@ class DeckIndex extends React.Component {
     fetchDecks();
   }
 
-  componentWillReceiveProps(newProps) {
-    const { fetchDecks } = newProps;
-    fetchDecks();
-  }
 
   render() {
     const { decks, count } = this.props;
 
     return (
-      <div>
-        { count ? (
           <div className="deck-index-container">
             <ul className="deck_index_item_border deck-index-item-outer-title">
               <div className="deck-header-box">
@@ -44,8 +38,6 @@ class DeckIndex extends React.Component {
               }
             </ul>
           </div>
-        ) : ( "" ) }
-      </div>
     );
   }
 }
