@@ -8,8 +8,6 @@ class DeckForm extends React.Component {
     };
   }
 
-
-
   handleSubmit() {
     return(e) => {
       e.preventDefault();

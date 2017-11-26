@@ -45,7 +45,7 @@ class CardIndex extends React.Component {
                     updateCard={updateCard} />)
               }
             </ul>
-            <Link to="/card_form">
+            <Link to={`/deck/view/${deckId}/add_card`}>
               Add Card
             </Link>
 

@@ -20,8 +20,6 @@ class DeckDetail extends React.Component {
     };
   }
 
-
-
   render() {
     const { deck } = this.props;
     return (
@@ -92,14 +90,3 @@ class DeckDetail extends React.Component {
 }
 
 export default DeckDetail;
-
-// <li>
-//     <h3>Description:</h3>
-//     havent made this yet.
-// </li>
-
-// {
-//   deck.cards.map(card =>
-//     <li key={card.id}>{card.keyword}</li>
-//   )
-// }

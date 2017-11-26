@@ -17,6 +17,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  width: 50vw;
   // width: 50vh;
   // justify-content: space-between;
 }
@@ -27,12 +28,12 @@
   font-size: 2em;
   padding-bottom: 1em;
   padding-top: 1em;
-  padding-right: 20px;
+  box-sizing: border-box;
 }
 
 
 .deck-show-item-header-text input {
-  width: 80vh;
+  width: 50vw;
 }
 
 .deck-show-header-links {

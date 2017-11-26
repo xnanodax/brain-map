@@ -5,14 +5,9 @@ import DeckDetail from './deck_detail';
 
 class DeckShow extends React.Component {
 
-  // constructor(props){
-  //   super(props);
-  // }
   componentDidMount(){
     this.props.fetchDeck(this.props.match.params.deckId);
   }
-
-
 
   render() {
     return (
@@ -23,15 +18,5 @@ class DeckShow extends React.Component {
   }
 
 }
-
-// const DeckShow = ({deck, formType}) => {
-//
-//   return (
-//     <div>
-//       <DeckDetail deck={deck} formType={formType}/>
-//     </div>
-//   );
-// };
-
 
 export default DeckShow;
