@@ -16,8 +16,7 @@ class TagIndex extends React.Component {
     const { fetchTaggings, deckId } = this.props;
     const newDeckId = newProps.match.params.deckId;
     if (deckId !== newDeckId) {
-      fetchTaggings(newDeckId);
-    }
+      fetchTaggings(newDeckId); }
   }
 
   render() {
