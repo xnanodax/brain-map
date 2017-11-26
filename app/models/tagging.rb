@@ -11,6 +11,7 @@
 
 class Tagging < ApplicationRecord
   validates :deck_id, :tag_id, presence: true
+  validates :tag_id, uniqueness: { scope: :deck_id }
   validates :deck_id, uniqueness: { scope: :tag_id }
 
   belongs_to :deck,
@@ -22,5 +23,6 @@ class Tagging < ApplicationRecord
   primary_key: :id,
   foreign_key: :tag_id,
   class_name: :Tag
+
 
 end

@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20171125224717) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["deck_id", "tag_id"], name: "index_taggings_on_deck_id_and_tag_id", unique: true
+    t.index ["tag_id", "deck_id"], name: "index_taggings_on_tag_id_and_deck_id", unique: true
   end
 
   create_table "tags", force: :cascade do |t|

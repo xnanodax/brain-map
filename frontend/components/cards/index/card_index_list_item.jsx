@@ -3,14 +3,14 @@ import ClickToEdit from './../../click_to_edit/index.js';
 
 const CardIndexListItem = ({num, card, deckId, updateCard}) => (
   <div>
-    <div class="container">
-      <div class="table-row wrapper">
+    <div className="container">
+      <div className="table-row wrapper">
 
-        <div class="text-xsmall">
+        <div className="text-xsmall">
           {num}
         </div>
 
-        <div class="text-short">
+        <div className="text-short">
           <ClickToEdit
             endEditing={
               (value) => {
@@ -23,7 +23,7 @@ const CardIndexListItem = ({num, card, deckId, updateCard}) => (
           </ClickToEdit>
         </div>
 
-        <div class="text-long">
+        <div className="text-long">
           <ClickToEdit
             endEditing={
               (value) => {

@@ -1,6 +1,7 @@
 class Api::TaggingsController < ApplicationController
   def index
-    @taggings = Tagging.all
+    # @taggings = Tagging.all
+    @taggings = Deck.find_by(id: params[:deck_id]).taggings
   end
 
   def create
@@ -8,7 +9,7 @@ class Api::TaggingsController < ApplicationController
     if @tagging.save
       render :show
     else
-      render json: @tagging.errors.full_messages
+      render json: @tagging.errors.full_messages, status: 422
     end
   end
 
@@ -22,8 +23,9 @@ class Api::TaggingsController < ApplicationController
   end
 
   def destroy
-    @tagging = Tagging.find_by(deck_id: params[:deck_id], tag_id: params[:tag_id])
-    if @tagging.destroy
+    @tagging = Tagging.find_by(tag_id: params[:tagging][:tag_id], deck_id: params[:tagging][:deck_id])
+    if @tagging
+      @tagging.destroy
       render :delete
     else
       render json: ["cannot find tagging"], status: 422
@@ -31,6 +33,6 @@ class Api::TaggingsController < ApplicationController
   end
 
   def tagging_params
-    params.permit(:deck_id, :tag_id)
+    params.require(:tagging).permit(:deck_id, :tag_id)
   end
 end

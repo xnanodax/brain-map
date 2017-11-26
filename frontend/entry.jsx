@@ -49,9 +49,11 @@ window.deleteCard = deleteCard;
 
 import {
   createTagging,
-  deleteTagging
-} from './utils/tag_util';
+  deleteTagging,
+  fetchTaggings
+} from './actions/tagging_action';
 
+window.fetchTaggings = fetchTaggings;
 window.createTagging = createTagging;
 window.deleteTagging = deleteTagging;
 
