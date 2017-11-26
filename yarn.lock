@@ -2264,6 +2264,10 @@ rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-click-to-edit@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/react-click-to-edit/-/react-click-to-edit-0.3.0.tgz#50adecd937d385436e6d0bb1ebae4050a9e12792"
+
 react-dom@^16.1.1:
   version "16.1.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.1.1.tgz#b2e331b6d752faf1a2d31399969399a41d8d45f8"
