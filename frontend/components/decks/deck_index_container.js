@@ -7,8 +7,6 @@ import {
   fetchDeck
 } from '../../actions/deck_actions';
 
-// import { selectAllCardIds } from './../';
-
 const mapStateToProps = (state, ownProps) => {
   const decksArr = Object.values(state.entities.decks);
   return {

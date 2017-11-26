@@ -39,7 +39,6 @@ class CardForm extends React.Component {
               value={this.state.keyword}/>
 
               <input
-                autoFocus
                 type="text"
                 placeholder="answer"
                 onChange={this.handleUpdating('body')}

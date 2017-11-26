@@ -21,12 +21,12 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  let action = (ownProps.match.path === '/:deckId/edit') ? updateDeck : createDeck;
+  // let action = (ownProps.match.path === '/:deckId/edit') ? updateDeck : createDeck;
   return {
-    fetchDecks: () => dispatch(fetchDecks()),
+    // fetchDecks: () => dispatch(fetchDecks()),
     fetchDeck: (id) => dispatch(fetchDeck(id)),
     updateDeck: (deck)=> dispatch(updateDeck(deck)),
-    action: (deck) => dispatch(action(deck)),
+    // action: (deck) => dispatch(action(deck)),
     deleteDeck: (deck_id) => dispatch(deleteDeck(deck_id))
    };
 };

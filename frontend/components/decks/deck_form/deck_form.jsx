@@ -9,9 +9,11 @@ class DeckForm extends React.Component {
   }
 
   handleSubmit() {
+    const { createDeck, history } = this.props;
     return(e) => {
       e.preventDefault();
-      this.props.createDeck(this.state).then(() => this.props.history.push('/deck'));
+      createDeck(this.state)
+        .then(() => history.push('/deck'));
     };
   }
 
@@ -23,6 +25,7 @@ class DeckForm extends React.Component {
 
   render() {
     const { createDeck } = this.props;
+    const { title } = this.state;
     return (
       <div className="deck-form-container">
         <h1>Create Deck</h1>
@@ -33,7 +36,7 @@ class DeckForm extends React.Component {
               type="text"
               placeholder="title"
               onChange={this.handleUpdating('title')}
-              value={this.state.title}/>
+              value={title}/>
 
             <button>
               Create New

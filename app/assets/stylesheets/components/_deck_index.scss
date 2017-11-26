@@ -25,8 +25,6 @@
 }
 
 .deck-header-box-item2 {
-  padding-left: 80px;
-  margin: 0 auto;
 }
 
 .deck-header-box {
@@ -34,7 +32,7 @@
   flex-direction: row;
   align-items: center;
   background: white;
-  // justify-content: space-around;
+  justify-content: space-between;
 }
 
 .deck-header-font{
@@ -72,7 +70,7 @@
 }
 
 .deck_index_item_border {
-  padding: 20px 20px 10px 20px;
+  padding: 20px 40px 10px 20px;
 }
 
 .deck-index-container a {

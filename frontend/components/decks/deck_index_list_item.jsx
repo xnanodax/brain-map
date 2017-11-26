@@ -6,7 +6,8 @@ const DeckListIndexItem = ({deck}) => (
     <li className="deck-index-item-outer">
       <ul className="deck_index_item_border">
         <li className="list-title">{deck.title}</li>
-        <li> {deck.cards.length} Cards</li>
+        <li> {deck.cards.length} { deck.cards.length === 1 ? (<p className="inline">Card</p>) : (<p className="inline">Cards</p>) }</li>
+
         <li>Mastery: <div className="green">{deck.mastery_percentage}%</div></li>
       </ul>
     </li>

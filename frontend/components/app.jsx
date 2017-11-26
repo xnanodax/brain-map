@@ -30,7 +30,7 @@ const App = () => (
 
 
     <Route path="/deck/new" component={DeckFormContainer} />
-    <Route path="/deck/view/:deckId/add_card" component={CardFormContainer} />
+    <Route path="/deck/view/:deckId/new" component={CardFormContainer} />
   </div>
 );
 

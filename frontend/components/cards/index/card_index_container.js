@@ -16,7 +16,6 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchCards: (deckId) => dispatch(fetchCards(deckId)),
-  // fetchCard: (deckId, cardId) => dispatch(fetchCard(deckId, cardId)),
   updateCard: (deckId, card) => dispatch(updateCard(deckId, card))
 });
 

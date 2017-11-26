@@ -15,13 +15,15 @@ class DeckDetail extends React.Component {
   }
 
   handleDeleteAfterRedirect(id) {
+    const { deleteDeck, history } = this.props;
     return (e) => {
-      this.props.deleteDeck(id).then(()=>this.props.history.push("/deck"));
+      deleteDeck(id)
+        .then(() =>history.push("/deck"));
     };
   }
 
   render() {
-    const { deck } = this.props;
+    const { deck, updateDeck } = this.props;
     return (
       <div className="deck-show">
         { deck ? (
@@ -32,13 +34,12 @@ class DeckDetail extends React.Component {
                 className='deck-show-item-header-text'
                 endEditing={
                   (value) => {
-                  this.props.deck.title = value;
-                  this.props.updateDeck(this.props.deck);
+                  deck.title = value;
+                  updateDeck(deck);
                   }
                 }
               >
                 {deck.title}
-
               </ClickToEdit>
 
               <div className="deck-show-header-links">
@@ -48,9 +49,7 @@ class DeckDetail extends React.Component {
                   onClick={this.handleDeleteAfterRedirect(deck.id)}>
                 </i>
 
-
-                  <i className="fa fa-cog" aria-hidden="true"></i>
-
+                <i className="fa fa-cog" aria-hidden="true"></i>
               </div>
             </ul>
 

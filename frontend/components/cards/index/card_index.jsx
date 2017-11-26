@@ -45,7 +45,7 @@ class CardIndex extends React.Component {
                     updateCard={updateCard} />)
               }
             </ul>
-            <Link to={`/deck/view/${deckId}/add_card`}>
+            <Link to={`/deck/view/${deckId}/new`}>
               Add Card
             </Link>
 
@@ -57,33 +57,3 @@ class CardIndex extends React.Component {
 
 
 export default CardIndex;
-
-
-
-// <div className="deck-index-container">
-//
-//   <ul className="deck_index_item_border deck-index-item-outer-title">
-//
-//     <div className="deck-header-box">
-//       <div className="deck-header-box-item1">
-//         <li className="deck-header-font">Decks</li>
-//         <li> __Decks</li>
-//       </div>
-//
-//       <div className="deck-header-box-item2">
-//         <Link to="/deck/new">
-//          <i className="fa fa-plus fa-2x" aria-hidden="true"></i>
-//         </Link>
-//       </div>
-//
-//     </div>
-//   </ul>
-//
-//   <ul>
-//     {
-//       decks.map((deck =>
-//         <DeckIndexItem key={deck.id} deck={deck} />
-//       ))
-//     }
-//   </ul>
-// </div>
