@@ -18,7 +18,7 @@ class DeckIndex extends React.Component {
               <div className="deck-header-box">
                 <div className="deck-header-box-item1">
                   <li className="deck-header-font">Decks</li>
-                  <li> { deckCount } { deckCount === 1 ? (<p>Deck</p>) : (<p>Decks</p>) }</li>
+                  <li> { deckCount } { deckCount === 1 ? (<p className="inline">Deck</p>) : (<p className="inline">Decks</p>) }</li>
                 </div>
 
                 <div className="deck-header-box-item2">

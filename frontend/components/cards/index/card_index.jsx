@@ -9,16 +9,14 @@ class CardIndex extends React.Component {
   }
 
   componentDidMount() {
-    const { fetchCards } = this.props;
-    const currDeckId = this.props.match.params.deckId;
-    fetchCards(currDeckId);
+    const { fetchCards, deckId } = this.props;
+    fetchCards(deckId);
   }
 
   componentWillReceiveProps(newProps) {
-    const { fetchCards } = this.props;
-    const currDeckId = this.props.match.params.deckId;
+    const { fetchCards, deckId } = this.props;
     const newDeckId = newProps.match.params.deckId;
-    if (currDeckId !== newDeckId) {
+    if (deckId !== newDeckId) {
       fetchCards(newDeckId);
     }
   }

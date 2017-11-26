@@ -10,7 +10,7 @@ const TaggingReducer = (state = {}, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_TAGGINGS:
-      return merge({}, state, action.taggings);
+      return merge({}, action.taggings);
     case RECEIVE_TAGGING:
       return merge({}, state, action.tagging);
     case REMOVE_TAGGING:

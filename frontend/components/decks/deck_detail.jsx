@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { BarLoader } from 'react-spinners';
 import CardIndexContainer from './../cards/index/card_index_container';
-// import ClickToEdit from 'react-click-to-edit';
+import TagIndexContainer from './../tags/tag_index_container';
 import ClickToEdit from './../click_to_edit/index.js';
 
 class DeckDetail extends React.Component {
@@ -32,7 +32,6 @@ class DeckDetail extends React.Component {
 
               <ClickToEdit
                 className='deck-show-item-header-text'
-                field='title'
                 endEditing={
                   (value) => {
                   this.props.deck.title = value;
@@ -68,9 +67,9 @@ class DeckDetail extends React.Component {
                   <div className="percentageColor">{deck.mastery_percentage}%</div>
                 </ul>
               </li>
-              <li>
-                <h3>Tags:</h3>
-              </li>
+              <ul className="tag-list">
+                  <TagIndexContainer />
+              </ul>
 
               <ul className="card-list">
                   <CardIndexContainer />

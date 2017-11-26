@@ -62,6 +62,9 @@
   width: 100px;
 }
 
+.inline {
+  display: inline-block;
+}
 
 
 h1 {
@@ -96,9 +99,15 @@ h1 {
 .text-short {
   width: 20vw;
 }
+.text-short input {
+  width: 20vw;
+}
 
 .text-long {
-  width: 20vw;
+  width: 30vw;
+}
+.text-long input {
+  width: 30vw;
 }
 
 .card-container {

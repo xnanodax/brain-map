@@ -12,6 +12,7 @@ const CardIndexListItem = ({num, card, deckId, updateCard}) => (
 
         <div className="text-short">
           <ClickToEdit
+            className = "text-short"
             endEditing={
               (value) => {
                 card.keyword = value;
@@ -25,6 +26,7 @@ const CardIndexListItem = ({num, card, deckId, updateCard}) => (
 
         <div className="text-long">
           <ClickToEdit
+            className = "text-long"
             endEditing={
               (value) => {
                 card.body = value;
