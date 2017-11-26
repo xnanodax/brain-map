@@ -24,5 +24,13 @@ class Deck < ApplicationRecord
   class_name: :Card,
   dependent: :destroy
 
-  # has_many :tags
+  has_many :taggings,
+  primary_key: :id,
+  foreign_key: :deck_id,
+  class_name: :Tagging
+
+  has_many :tags,
+  through: :taggings,
+  source: :tag
+
 end

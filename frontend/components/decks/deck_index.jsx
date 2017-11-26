@@ -10,7 +10,7 @@ class DeckIndex extends React.Component {
 
 
   render() {
-    const { decks, count } = this.props;
+    const { decks, deckCount } = this.props;
 
     return (
           <div className="deck-index-container">
@@ -18,7 +18,7 @@ class DeckIndex extends React.Component {
               <div className="deck-header-box">
                 <div className="deck-header-box-item1">
                   <li className="deck-header-font">Decks</li>
-                  <li> { count } { count === 1 ? (<p>Deck</p>) : (<p>Decks</p>) }</li>
+                  <li> { deckCount } { deckCount === 1 ? (<p>Deck</p>) : (<p>Decks</p>) }</li>
                 </div>
 
                 <div className="deck-header-box-item2">

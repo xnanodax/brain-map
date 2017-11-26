@@ -28,18 +28,28 @@ class CardIndex extends React.Component {
 
     return (
       <div>
-        <h3>Card:</h3>
+        <h3>Cards:</h3>
           <div className="card-container">
             <div className="table-row header wrapper">
+              <div className="text-xsmall">#</div>
               <div className="text-short">Question</div>
               <div className="text-long">Answer</div>
             </div>
 
             <ul>
               {
-                cards.map(card => <CardIndexListItem card = {card} deckId={deckId} updateCard={updateCard}/>)
+                cards.map((card, idx) =>
+                  <CardIndexListItem
+                    num={idx+1}
+                    key={idx}
+                    card={card}
+                    deckId={deckId}
+                    updateCard={updateCard} />)
               }
             </ul>
+            <Link to="/card_form">
+              Add Card
+            </Link>
 
           </div>
       </div>

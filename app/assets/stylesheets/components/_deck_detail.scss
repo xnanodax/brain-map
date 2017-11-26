@@ -1,3 +1,14 @@
+.deck-show-container {
+  position: absolute;
+  left: 400px;
+  color: $gray;
+  width: 800px;
+  border-right: 1px solid $light-gray;
+  height: 100vh;
+  overflow-y: auto;
+
+}
+
 .deck-show {
   padding-top: 30px;
 }
@@ -9,6 +20,7 @@
   // width: 50vh;
   // justify-content: space-between;
 }
+
 
 
 .deck-show-item-header-text {
@@ -50,14 +62,7 @@
   width: 100px;
 }
 
-.deck-show-container {
-  position: absolute;
-  left: 400px;
-  color: $gray;
-  width: 800px;
-  border-right: 1px solid $light-gray;
-  height: 100vh;
-}
+
 
 h1 {
   color: $dark-gray;
@@ -82,6 +87,10 @@ h1 {
   display: flex;
   flex-direction: row;
   flex-grow: 0;
+}
+
+.text-xsmall {
+  width: 7vw;
 }
 
 .text-short {

@@ -1,10 +1,15 @@
 import React from 'react';
 import ClickToEdit from './../../click_to_edit/index.js';
 
-const CardIndexListItem = ({card, deckId, updateCard}) => (
+const CardIndexListItem = ({num, card, deckId, updateCard}) => (
   <div>
     <div class="container">
       <div class="table-row wrapper">
+
+        <div class="text-xsmall">
+          {num}
+        </div>
+
         <div class="text-short">
           <ClickToEdit
             endEditing={

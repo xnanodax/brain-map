@@ -47,6 +47,14 @@ window.createCard = createCard;
 window.updateCard = updateCard;
 window.deleteCard = deleteCard;
 
+import {
+  createTagging,
+  deleteTagging
+} from './utils/tag_util';
+
+window.createTagging = createTagging;
+window.deleteTagging = deleteTagging;
+
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById('root');
 

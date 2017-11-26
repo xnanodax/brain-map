@@ -6,68 +6,136 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user1 = User.create({
+User.destroy_all
+Deck.destroy_all
+Card.destroy_all
+Tag.destroy_all
+Tagging.destroy_all
+
+user1 = User.create!({
   username: "password",
-  email: "cynma@gmail.com",
+  email: "password",
   password: "password"
 });
 
-user2 = User.create({
+user2 = User.create!({
   username: "password1",
-  email: "cynma1@gmail.com",
+  email: "password1",
   password: "password1"
 });
 
+user3 = User.create!({
+  username: "password2",
+  email: "password2",
+  password: "password2"
+});
 
-deck1 = Deck.create({
+user4 = User.create!({
+  username: "password3",
+  email: "password3",
+  password: "password3"
+});
+
+user5 = User.create!({
+  username: "password4",
+  email: "password4",
+  password: "password4"
+});
+
+user6 = User.create!({
+  username: "password5",
+  email: "password5",
+  password: "password5"
+});
+
+user7 = User.create!({
+  username: "password6",
+  email: "password6",
+  password: "password6"
+});
+
+user8 = User.create!({
+  username: "password7",
+  email: "password7",
+  password: "password7"
+});
+
+
+
+
+
+deck1 = Deck.create!({
   title: "How To Get Into App Academy",
   author_id: user1.id,
   mastery_percentage: 50
 })
 
-deck2 = Deck.create({
+deck2 = Deck.create!({
   title: "Chemistry",
-  author_id: user2.id
+  author_id: user1.id
 })
 
-card1 = Card.create({
+card1 = Card.create!({
   keyword: ".select",
   body: "body1",
   author_id: user1.id,
   deck_id: deck1.id
   })
 
-card2 = Card.create({
+card2 = Card.create!({
   keyword: ".reject",
   body: "body2",
   author_id: user1.id,
   deck_id: deck1.id
   })
 
-card3 = Card.create({
+card3 = Card.create!({
   keyword: ".uniq",
   body: "body2",
   author_id: user1.id,
   deck_id: deck1.id
   })
 
-card4 = Card.create({
+card4 = Card.create!({
   keyword: "electron",
   body: "negatively charged particles",
   author_id: user2.id,
   deck_id: deck2.id
   })
 
-card5 = Card.create({
+card5 = Card.create!({
   keyword: "protons",
   body: "postively charged particles found in the nucleus",
   author_id: user2.id,
   deck_id: deck2.id
   })
 
-card6 = Card.create({
+card6 = Card.create!({
   keyword: "neutrons",
   body: "neutral charged particles found in the nucleus",
   author_id: user2.id,
   deck_id: deck2.id
   })
+
+
+tag1 = Tag.create!({name: "Science"})
+tag2 = Tag.create!({name: "Mathematics"})
+tag3 = Tag.create!({name: "Foreign Language"})
+tag4 = Tag.create!({name: "English"})
+tag5 = Tag.create!({name: "Finance and Economics"})
+tag6 = Tag.create!({name: "Technology"})
+tag7 = Tag.create!({name: "Computer Science"})
+tag8 = Tag.create!({name: "Food and Beverage"})
+tag9 = Tag.create!({name: "Fine Arts"})
+tag10 = Tag.create!({name: "Law"})
+tag11 = Tag.create!({name: "Medical and Nursing"})
+tag12 = Tag.create!({name: "Other"})
+
+tag13 = Tag.create!({name: "K-6"})
+tag13 = Tag.create!({name: "7-12"})
+tag13 = Tag.create!({name: "University"})
+
+tagging1 = Tagging.create!({deck_id: deck1.id, tag_id: tag7.id})
+tagging2 = Tagging.create!({deck_id: deck1.id, tag_id: tag13.id})
+tagging3 = Tagging.create!({deck_id: deck2.id, tag_id: tag1.id})
+tagging4 = Tagging.create!({deck_id: deck2.id, tag_id: tag13.id})
