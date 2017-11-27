@@ -16,7 +16,6 @@ const TaggingReducer = (state = {}, action) => {
     case REMOVE_TAGGING:
       const newState = merge({}, state);
       const deleteId = action.tagging.tag_id.id;
-      console.log("deleteID", deleteId);
       delete newState[deleteId];
       return newState;
     default:

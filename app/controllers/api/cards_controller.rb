@@ -51,6 +51,6 @@ class Api::CardsController < ApplicationController
   end
 
   def card_params
-    params.require(:card).permit(:keyword, :body, :id)
+    params.require(:card).permit(:keyword, :body)
   end
 end

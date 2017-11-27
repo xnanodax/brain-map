@@ -4,7 +4,7 @@ class Main extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="study-main-container">
         this is the Main bar
       </div>
     );

@@ -2,7 +2,7 @@
   position: absolute;
   left: 400px;
   color: $gray;
-  width: 800px;
+  width: 80vw;
   border-right: 1px solid $light-gray;
   height: 100vh;
   overflow-y: auto;
@@ -33,6 +33,7 @@
 
 
 .deck-show-item-header-text input {
+  width: 50vw;
 }
 
 .deck-show-header-links {

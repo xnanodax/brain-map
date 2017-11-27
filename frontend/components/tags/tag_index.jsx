@@ -14,16 +14,9 @@ class TagIndex extends React.Component {
   componentDidMount() {
     const { fetchTaggings, deckId, tags } = this.props;
     fetchTaggings(deckId);
-    // console.log("tags", tags);
-    // const tagArr = tags.map(tag => tag.name);
-    // console.log("hey", tagArr);
-    // debugger
-    // if (tags) this.setState({ tags: tagArr });
   }
 
-  componentWillReceiveProps(newProps){
-    console.log(newProps);
-  }
+
 
   componentWillReceiveProps(newProps) {
     const { fetchTaggings, deckId, tags } = this.props;
@@ -55,9 +48,21 @@ class TagIndex extends React.Component {
     const { tags, deckId, fetchTaggings, createTagging, deleteTagging } = this.props;
 
     return (
-      <div>
-        <h3>Tags:</h3>
-            <ul>
+      <div className="tag-index-container">
+        <div className="tag-header">
+          <h3>Tags:</h3>
+
+          <TagsInput
+            value={ [] }
+            inputProps = {
+              {className: 'react-tagsinput-input',
+                placeholder: 'Add a tag!'}
+              }
+              onChange={(value) => this.checkTagging(value[0])} />
+        </div>
+
+
+          <ul className="tag-index-list">
               {
                 tags.map((tag, idx) =>
                   <TagIndexListItem
@@ -68,11 +73,9 @@ class TagIndex extends React.Component {
                     />
                 )
               }
-            </ul>
+          </ul>
 
-            <TagsInput
-              value={this.state.tags}
-              onChange={(value) => this.checkTagging(value[0])} />
+
       </div>
     );
   }

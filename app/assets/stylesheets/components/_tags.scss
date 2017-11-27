@@ -1,0 +1,33 @@
+.tag_name {
+  font-size: 1.2em;
+  padding-right: 10px;
+  display: inline-block;
+}
+
+.tag-header {
+  display: flex;
+  width: 250px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+}
+
+.react-tagsinput input {
+}
+
+.tag-index-list {
+  padding-left: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 60vw;
+}
+
+.tag-index-list-item {
+  border: 1px solid $light-gray;
+  border-radius: 15px;
+  padding: 5px 10px;
+  margin: 3px;
+  // width: 30px;
+  display: inline-block;
+}

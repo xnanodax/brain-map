@@ -10,8 +10,12 @@ export const createTagging = (deckId, tagId) => (
     type: 'POST',
     url: `/api/decks/${deckId}/taggings`,
     data: {
-      tagging: { deck_id: deckId, tag_id: tagId }
+      tagging: {
+        deck_id: deckId,
+        tag_id: tagId
+      }
     }
+    
   })
 );
 
@@ -20,8 +24,12 @@ export const deleteTagging = (deckId, tagId) => (
     type: 'DELETE',
     url: `/api/decks/${deckId}/taggings/${tagId}`,
     data: {
-      tagging: { deck_id: deckId, tag_id: tagId }
+      tagging: {
+        deck_id: deckId,
+        tag_id: tagId
+      }
     }
+
   })
 );
 
@@ -43,7 +51,7 @@ export const createTag = (name) => (
     type: 'POST',
     url: `/api/tags`,
     data: {
-      tag: name 
+      tag: name
     }
   })
 );
