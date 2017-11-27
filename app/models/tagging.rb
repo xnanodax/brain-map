@@ -24,5 +24,10 @@ class Tagging < ApplicationRecord
   foreign_key: :tag_id,
   class_name: :Tag
 
-
+  def self.find_using_tag_name(tag_name)
+    tag = Tag.find_by(name: tag_name.titleize)
+    if tag
+      Tagging.find_by(tag_id: tag.id)
+    end
+  end
 end

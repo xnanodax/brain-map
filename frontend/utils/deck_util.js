@@ -12,13 +12,13 @@ export const fetchDeck = id => (
   })
 );
 
-export const createDeck = deck => {
-  return $.ajax({
+export const createDeck = deck => (
+  $.ajax({
     method: 'POST',
     url: `/api/decks/`,
     data: { deck }
-  });
-};
+  })
+);
 
 export const updateDeck = deck => (
   $.ajax({

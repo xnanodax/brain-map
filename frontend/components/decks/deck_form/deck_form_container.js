@@ -4,7 +4,8 @@ import DeckForm from './deck_form';
 import { createDeck } from './../../../actions/deck_actions';
 
 const mapStateToProps = (state, ownProps) => ({
-  deck: state.entities.decks[ownProps.match.params.deckId]
+  deck: state.entities.decks[ownProps.match.params.deckId],
+  errors: state.errors.decks
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

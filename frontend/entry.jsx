@@ -50,12 +50,20 @@ window.deleteCard = deleteCard;
 import {
   createTagging,
   deleteTagging,
-  fetchTaggings
+  fetchTaggings,
+  fetchAllTags
 } from './actions/tagging_action';
+
+import {
+  createTag
+} from './utils/tagging_util';
 
 window.fetchTaggings = fetchTaggings;
 window.createTagging = createTagging;
 window.deleteTagging = deleteTagging;
+
+window.fetchAllTags = fetchAllTags;
+window.createTag = createTag;
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById('root');

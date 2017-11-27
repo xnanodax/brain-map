@@ -41,7 +41,7 @@ class SessionForm extends React.Component {
         </div>
 
         <div className="session-form">
-          { formType === "Sign Up" ? <h1>{formType} for free</h1> : <h1>{ formType }</h1> }
+          { formType === "Sign Up" ? <h1>{ formType } for free</h1> : <h1>{ formType }</h1> }
           <form onSubmit={this.handleSubmit()} >
 
             <ul className="session-errors">

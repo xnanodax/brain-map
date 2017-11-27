@@ -9,12 +9,16 @@ class CardForm extends React.Component {
     };
   }
 
+  componentWillReceiveProps(newProps){
+    console.log(newProps);
+  }
+
   handleSubmit() {
     const { deckId, createCard } = this.props;
     return(e) => {
       e.preventDefault();
-      createCard(deckId, this.state)
-        .then(() => this.props.history.push(`/deck/view/${deckId}`));
+      createCard(deckId, this.state);
+        // .then(() => this.props.history.push(`/deck/view/${deckId}`));
     };
   }
 
@@ -25,10 +29,16 @@ class CardForm extends React.Component {
   }
 
   render() {
-    const { createCard } = this.props;
+    const { createCard, errors } = this.props;
     return (
       <div className="deck-form-container">
         <h1>Create Card</h1>
+
+        <ul className="session-errors">
+          {errors.map((error,idx) => <li key={idx}>{ error }</li>)}
+        </ul>
+
+
         <form onSubmit={this.handleSubmit()}>
           <label>
             <input

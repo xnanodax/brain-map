@@ -6,8 +6,8 @@ import DeckDetail from './deck_detail';
 class DeckShow extends React.Component {
 
   componentDidMount(){
-    const { fetchDeck, match } = this.props;
-    fetchDeck(match.params.deckId);
+    const { fetchDeck, match, deckId } = this.props;
+    fetchDeck(deckId);
   }
 
   render() {

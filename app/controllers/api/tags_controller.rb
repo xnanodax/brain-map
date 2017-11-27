@@ -1,6 +1,6 @@
 class Api::TagsController < ApplicationController
   def index
-    @tags = Tag.all
+    @tag = Tag.find_by(name: params[:tag][:name])
   end
 
   def create

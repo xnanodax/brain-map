@@ -20,4 +20,6 @@ class Tag < ApplicationRecord
   through: :taggings,
   source: :deck
 
+
+
 end

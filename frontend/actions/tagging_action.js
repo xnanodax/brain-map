@@ -25,6 +25,8 @@ const receiveTaggingErrors = (errors) => ({
   errors
 });
 
+
+
 export const fetchTaggings = (deckId) => dispatch => (
   TaggingAPIUtil.fetchTaggings(deckId)
     .then(taggings => dispatch(receiveTaggings(taggings)),
@@ -42,4 +44,31 @@ export const deleteTagging = (deckId, tagId) => dispatch => (
   TaggingAPIUtil.deleteTagging(deckId, tagId)
     .then(tagging => dispatch(removeTagging(tagging)),
         errors => dispatch(receiveTaggingErrors(errors.responseJSON)))
+);
+
+
+
+export const RECEIVE_TAGS = "RECEIVE_TAGS";
+export const RECEIVE_TAG = "RECEIVE_TAG";
+
+const receiveTags = (tags) => ({
+  type: RECEIVE_TAGS,
+  tags
+});
+
+const receiveTag = (tag) => ({
+  type: RECEIVE_TAG,
+  tag
+});
+
+export const fetchAllTags = (name) => dispatch => (
+  TaggingAPIUtil.fetchAllTags(name)
+    .then((tags) => dispatch(receiveTags(tags)),
+      errors => dispatch(receiveTaggingErrors(errors.responseJSON)))
+);
+
+export const createTag = (name) => dispatch => (
+  TaggingAPIUtil.createTag(name)
+    .then(tag => dispatch(receiveTag(tag)),
+      errors => dispatch(receiveTaggingErrors(errors.responseJSON)))
 );

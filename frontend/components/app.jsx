@@ -7,9 +7,10 @@ import NavBarLoggedInContainer from './navbar_log/navbar_logged_in_container';
 import DeckContainer from './decks/deck_index_container';
 import DeckShowContainer from './decks/deck_show_container';
 import DeckFormContainer from './decks/deck_form/deck_form_container';
-
 import CardIndexContainer from './cards/index/card_index_container';
 import CardFormContainer from './cards/form/card_form_container';
+import StudyContainer from './study/study_container';
+
 import {
   AuthRoute,
   ProtectedRoute
@@ -31,6 +32,8 @@ const App = () => (
 
     <Route path="/deck/new" component={DeckFormContainer} />
     <Route path="/deck/view/:deckId/new" component={CardFormContainer} />
+    <Route path="/study/:deckId/" component={NavBarLoggedInContainer} />
+    <Route path="/study/:deckId/" component={StudyContainer} />
   </div>
 );
 

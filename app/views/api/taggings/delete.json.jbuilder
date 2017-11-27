@@ -1,1 +1,2 @@
-json.partial! './api/taggings/tagging', tagging: @tagging
+json.extract! @tagging, :id
+json.tag_id @tagging.tag, :id

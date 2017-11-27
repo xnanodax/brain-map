@@ -16,8 +16,9 @@ import {
 } from './../../actions/card_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  const deck = state.entities.decks[ownProps.match.params.deckId];
-  return { deck };
+  const deckId = ownProps.match.params.deckId;
+  const deck = state.entities.decks[deckId];
+  return { deckId, deck };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {

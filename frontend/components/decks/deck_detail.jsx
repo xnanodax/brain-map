@@ -5,6 +5,8 @@ import CardIndexContainer from './../cards/index/card_index_container';
 import TagIndexContainer from './../tags/tag_index_container';
 import ClickToEdit from './../click_to_edit/index.js';
 
+
+
 class DeckDetail extends React.Component {
   constructor(props) {
     super(props);
@@ -23,7 +25,7 @@ class DeckDetail extends React.Component {
   }
 
   render() {
-    const { deck, updateDeck } = this.props;
+    const { deckId, deck, updateDeck } = this.props;
     return (
       <div className="deck-show">
         { deck ? (
@@ -46,7 +48,7 @@ class DeckDetail extends React.Component {
                 <i
                   className="fa fa-trash-o"
                   aria-hidden="true"
-                  onClick={this.handleDeleteAfterRedirect(deck.id)}>
+                  onClick={this.handleDeleteAfterRedirect(deckId)}>
                 </i>
 
                 <i className="fa fa-cog" aria-hidden="true"></i>
@@ -55,7 +57,13 @@ class DeckDetail extends React.Component {
 
             <ul className ="deck-show-attributes">
               <li>
-                <button className="deck-show-attributes-button"><i className="fa fa-play" aria-hidden="true"></i>&nbsp;&nbsp;Study</button>
+                <Link to={`/study/${deckId}`} >
+                  <button className="deck-show-attributes-button">
+                    <i className="fa fa-play" aria-hidden="true">
+                    </i>
+                      &nbsp;&nbsp;Study
+                  </button>
+                </Link>
               </li>
 
               <li>

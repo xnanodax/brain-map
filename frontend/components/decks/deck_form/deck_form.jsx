@@ -13,7 +13,10 @@ class DeckForm extends React.Component {
     return(e) => {
       e.preventDefault();
       createDeck(this.state)
-        .then(() => history.push('/deck'));
+        .then(() => history.push('/deck'),
+          (errors) => console.log(errors));
+        // .then(() => history.push('/deck'),
+        //       err => console.log(err));
     };
   }
 
@@ -24,11 +27,17 @@ class DeckForm extends React.Component {
   }
 
   render() {
-    const { createDeck } = this.props;
+    const { createDeck, errors } = this.props;
     const { title } = this.state;
     return (
       <div className="deck-form-container">
         <h1>Create Deck</h1>
+
+          <ul className="session-errors">
+            {errors.map((error,idx) => <li key={idx}>{ error }</li>)}
+          </ul>
+
+
         <form onSubmit={this.handleSubmit()}>
           <label>
             <input
