@@ -6,7 +6,7 @@ import {
 } from '../actions/deck_actions';
 
 
-const DecksErrorReducer = (state = {}, action) => {
+const DecksErrorReducer = (state = [], action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_DECKS:

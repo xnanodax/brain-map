@@ -32,16 +32,20 @@ class TagIndex extends React.Component {
   checkTagging(name) {
     const nameLower = name.toString().toLowerCase();
     const { createTagging, deckId, fetchAllTags, createTag } = this.props;
-    fetchAllTags(nameLower)
-      .then((action) => { createTagging(deckId, action.tags.id); },
-        (err) => {
-          createTag({name: nameLower}).then((action) => {
-            const newTagId = Object.keys(action.tag)[0];
-            // console.log(newTagId);
-            createTagging(deckId, newTagId);
-          });
-          // ;
-          });
+
+    createTagging(deckId, name)
+
+    
+    // fetchAllTags(nameLower)
+    //   .then((action) => { createTagging(deckId, action.tags.id); },
+    //     (err) => {
+    //       createTag({name: nameLower}).then((action) => {
+    //         const newTagId = Object.keys(action.tag)[0];
+    //         // console.log(newTagId);
+    //         createTagging(deckId, newTagId);
+    //       });
+    //       // ;
+    //       });
   }
 
   render() {

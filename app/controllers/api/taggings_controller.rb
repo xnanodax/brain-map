@@ -5,12 +5,39 @@ class Api::TaggingsController < ApplicationController
   end
 
   def create
-    @tagging = Tagging.new(tagging_params)
-    if @tagging.save
-      render :show
+    @tag = Tagging.find_using_tag_name(params[:tagging][:name])
+    if @tag
+      params[:tagging].delete :name
+      params[:tagging][:tag_id] = @tag.id
+
+      @tagging = Tagging.new(tagging_params)
+      if @tagging.save
+        render :show
+      else
+        render json: ["tagging already exist"], status: 422
+      end
+
     else
-      render json: @tagging.errors.full_messages, status: 422
+      @tag = Tag.new(tag_params)
+      @tag.save
+
+      tag_id = @tag.id
+      params[:tagging][:tag_id] = tag_id
+
+      @tagging = Tagging.new(tagging_params)
+      @tagging.save
+      render :show
+
     end
+
+
+    # @tagging = Tagging.new(tagging_params)
+    # if @tagging.save
+    #   render :show
+    # else
+    #
+    #   # render json: @tagging.errors.full_messages, status: 422
+    # end
   end
 
   def show
@@ -35,5 +62,9 @@ class Api::TaggingsController < ApplicationController
 
   def tagging_params
     params.require(:tagging).permit(:deck_id, :tag_id)
+  end
+
+  def tag_params
+    params.require(:tagging).permit(:name)
   end
 end

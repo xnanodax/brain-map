@@ -25,9 +25,6 @@ class Tagging < ApplicationRecord
   class_name: :Tag
 
   def self.find_using_tag_name(tag_name)
-    tag = Tag.find_by(name: tag_name.titleize)
-    if tag
-      Tagging.find_by(tag_id: tag.id)
-    end
+    Tag.find_by(name: tag_name)
   end
 end

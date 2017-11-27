@@ -32,10 +32,9 @@ class CardForm extends React.Component {
       <div className="deck-form-container">
 
         <h1>Create Card
+          <i class="fa fa-times" aria-hidden="true" onClick={() => history.go(-1)}></i>
+        </h1>
 
-            <i class="fa fa-times" aria-hidden="true" onClick={() => history.go(-1)}></i>
-
-</h1>
         <ul className="session-errors">
           {errors.map((error,idx) => <li key={idx}>{ error }</li>)}
         </ul>

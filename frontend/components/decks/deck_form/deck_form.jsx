@@ -6,18 +6,18 @@ class DeckForm extends React.Component {
     this.state = {
       title: ""
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit() {
+  handleSubmit(e) {
     const { createDeck, history } = this.props;
-    return(e) => {
       e.preventDefault();
-      createDeck(this.state)
-        .then(() => history.push('/deck'),
-          (errors) => console.log(errors));
-        // .then(() => history.push('/deck'),
-        //       err => console.log(err));
-    };
+
+      if (this.state.title === "") {
+        return createDeck(this.state);
+      } else {
+        return createDeck(this.state).then(()=> history.push('/deck'));
+      }
   }
 
   handleUpdating(field) {
@@ -29,6 +29,9 @@ class DeckForm extends React.Component {
   render() {
     const { createDeck, errors } = this.props;
     const { title } = this.state;
+
+
+
     return (
       <div className="deck-form-container">
 
@@ -40,7 +43,7 @@ class DeckForm extends React.Component {
           </ul>
 
 
-        <form onSubmit={this.handleSubmit()}>
+        <form onSubmit={(e) => this.handleSubmit(e)}>
           <label>
             <input
               autoFocus

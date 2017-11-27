@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Route, Redirect } from 'react-router-dom';
+import { Link, Route, Redirect, Switch } from 'react-router-dom';
 
 import SessionFormContainer from './session/session_form_container';
 import HomePageNotLoggedInContainer from './homepage/homepage_not_logged_in_container';
@@ -18,25 +18,26 @@ import {
 
 
 //Auth Route is for when you login, what you shouldn't see.
+// <Switch>
 const App = () => (
-  <div className="app">
+    <div className="app">
+      <Redirect to="/login" from="/" />
+      <AuthRoute exact path="/login" component={HomePageNotLoggedInContainer} />
+      <AuthRoute exact path="/signup" component={HomePageNotLoggedInContainer} />
 
-    <Route exact path="/" component={HomePageNotLoggedInContainer} />
-    <AuthRoute path="/login" component={HomePageNotLoggedInContainer} />
-    <AuthRoute path="/signup" component={HomePageNotLoggedInContainer} />
-
-    <Route path="/deck" component={NavBarLoggedInContainer} />
-    <Route path="/deck" component={DeckContainer} />
-    <Route exact path="/deck/view/:deckId" component={DeckShowContainer} />
+      <Route path="/deck" component={NavBarLoggedInContainer} />
+      <Route path="/deck" component={DeckContainer} />
+      <Route exact path="/deck/view/:deckId" component={DeckShowContainer} />
 
 
-    <Route path="/deck/new" component={DeckFormContainer} />
-    <Route path="/deck/view/:deckId/new" component={CardFormContainer} />
-    <Route path="/study/:deckId/" component={NavBarLoggedInContainer} />
-    <Route path="/study/:deckId/" component={StudyContainer} />
-  </div>
+      <Route path="/deck/new" component={DeckFormContainer} />
+      <Route path="/deck/view/:deckId/new" component={CardFormContainer} />
+      <Route path="/study/:deckId/" component={NavBarLoggedInContainer} />
+      <Route path="/study/:deckId/" component={StudyContainer} />
+    </div>
 );
 
+// <Switch>
 export default App;
 
 

@@ -5,17 +5,17 @@ export const fetchTaggings = (deckId) => (
   })
 );
 
-export const createTagging = (deckId, tagId) => (
+export const createTagging = (deckId, name) => (
   $.ajax({
     type: 'POST',
     url: `/api/decks/${deckId}/taggings`,
     data: {
       tagging: {
         deck_id: deckId,
-        tag_id: tagId
+        name
       }
     }
-    
+
   })
 );
 
