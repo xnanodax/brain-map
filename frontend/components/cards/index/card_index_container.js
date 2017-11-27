@@ -6,7 +6,8 @@ import CardIndex from './card_index';
 import {
   fetchCards,
   fetchCard,
-  updateCard
+  updateCard,
+  deleteCard
 } from './../../../actions/card_actions';
 
 const mapStateToProps = (state, ownProps) => ({
@@ -16,7 +17,9 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchCards: (deckId) => dispatch(fetchCards(deckId)),
-  updateCard: (deckId, card) => dispatch(updateCard(deckId, card))
+  updateCard: (deckId, card) => dispatch(updateCard(deckId, card)),
+  deleteCard: (deckId, cardId) => dispatch(deleteCard(deckId, cardId))
+
 });
 
 export default withRouter(

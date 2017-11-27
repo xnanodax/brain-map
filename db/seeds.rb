@@ -61,7 +61,15 @@ user8 = User.create!({
 });
 
 
+deckDefault1 = Deck.create!({
+  title: "Tap Here To Edit",
+  author_id: user1.id,
+  })
 
+deckDefault2 = Deck.create!({
+  title: "Tap Here To Edit",
+  author_id: user2.id,
+  })
 
 
 deck1 = Deck.create!({
@@ -74,6 +82,20 @@ deck2 = Deck.create!({
   title: "Chemistry",
   author_id: user1.id
 })
+
+cardDefault1 = Card.create({
+  keyword: "tap to edit",
+  body: "tap to edit",
+  author_id: user1.id,
+  deck_id: deckDefault1.id
+  })
+
+cardDefault2 = Card.create({
+  keyword: "tap to edit",
+  body: "tap to edit",
+  author_id: user2.id,
+  deck_id: deckDefault2.id
+  })
 
 card1 = Card.create!({
   keyword: ".select",
@@ -129,7 +151,7 @@ tag8 = Tag.create!({name: "food"})
 tag9 = Tag.create!({name: "arts"})
 tag10 = Tag.create!({name: "law"})
 tag11 = Tag.create!({name: "medical"})
-tag12 = Tag.create!({name: "Other"})
+tag12 = Tag.create!({name: "other"})
 
 tag13 = Tag.create!({name: "k-6"})
 tag13 = Tag.create!({name: "7-12"})

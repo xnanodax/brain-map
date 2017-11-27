@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  createCard: (deckId, card) => dispatch(createCard(deckId, card)),
+  createCard: (deckId, card) => dispatch(createCard(deckId, card))
 });
 
 export default withRouter(

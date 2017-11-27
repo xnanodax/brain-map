@@ -22,7 +22,7 @@ class CardIndex extends React.Component {
   }
 
   render() {
-    const { cards, deckId, updateCard } = this.props;
+    const { cards, deckId, updateCard, deleteCard } = this.props;
 
     return (
       <div>
@@ -42,10 +42,12 @@ class CardIndex extends React.Component {
                     key={idx}
                     card={card}
                     deckId={deckId}
-                    updateCard={updateCard} />)
+                    updateCard={updateCard}
+                    deleteCard={deleteCard} />)
               }
             </ul>
             <Link to={`/deck/view/${deckId}/new`}>
+              <i class="fa fa-plus" aria-hidden="true"></i>
               Add Card
             </Link>
 

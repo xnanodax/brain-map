@@ -29,7 +29,10 @@ class User < ApplicationRecord
   through: :decks,
   source: :cards
 
-
+  has_many :studyscores,
+  primary_key: :id,
+  foreign_key: :learning_score,
+  class_name: :Studyscore
 
 
   def self.find_by_credentials(username, password)

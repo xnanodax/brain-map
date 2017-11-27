@@ -19,7 +19,7 @@ const decksReducer = (state = {}, action) => {
   let newState;
   switch(action.type) {
     case RECEIVE_DECKS:
-      return merge({}, state, action.decks);
+      return merge({}, action.decks);
     case RECEIVE_DECK:
       return merge({}, state, action.deck);
     case REMOVE_DECK:

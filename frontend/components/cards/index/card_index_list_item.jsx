@@ -1,7 +1,7 @@
 import React from 'react';
 import ClickToEdit from './../../click_to_edit/index.js';
 
-const CardIndexListItem = ({num, card, deckId, updateCard}) => (
+const CardIndexListItem = ({num, card, deckId, updateCard, deleteCard}) => (
   <div>
     <div className="container">
       <div className="table-row wrapper">
@@ -37,6 +37,11 @@ const CardIndexListItem = ({num, card, deckId, updateCard}) => (
           {card.body}
           </ClickToEdit>
         </div>
+
+        <i className="fa fa-times fa-1x" aria-hidden="true" onClick={() => deleteCard(deckId, card.id)}>
+        </i>
+
+
       </div>
 
     </div>
