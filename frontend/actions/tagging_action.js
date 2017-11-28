@@ -25,8 +25,6 @@ const receiveTaggingErrors = (errors) => ({
   errors
 });
 
-
-
 export const fetchTaggings = (deckId) => dispatch => (
   TaggingAPIUtil.fetchTaggings(deckId)
     .then(taggings => dispatch(receiveTaggings(taggings)),

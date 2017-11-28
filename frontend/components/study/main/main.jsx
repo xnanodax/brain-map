@@ -9,6 +9,19 @@ class Main extends React.Component {
     //   remainingCards: this.props.cards
     // };
 
+    // this.setState({
+    //   currentCard: nextCard,
+    // });
+    //
+    // this.setState({
+    //   remainingCards: this.state.remainingCards.slice(1)
+    // });
+    //
+    // this.setState({
+    //   display: this.state.currentCard.keyword
+    // });
+
+
     this.state = {
       currentCard: "starting",
       display: "starting",
@@ -20,15 +33,20 @@ class Main extends React.Component {
     const { deckId, cards, fetchDeck, fetchCards } = this.props;
     fetchDeck(deckId);
     fetchCards(deckId);
+      // .then((cards) => console.log(cards));
 
     const nextCard = this.state.remainingCards[0];
 
     this.setState({
-      currentCard: nextCard,
-      display: nextCard.keyword,
-      remainingCards: this.state.remainingCards.slice(1)
-    });
+          currentCard: nextCard,
+          display: nextCard.keyword,
+          remainingCards: cards
+        });
+
   }
+
+
+//different btw props and state
 
   componentDidUpdate() {
     const { deckId, fetchDeck, cards, fetchCards } = this.props;
@@ -80,19 +98,24 @@ class Main extends React.Component {
       console.log("next!");
       const nextCard = this.state.remainingCards[0];
       console.log('next Card', nextCard);
-      this.setState({
-        currentCard: nextCard,
-      });
 
       this.setState({
+        currentCard: nextCard,
+        display: nextCard.keyword,
         remainingCards: this.state.remainingCards.slice(1)
       });
 
-      this.setState({
-        display: this.state.currentCard.keyword
-      });
       console.log('state', this.state);
     };
+  }
+
+  rotateCard(e) {
+    if (this.card.classList.contains('rotate')) {
+      this.card.classList.remove('rotate');
+    } else {
+      this.card.classList.add('rotate');
+    }
+
   }
 
   recordScore(e) {
@@ -112,9 +135,12 @@ class Main extends React.Component {
       <div className="study-main-container">
         {this.state.currentCard ? (
           <div>
-            <div className="display-card">
+            <button
+              ref={(el) => {this.card = el;} }
+              onClick={this.rotateCard.bind(this)}
+              className="display-card flip">
               {this.state.display}
-            </div>
+            </button>
 
             <button className="study-button" onClick={this.flipCard()}>
               Reveal Answer!

@@ -18,7 +18,6 @@ import {
 const mapStateToProps = (state, ownProps) => ({
   deckId: ownProps.match.params.deckId,
   cards: Object.values(state.entities.cards),
-  reveal: false
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

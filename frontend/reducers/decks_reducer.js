@@ -11,7 +11,6 @@ import {
   REMOVE_TAGGING
 } from '../actions/tagging_action';
 
-
 import merge from 'lodash/merge';
 
 const decksReducer = (state = {}, action) => {
