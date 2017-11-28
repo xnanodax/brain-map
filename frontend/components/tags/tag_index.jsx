@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import TagIndexListItem from './tag_index_list_item';
 import TagsInput from 'react-tagsinput';
-// import 'react-tagsinput/react-tagsinput.css'; // If using WebPack and style-loader.
 
 
 class TagIndex extends React.Component {
@@ -16,8 +15,6 @@ class TagIndex extends React.Component {
     fetchTaggings(deckId);
   }
 
-
-
   componentWillReceiveProps(newProps) {
     const { fetchTaggings, deckId, tags } = this.props;
     const newDeckId = newProps.match.params.deckId;
@@ -25,31 +22,14 @@ class TagIndex extends React.Component {
       fetchTaggings(newDeckId); }
   }
 
-  // checkTagging(id) {
-  //   const { createTagging, deckId } = this.props;
-  //   createTagging(deckId, id);
-  // }
   checkTagging(name) {
     const nameLower = name.toString().toLowerCase();
-    const { createTagging, deckId, fetchAllTags, createTag } = this.props;
-
-    createTagging(deckId, name)
-
-    
-    // fetchAllTags(nameLower)
-    //   .then((action) => { createTagging(deckId, action.tags.id); },
-    //     (err) => {
-    //       createTag({name: nameLower}).then((action) => {
-    //         const newTagId = Object.keys(action.tag)[0];
-    //         // console.log(newTagId);
-    //         createTagging(deckId, newTagId);
-    //       });
-    //       // ;
-    //       });
+    const { createTagging, deckId, fetchAllTags } = this.props;
+    createTagging(deckId, name);
   }
 
   render() {
-    const { tags, deckId, fetchTaggings, createTagging, deleteTagging } = this.props;
+    const { tags, deckId, deleteTagging } = this.props;
 
     return (
       <div className="tag-index-container">
@@ -57,10 +37,10 @@ class TagIndex extends React.Component {
           <h3>Tags:</h3>
 
           <TagsInput
-            value={ [] }
+            value={[]}
             inputProps = {
               {className: 'react-tagsinput-input',
-                placeholder: 'Add a tag!'}
+                placeholder: 'add a tag'}
               }
               onChange={(value) => this.checkTagging(value[0])} />
         </div>

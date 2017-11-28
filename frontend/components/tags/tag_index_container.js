@@ -10,7 +10,6 @@ import {
   createTag
 } from './../../actions/tagging_action';
 
-// import { createTag } from './../../utils/tagging_util';
 
 const mapStateToProps = (state, ownProps) => ({
   tags: Object.values(state.entities.tags),
@@ -19,10 +18,9 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchTaggings: (deckId) => dispatch(fetchTaggings(deckId)),
-  createTagging: (deckId, tagId) => dispatch(createTagging(deckId, tagId)),
-  deleteTagging: (deckId, tagId) => dispatch(deleteTagging(deckId, tagId)),
-  fetchAllTags: (name) => dispatch(fetchAllTags(name)),
-  createTag: (name) => dispatch(createTag(name))
+  createTagging: (deckId, name) => dispatch(createTagging(deckId, name)),
+  deleteTagging: (deckId, name) => dispatch(deleteTagging(deckId, name)),
+  fetchAllTags: (name) => dispatch(fetchAllTags(name))
 });
 
 export default withRouter(

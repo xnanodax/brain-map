@@ -30,7 +30,6 @@ class Api::CardsController < ApplicationController
   end
 
   def update
-    # @card = Card.find_by(id: params[:id])
     @card = current_user.cards.find_by(id: params[:id])
     if @card
       @card.update_attributes(card_params)

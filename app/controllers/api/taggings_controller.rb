@@ -1,43 +1,18 @@
 class Api::TaggingsController < ApplicationController
   def index
     # @taggings = Tagging.all
-    @taggings = Deck.find_by(id: params[:deck_id]).taggings
+    @taggings = Deck.fetch_taggings(params[:deck_id])
   end
 
   def create
-    @tag = Tagging.find_using_tag_name(params[:tagging][:name])
-    if @tag
-      params[:tagging].delete :name
-      params[:tagging][:tag_id] = @tag.id
-
-      @tagging = Tagging.new(tagging_params)
-      if @tagging.save
-        render :show
-      else
-        render json: ["tagging already exist"], status: 422
-      end
-
-    else
-      @tag = Tag.new(tag_params)
-      @tag.save
-
-      tag_id = @tag.id
-      params[:tagging][:tag_id] = tag_id
-
-      @tagging = Tagging.new(tagging_params)
-      @tagging.save
+    @tag = Tag.find_tag(params)
+    params[:tagging][:tag_id] = @tag.id
+    @tagging = Tagging.new(tagging_params)
+    if @tagging.save
       render :show
-
+    else
+      render json: ["tagging already exist"], status: 422
     end
-
-
-    # @tagging = Tagging.new(tagging_params)
-    # if @tagging.save
-    #   render :show
-    # else
-    #
-    #   # render json: @tagging.errors.full_messages, status: 422
-    # end
   end
 
   def show
@@ -51,6 +26,8 @@ class Api::TaggingsController < ApplicationController
 
   def destroy
     # @tagging = Tagging.find_by(tag_id: params[:tagging][:tag_id], deck_id: params[:tagging][:deck_id])
+    # @tag = Tagging.find_using_tag_name(params[:tagging][:name])
+
     @tagging = Tagging.find_by(id: params[:id])
     if @tagging
       @tagging.destroy
@@ -64,7 +41,4 @@ class Api::TaggingsController < ApplicationController
     params.require(:tagging).permit(:deck_id, :tag_id)
   end
 
-  def tag_params
-    params.require(:tagging).permit(:name)
-  end
 end

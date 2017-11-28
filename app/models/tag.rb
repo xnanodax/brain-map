@@ -20,6 +20,18 @@ class Tag < ApplicationRecord
   through: :taggings,
   source: :deck
 
+  def self.find_name(tag_name)
+    Tag.find_by(name: tag_name)
+  end
 
+  def self.find_tag(params)
+    tag = Tag.find_name(params[:tagging][:name])
+    if tag
+    else
+      tag = Tag.new(params.require(:tagging).permit(:name))
+      tag.save
+    end
+    tag
+  end
 
 end

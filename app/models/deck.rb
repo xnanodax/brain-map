@@ -42,4 +42,8 @@ class Deck < ApplicationRecord
         .studyscores
         .where(tester_id: current_user_id)
   end
+
+  def self.fetch_taggings(id)
+    Deck.find_by(id: id).taggings
+  end
 end

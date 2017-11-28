@@ -36,7 +36,7 @@ class DeckForm extends React.Component {
       <div className="deck-form-container">
 
         <h1>Create Deck
-          <i class="fa fa-times" aria-hidden="true" onClick={() => history.go(-1)}></i>
+          <i className="fa fa-times" aria-hidden="true" onClick={() => history.go(-1)}></i>
         </h1>
           <ul className="session-errors">
             {errors.map((error,idx) => <li key={idx}>{ error }</li>)}

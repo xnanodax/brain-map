@@ -47,7 +47,7 @@ class CardIndex extends React.Component {
               }
             </ul>
             <Link to={`/deck/view/${deckId}/new`}>
-              <i class="fa fa-plus" aria-hidden="true"></i>
+              <i className="fa fa-plus" aria-hidden="true"></i>
               Add Card
             </Link>
 
