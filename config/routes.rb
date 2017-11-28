@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       resources :studyscore, only: [:index]
     end
 
-    resources :studyscore, only: [ :create, :show, :update ] do
+    resources :studyscore, only: [] do
       get "fetch", on: :collection
       patch "update_by_card", on: :collection
     end

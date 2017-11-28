@@ -4,11 +4,11 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 // import * as StudyScoreUtil from './utils/studyscore_util';
-// import { fetchScores, fetchScore, addScore, updateScore } from './actions/study_actions';
+// import { fetchScores, fetchScore, addScore, recordScore } from './actions/study_actions';
 // window.fetchScores = fetchScores;
 // window.fetchScore = fetchScore;
 // window.addScore = addScore;
-// window.updateScore = updateScore;
+// window.recordScore = recordScore;
 // window.fetchStudyScores = StudyScoreUtil.fetchStudyScores;
 // window.fetchStudyScore = StudyScoreUtil.fetchStudyScore;
 // window.createStudyScore = StudyScoreUtil.createStudyScore;

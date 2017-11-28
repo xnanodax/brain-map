@@ -16,38 +16,51 @@ class Main extends React.Component {
     };
   }
 
-
-
   componentDidMount() {
-    const { deckId, fetchDeck, cards, fetchCards } = this.props;
+    const { deckId, cards, fetchDeck, fetchCards } = this.props;
     fetchDeck(deckId);
     fetchCards(deckId);
+
+    const nextCard = this.state.remainingCards[0];
+
     this.setState({
-      currentCard: cards.shift(),
-      display: this.state.currentCard.keyword,
-      remainingCards: cards
+      currentCard: nextCard,
+      display: nextCard.keyword,
+      remainingCards: this.state.remainingCards.slice(1)
     });
   }
 
-  componentWillReceiveProps(newProps) {
-    console.log("newProps", newProps);
-    const { deckId, fetchDeck, cards, fetchCards, fetchCard } = newProps;
-    // fetchDeck(deckId);
-    // fetchCards(deckId);
-    // this.setState({
-    //   currentCard: newProps.cards.shift(),
-    //   remainingCards: newProps.cards
-    // });
-
-    // this.setState({
-    //   display: this.state.currentCard.keyword
-    // });
-    if (this.state.remainingCards.length === newProps.cards.length ) {
+  componentDidUpdate() {
+    const { deckId, fetchDeck, cards, fetchCards } = this.props;
+    const newCard = this.state.remainingCards[0];
+    if (this.state.display === undefined ) {
       this.setState({
-        display: newProps.cards.keyword
+        currentCard: newCard,
+        display: newCard.keyword,
+        remainingCards: this.state.remainingCards.slice(1)
       });
     }
+  }
 
+  componentWillReceiveProps(newProps) {
+    // console.log("newProps", newProps);
+  //   const { deckId, fetchDeck, cards, fetchCards, fetchCard } = newProps;
+  //   // fetchDeck(deckId);
+  //   // fetchCards(deckId);
+  //   // this.setState({
+  //   //   currentCard: newProps.cards.shift(),
+  //   //   remainingCards: newProps.cards
+  //   // });
+  //
+  //   // this.setState({
+  //   //   display: this.state.currentCard.keyword
+  //   // });
+  //   if (this.state.remainingCards.length === newProps.cards.length ) {
+  //     this.setState({
+  //       display: newProps.cards.keyword
+  //     });
+  //   }
+  //
   }
 
   flipCard() {
@@ -65,32 +78,80 @@ class Main extends React.Component {
   nextCard() {
     return(e) => {
       console.log("next!");
+      const nextCard = this.state.remainingCards[0];
+      console.log('next Card', nextCard);
       this.setState({
-        currentCard: this.state.remainingCards.shift(),
-        display: this.state.currentCard.keyword,
-        remainingCards: this.state.remainingCards
+        currentCard: nextCard,
       });
+
+      this.setState({
+        remainingCards: this.state.remainingCards.slice(1)
+      });
+
+      this.setState({
+        display: this.state.currentCard.keyword
+      });
+      console.log('state', this.state);
     };
+  }
+
+  recordScore(e) {
+    e.preventDefault();
+    const { recordScore } = this.props;
+
+    recordScore(this.state.currentCard.id, e.target.value);
   }
 
 
   // this.state.allIds.length === 0
   // <MainDone />
   render() {
-    console.log("state", this.state);
+    // console.log("state", this.state);
     const { cards } = this.props;
     return (
       <div className="study-main-container">
         {this.state.currentCard ? (
           <div>
-            {this.state.display}
-            <button onClick={this.flipCard()}>
-              flip!
+            <div className="display-card">
+              {this.state.display}
+            </div>
+
+            <button className="study-button" onClick={this.flipCard()}>
+              Reveal Answer!
             </button>
 
-            <button onClick={this.nextCard()}>
-              proceed!
-            </button>
+            <div className="button-control">
+              <div>
+                How well do you know this?
+              </div>
+              <ul className="button-list">
+                <button value="1" onClick={(e) => this.recordScore(e)} className="study-button score-1">
+                  1
+                  Not at all
+                </button>
+
+                <button value="2" onClick={(e) => this.recordScore(e)} className="study-button score-2">
+                  2
+                </button>
+
+                <button value="3" onClick={(e) => this.recordScore(e)} className="study-button score-3">
+                  3
+                </button>
+
+                <button value="4" onClick={(e) => this.recordScore(e)} className="study-button score-4">
+                  4
+                </button>
+
+                <button value="5" onClick={(e) => this.recordScore(e)} className="study-button score-5">
+                  5
+                  Perfectly
+                </button>
+              </ul>
+
+              <button className="study-button" onClick={this.nextCard()}>
+                Next!
+              </button>
+            </div>
           </div>
         ) : ("you finished!") }
       </div>

@@ -46,4 +46,10 @@ class Deck < ApplicationRecord
   def self.fetch_taggings(id)
     Deck.find_by(id: id).taggings
   end
+
+  def self.top_five_results(query_params)
+    param = '%' + query_params.downcase + '%' #i can use sql query like
+    Deck.where('lower(title) LIKE ?', param).limit(5)
+  end
+
 end

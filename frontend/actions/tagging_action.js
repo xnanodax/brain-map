@@ -66,9 +66,3 @@ export const fetchAllTags = (name) => dispatch => (
     .then((tags) => dispatch(receiveTags(tags)),
       errors => dispatch(receiveTaggingErrors(errors.responseJSON)))
 );
-
-export const createTag = (name) => dispatch => (
-  TaggingAPIUtil.createTag(name)
-    .then(tag => dispatch(receiveTag(tag)),
-      errors => dispatch(receiveTaggingErrors(errors.responseJSON)))
-);

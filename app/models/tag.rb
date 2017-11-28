@@ -24,14 +24,19 @@ class Tag < ApplicationRecord
     Tag.find_by(name: tag_name)
   end
 
-  def self.find_tag(params)
-    tag = Tag.find_name(params[:tagging][:name])
+  def self.find_tag(query_params)
+    tag = Tag.find_name(query_params[:tagging][:name])
     if tag
     else
-      tag = Tag.new(params.require(:tagging).permit(:name))
+      tag = Tag.new(query_params.require(:tagging).permit(:name))
       tag.save
     end
     tag
+  end
+
+  def self.top_five_results(query_params)
+    param = '%' + query_params.downcase + '%' #i can use sql query like
+    Tag.where('lower(name) LIKE ?', param).limit(5)
   end
 
 end

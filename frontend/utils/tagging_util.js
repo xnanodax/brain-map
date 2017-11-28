@@ -33,25 +33,12 @@ export const deleteTagging = (deckId, tagId) => (
   })
 );
 
-
-
-
 export const fetchAllTags = (name) => (
   $.ajax({
     type: 'GET',
     url: `/api/tags`,
     data: {
       tag: { name }
-    }
-  })
-);
-
-export const createTag = (name) => (
-  $.ajax({
-    type: 'POST',
-    url: `/api/tags`,
-    data: {
-      tag: name
     }
   })
 );

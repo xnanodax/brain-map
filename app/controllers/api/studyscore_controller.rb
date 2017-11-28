@@ -14,23 +14,17 @@ class Api::StudyscoreController < ApplicationController
     end
   end
 
-  def create
-    @studyscore = Studyscore.new(studyscore_params)
-    @studyscore.tester_id = current_user.id
-
-    if @studyscore.save
-      render :show
-    else
-      render json: @studyscore.errors.full_messages, status: 424
-    end
-  end
-
   def update_by_card
     card = Card.find_by(id: params[:studyscore][:card_id])
-    
-    if card
-      @studyscore = card.studyscores.find_by(tester_id: current_user.id)
+    @studyscore = card.studyscores.find_by(tester_id: current_user.id)
+
+    if card && @studyscore
       @studyscore.update_attributes(studyscore_params)
+      render :show
+    elsif card
+      @studyscore = Studyscore.new(studyscore_params)
+      @studyscore.tester_id = current_user.id
+      @studyscore.save
       render :show
     else
       render json: ["cannot update card to update score"], status: 424

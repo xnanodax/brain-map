@@ -7,7 +7,6 @@ import {
   createTagging,
   deleteTagging,
   fetchAllTags,
-  createTag
 } from './../../actions/tagging_action';
 
 

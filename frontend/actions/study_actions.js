@@ -31,13 +31,7 @@ export const fetchScore = (cardId) => dispatch => (
       (errors) => dispatch(receiveStudyError(errors)))
 );
 
-export const addScore = (cardId, learningScore) => dispatch => (
-  StudyAPIUtil.createStudyScore(cardId, learningScore)
-    .then(score => dispatch(receiveScore(score)),
-      (errors) => dispatch(receiveStudyError(errors)))
-);
-
-export const updateScore = (cardId, learningScore) => dispatch => (
+export const recordScore = (cardId, learningScore) => dispatch => (
   StudyAPIUtil.updateStudyScore(cardId, learningScore)
     .then(score => dispatch(receiveScore(score)),
       (errors) => dispatch(receiveStudyError(errors)))
