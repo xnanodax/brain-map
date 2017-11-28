@@ -3,74 +3,21 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 
-// import {
-//   fetchDecks,
-//   fetchDeck,
-//   createDeck,
-//   updateDeck,
-//   deleteDeck
-// } from './utils/deck_util';
-
-// import {
-//   fetchDecks,
-//   fetchDeck,
-//   createDeck,
-//   updateDeck,
-//   deleteDeck
-// } from './actions/deck_actions';
-
-// window.fetchDecks = fetchDecks;
-// window.fetchDeck = fetchDeck;
-// window.createDeck = createDeck;
-// window.updateDeck = updateDeck;
-// window.deleteDeck = deleteDeck;
-
-// import {
-//   fetchCards,
-//   fetchCard,
-//   createCard,
-//   updateCard,
-//   deleteCard
-// } from './utils/card_util';
-
-// import {
-//   fetchCards,
-//   fetchCard,
-//   createCard,
-//   updateCard,
-//   deleteCard
-// } from './actions/card_actions';
-//
-// window.fetchCards = fetchCards;
-// window.fetchCard = fetchCard;
-// window.createCard = createCard;
-// window.updateCard = updateCard;
-// window.deleteCard = deleteCard;
-//
-// import {
-//   createTagging,
-//   deleteTagging,
-//   fetchTaggings,
-//   fetchAllTags
-// } from './actions/tagging_action';
-//
-// import {
-//   createTag
-// } from './utils/tagging_util';
-//
-// window.fetchTaggings = fetchTaggings;
-// window.createTagging = createTagging;
-// window.deleteTagging = deleteTagging;
-//
-// window.fetchAllTags = fetchAllTags;
-// window.createTag = createTag;
-
-import * as StudyScoreUtil from './utils/studyscore_util';
-
-window.fetchStudyScores = StudyScoreUtil.fetchStudyScores;
+// import * as StudyScoreUtil from './utils/studyscore_util';
+// import { fetchScores, fetchScore, addScore, updateScore } from './actions/study_actions';
+// window.fetchScores = fetchScores;
+// window.fetchScore = fetchScore;
+// window.addScore = addScore;
+// window.updateScore = updateScore;
+// window.fetchStudyScores = StudyScoreUtil.fetchStudyScores;
 // window.fetchStudyScore = StudyScoreUtil.fetchStudyScore;
-window.createStudyScore = StudyScoreUtil.createStudyScore;
-window.deleteStudyScore = StudyScoreUtil.deleteStudyScore;
+// window.createStudyScore = StudyScoreUtil.createStudyScore;
+// window.updateStudyScore = StudyScoreUtil.updateStudyScore;
+
+// import { signup, login, logout } from './actions/session';
+// // window.signup = signup;
+// // window.login = login;
+// window.logout = logout;
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -94,12 +41,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
   ReactDOM.render(<Root store={store} />, root);
 });
-
-
-//testing
-// import { signup, login, logout } from './utils/session_util';
-import { signup, login, logout } from './actions/session';
-// window.signup = signup;
-// window.login = login;
-window.logout = logout;
-//testing

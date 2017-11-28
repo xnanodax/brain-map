@@ -5,18 +5,6 @@ export const fetchStudyScores = (deckId) => (
   })
 );
 
-// export const fetchStudyScore = (deckId, cardId) => (
-//   $.ajax({
-//     method: 'GET',
-//     url: `/api/decks/${deckId}/studyscore/${studyscoreId}`,
-//     data: {
-//       studyscore: {
-//         card_id: cardId
-//       }
-//     }
-//   })
-// );
-
 export const fetchStudyScore = (cardId) => (
   $.ajax({
     method: 'GET',
@@ -27,28 +15,28 @@ export const fetchStudyScore = (cardId) => (
   })
 );
 
-export const createStudyScore = (learningScore, cardId) => (
+export const createStudyScore = (cardId, learningScore) => (
   $.ajax({
     method: 'POST',
     url: `/api/studyscore`,
     data: {
       studyscore: {
-        learning_score: learningScore,
-        card_id: cardId
+        card_id: cardId,
+        learning_score: learningScore
       }
     }
   })
 );
 
 
-export const updateStudyScore = (learningScore, cardId) => (
+export const updateStudyScore = (cardId, learningScore) => (
   $.ajax({
     method: 'PATCH',
     url: `/api/studyscore/update_by_card`,
     data: {
       studyscore: {
-        learning_score: learningScore,
-        card_id: cardId
+        card_id: cardId,
+        learning_score: learningScore
       }
     }
   })
