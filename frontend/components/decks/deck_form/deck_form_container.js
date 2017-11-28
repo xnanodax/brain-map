@@ -6,7 +6,7 @@ import { createDeck } from './../../../actions/deck_actions';
 const mapStateToProps = (state, ownProps) => {
   return { deck: state.entities.decks[ownProps.match.params.deckId],
   errors: state.errors.decks
-};
+  };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
