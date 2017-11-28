@@ -27,10 +27,10 @@ export const fetchStudyScore = (cardId) => (
   })
 );
 
-export const createStudyScore = (deckId, learningScore, cardId) => (
+export const createStudyScore = (learningScore, cardId) => (
   $.ajax({
     method: 'POST',
-    url: `/api/decks/${deckId}/studyscore`,
+    url: `/api/studyscore`,
     data: {
       studyscore: {
         learning_score: learningScore,
@@ -41,10 +41,10 @@ export const createStudyScore = (deckId, learningScore, cardId) => (
 );
 
 
-export const updateStudyScore = (deckId, learningScore, cardId) => (
+export const updateStudyScore = (learningScore, cardId) => (
   $.ajax({
     method: 'PATCH',
-    url: `/api/decks/${deckId}/studyscore/${studyScoreId}`,
+    url: `/api/studyscore/update_by_card`,
     data: {
       studyscore: {
         learning_score: learningScore,

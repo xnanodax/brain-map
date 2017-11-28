@@ -9,13 +9,25 @@ class Api::StudyscoreController < ApplicationController
       @studyscore = card.studyscores.find_by(tester_id: current_user.id)
       render :show
     else
-      render json: ["cannot find card"], status: 424
+      render json: ["cannot find card to update score"], status: 424
     end
   end
 
-  # def update_by_card
-  #
-  # end
+  def update_by_card
+    card = Card.find_by(id: params[:studyscore][:card_id])
+    if card
+      p "--------------------"
+      p card.studyscores
+      p "--------------------"
+      @studyscore = card.studyscores.find_by(tester_id: current_user.id)
+
+      @studyscore.update_attributes(studyscore_params)
+      render :show
+    else
+      render json: ["cannot update card to update score"], status: 424
+    end
+
+  end
 
   def create
     @studyscore = Studyscore.new(studyscore_params)
@@ -27,41 +39,38 @@ class Api::StudyscoreController < ApplicationController
     end
   end
 
-  def show
-    @studyscore = Studyscore.find_by(id: params[:id])
-    if @studyscore
-      render :show
-    else
-      render json: ["card does not exist"], status: 424
-    end
-  end
+  # def show
+  #   @studyscore = Studyscore.find_by(id: params[:id])
+  #   if @studyscore
+  #     render :show
+  #   else
+  #     render json: ["card does not exist"], status: 424
+  #   end
+  # end
 
-  def update
-    @studyscore = Studyscore.find_by(id: params[:id])
-    if @studyscore
-      @studyscore.update_attributes(studyscore_params)
-      render :show
-    else
-      render json: ["cannot update score that isn't yours"], status: 424
-    end
-  end
+  # def update
+  #   @studyscore = Studyscore.find_by(id: params[:id])
+  #   if @studyscore
+  #     @studyscore.update_attributes(studyscore_params)
+  #     render :show
+  #   else
+  #     render json: ["cannot update score that isn't yours"], status: 424
+  #   end
+  # end
 
-  def destroy
-    @studyscore = Studyscore.find_by(id: params[:id])
-    if @studyscore
-      @studyscore.destroy!
-      render :destroy
-    else
-      render json: ["cannot delete score that isn't yours"], status: 424
-    end
-
-  end
+  # def destroy
+  #   @studyscore = Studyscore.find_by(id: params[:id])
+  #   if @studyscore
+  #     @studyscore.destroy!
+  #     render :destroy
+  #   else
+  #     render json: ["cannot delete score that isn't yours"], status: 424
+  #   end
+  #
+  # end
 
   def studyscore_params
     params.require(:studyscore).permit(:learning_score, :card_id)
   end
 
-  def search_params
-    params.require(:studyscore).permit(:learning_score, :card_id)
-  end
 end
