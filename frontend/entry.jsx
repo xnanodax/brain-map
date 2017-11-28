@@ -33,37 +33,45 @@ import Root from './components/root';
 //   deleteCard
 // } from './utils/card_util';
 
-import {
-  fetchCards,
-  fetchCard,
-  createCard,
-  updateCard,
-  deleteCard
-} from './actions/card_actions';
+// import {
+//   fetchCards,
+//   fetchCard,
+//   createCard,
+//   updateCard,
+//   deleteCard
+// } from './actions/card_actions';
+//
+// window.fetchCards = fetchCards;
+// window.fetchCard = fetchCard;
+// window.createCard = createCard;
+// window.updateCard = updateCard;
+// window.deleteCard = deleteCard;
+//
+// import {
+//   createTagging,
+//   deleteTagging,
+//   fetchTaggings,
+//   fetchAllTags
+// } from './actions/tagging_action';
+//
+// import {
+//   createTag
+// } from './utils/tagging_util';
+//
+// window.fetchTaggings = fetchTaggings;
+// window.createTagging = createTagging;
+// window.deleteTagging = deleteTagging;
+//
+// window.fetchAllTags = fetchAllTags;
+// window.createTag = createTag;
 
-window.fetchCards = fetchCards;
-window.fetchCard = fetchCard;
-window.createCard = createCard;
-window.updateCard = updateCard;
-window.deleteCard = deleteCard;
+import * as StudyScoreUtil from './utils/studyscore_util';
 
-import {
-  createTagging,
-  deleteTagging,
-  fetchTaggings,
-  fetchAllTags
-} from './actions/tagging_action';
+window.fetchStudyScores = StudyScoreUtil.fetchStudyScores;
+// window.fetchStudyScore = StudyScoreUtil.fetchStudyScore;
+window.createStudyScore = StudyScoreUtil.createStudyScore;
+window.deleteStudyScore = StudyScoreUtil.deleteStudyScore;
 
-import {
-  createTag
-} from './utils/tagging_util';
-
-window.fetchTaggings = fetchTaggings;
-window.createTagging = createTagging;
-window.deleteTagging = deleteTagging;
-
-window.fetchAllTags = fetchAllTags;
-window.createTag = createTag;
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById('root');

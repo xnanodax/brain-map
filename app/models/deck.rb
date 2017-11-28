@@ -37,4 +37,9 @@ class Deck < ApplicationRecord
   through: :cards,
   source: :studyscores
 
+  def self.fetch_user_score(deckId, current_user_id)
+    Deck.find_by(id: deckId)
+        .studyscores
+        .where(tester_id: current_user_id)
+  end
 end
