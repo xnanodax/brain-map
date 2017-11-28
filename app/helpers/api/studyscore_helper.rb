@@ -1,0 +1,2 @@
+module Api::StudyscoreHelper
+end

@@ -19,4 +19,9 @@ class Card < ApplicationRecord
   primary_key: :id,
   foreign_key: :deck_id,
   class_name: :Deck
+
+  has_many :studyscores,
+  primary_key: :id,
+  foreign_key: :card_id,
+  class_name: :Studyscore
 end

@@ -21,9 +21,11 @@ import {
 // <Switch>
 const App = () => (
     <div className="app">
-      <Redirect to="/login" from="/" />
-      <AuthRoute exact path="/login" component={HomePageNotLoggedInContainer} />
-      <AuthRoute exact path="/signup" component={HomePageNotLoggedInContainer} />
+      <Switch>
+        <Redirect exact to="/login" from="/" />
+        <AuthRoute exact path="/login" component={HomePageNotLoggedInContainer} />
+        <AuthRoute exact path="/signup" component={HomePageNotLoggedInContainer} />
+      </Switch>
 
       <Route path="/deck" component={NavBarLoggedInContainer} />
       <Route path="/deck" component={DeckContainer} />

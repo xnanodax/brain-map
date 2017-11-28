@@ -13,12 +13,17 @@
 class Studyscore < ApplicationRecord
   validates :tester_id, :card_id, :learning_score, presence: true
   validates :tester_id, uniqueness: { scope: :card_id }
-  validates :tester_id, uniqueness: { scope: :learning_score }
 
   belongs_to :user,
   primary_key: :id,
   foreign_key: :tester_id,
   class_name: :User
 
-  
+  belongs_to :card,
+  primary_key: :id,
+  foreign_key: :card_id,
+  class_name: :Card
+
+
+
 end

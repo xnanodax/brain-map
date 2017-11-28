@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   logout: () => dispatch(logout())
-    .then(() => ownProps.history.push("/login"))
+    .then(() => ownProps.history.push("/"))
 });
 
 export default withRouter(

@@ -33,4 +33,8 @@ class Deck < ApplicationRecord
   through: :taggings,
   source: :tag
 
+  has_many :studyscores,
+  through: :cards,
+  source: :studyscores
+
 end

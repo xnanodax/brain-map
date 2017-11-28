@@ -31,7 +31,7 @@ class User < ApplicationRecord
 
   has_many :studyscores,
   primary_key: :id,
-  foreign_key: :learning_score,
+  foreign_key: :tester_id,
   class_name: :Studyscore
 
 

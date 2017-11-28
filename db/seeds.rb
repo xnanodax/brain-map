@@ -11,6 +11,7 @@ Deck.destroy_all
 Card.destroy_all
 Tag.destroy_all
 Tagging.destroy_all
+Studyscore.destroy_all
 
 user1 = User.create!({
   username: "password",
@@ -117,7 +118,7 @@ card3 = Card.create!({
   author_id: user1.id,
   deck_id: deck1.id
   })
-
+# -------
 card4 = Card.create!({
   keyword: "electron",
   body: "negatively charged particles",
@@ -152,12 +153,46 @@ tag9 = Tag.create!({name: "arts"})
 tag10 = Tag.create!({name: "law"})
 tag11 = Tag.create!({name: "medical"})
 tag12 = Tag.create!({name: "other"})
-
 tag13 = Tag.create!({name: "k-6"})
-tag13 = Tag.create!({name: "7-12"})
-tag13 = Tag.create!({name: "university"})
+tag14 = Tag.create!({name: "7-12"})
+tag15 = Tag.create!({name: "university"})
 
 tagging1 = Tagging.create!({deck_id: deck1.id, tag_id: tag7.id})
 tagging2 = Tagging.create!({deck_id: deck1.id, tag_id: tag13.id})
 tagging3 = Tagging.create!({deck_id: deck2.id, tag_id: tag1.id})
 tagging4 = Tagging.create!({deck_id: deck2.id, tag_id: tag13.id})
+
+studyscore1 = Studyscore.create!({
+  card_id: card1.id,
+  tester_id: user1.id,
+  learning_score: 5})
+
+studyscore2 = Studyscore.create!({
+  card_id: card2.id,
+  tester_id: user1.id,
+  learning_score: 4});
+
+studyscore3 = Studyscore.create!({
+  card_id: card3.id,
+  tester_id: user1.id,
+  learning_score: 2});
+
+studyscore4 = Studyscore.create!({
+  card_id: card4.id,
+  tester_id: user2.id,
+  learning_score: 1})
+
+studyscore5 = Studyscore.create!({
+  card_id: card5.id,
+  tester_id: user2.id,
+  learning_score: 2})
+
+studyscore6 = Studyscore.create!({
+  card_id: card6.id,
+  tester_id: user2.id,
+  learning_score: 1})
+
+studyscore7 = Studyscore.create!({
+  card_id: card6.id,
+  tester_id: user1.id,
+  learning_score: 1})
