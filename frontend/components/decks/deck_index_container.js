@@ -4,7 +4,8 @@ import DeckIndex from './deck_index';
 
 import {
   fetchDecks,
-  fetchDeck
+  fetchDeck,
+  clearDecks
 } from '../../actions/deck_actions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -17,7 +18,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchDecks: () => dispatch(fetchDecks()),
-  fetchDeck: (id) => dispatch(fetchDeck(id))
+  fetchDeck: (id) => dispatch(fetchDeck(id)),
+  clearDecks: () => dispatch(clearDecks())
 });
 
 export default withRouter(

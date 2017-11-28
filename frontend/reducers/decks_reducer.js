@@ -1,15 +1,15 @@
 import {
   RECEIVE_DECKS,
   RECEIVE_DECK,
-  REMOVE_DECK
+  REMOVE_DECK,
+  CLEAR_DECKS
 } from '../actions/deck_actions';
 
 import {
   RECEIVE_TAGGINGS,
   RECEIVE_TAGGING,
   REMOVE_TAGGING
-} from './../actions/tagging_action';
-
+} from '../actions/tagging_action';
 
 
 import merge from 'lodash/merge';
