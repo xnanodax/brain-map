@@ -3,9 +3,16 @@ import React from 'react';
 class Main extends React.Component {
   constructor(props) {
     super(props);
+    // this.state = {
+    //   currentCard: this.props.cards.shift(),
+    //   display: this.state.currentCard.keyword,
+    //   remainingCards: this.props.cards
+    // };
+
     this.state = {
-      currentCard: 0,
-      remainingCards: props.cards,
+      currentCard: "starting",
+      display: "starting",
+      remainingCards: this.props.cards
     };
   }
 
@@ -17,6 +24,7 @@ class Main extends React.Component {
     fetchCards(deckId);
     this.setState({
       currentCard: cards.shift(),
+      display: this.state.currentCard.keyword,
       remainingCards: cards
     });
   }
@@ -24,21 +32,42 @@ class Main extends React.Component {
   componentWillReceiveProps(newProps) {
     console.log("newProps", newProps);
     const { deckId, fetchDeck, cards, fetchCards, fetchCard } = newProps;
-
+    // fetchDeck(deckId);
+    // fetchCards(deckId);
     // this.setState({
     //   currentCard: newProps.cards.shift(),
     //   remainingCards: newProps.cards
     // });
-    // if (this.state.remainingCards.length !== newProps.cards.length ) {
-    //   fetchCard(deckId, this.state.currentCard.id);
-    // }
 
+    // this.setState({
+    //   display: this.state.currentCard.keyword
+    // });
+    if (this.state.remainingCards.length === newProps.cards.length ) {
+      this.setState({
+        display: newProps.cards.keyword
+      });
+    }
+
+  }
+
+  flipCard() {
+    const { remainingCards, currentCard } = this.state;
+    return(e) => {
+      console.log("flip!");
+      this.setState({
+        currentCard: this.state.currentCard,
+        display: this.state.display === this.state.currentCard.keyword ? this.state.currentCard.body : this.state.currentCard.keyword,
+        remainingCards: this.state.remainingCards
+      });
+    };
   }
 
   nextCard() {
     return(e) => {
+      console.log("next!");
       this.setState({
         currentCard: this.state.remainingCards.shift(),
+        display: this.state.currentCard.keyword,
         remainingCards: this.state.remainingCards
       });
     };
@@ -54,8 +83,11 @@ class Main extends React.Component {
       <div className="study-main-container">
         {this.state.currentCard ? (
           <div>
-            {this.state.currentCard.keyword}
-            {this.state.currentCard.body}
+            {this.state.display}
+            <button onClick={this.flipCard()}>
+              flip!
+            </button>
+
             <button onClick={this.nextCard()}>
               proceed!
             </button>

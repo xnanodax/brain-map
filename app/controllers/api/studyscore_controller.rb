@@ -5,6 +5,7 @@ class Api::StudyscoreController < ApplicationController
 
   def fetch
     card = Card.find_by(id: params[:studyscore][:card_id])
+
     if card
       @studyscore = card.studyscores.find_by(tester_id: current_user.id)
       render :show
@@ -16,6 +17,7 @@ class Api::StudyscoreController < ApplicationController
   def create
     @studyscore = Studyscore.new(studyscore_params)
     @studyscore.tester_id = current_user.id
+
     if @studyscore.save
       render :show
     else
@@ -25,6 +27,7 @@ class Api::StudyscoreController < ApplicationController
 
   def update_by_card
     card = Card.find_by(id: params[:studyscore][:card_id])
+    
     if card
       @studyscore = card.studyscores.find_by(tester_id: current_user.id)
       @studyscore.update_attributes(studyscore_params)

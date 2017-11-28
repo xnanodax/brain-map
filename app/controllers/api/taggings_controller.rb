@@ -8,6 +8,7 @@ class Api::TaggingsController < ApplicationController
     @tag = Tag.find_tag(params)
     params[:tagging][:tag_id] = @tag.id
     @tagging = Tagging.new(tagging_params)
+
     if @tagging.save
       render :show
     else
@@ -17,6 +18,7 @@ class Api::TaggingsController < ApplicationController
 
   def show
     @tagging = Tagging.find_by(id: params[:id])
+
     if @tagging
       render :show
     else
@@ -27,8 +29,8 @@ class Api::TaggingsController < ApplicationController
   def destroy
     # @tagging = Tagging.find_by(tag_id: params[:tagging][:tag_id], deck_id: params[:tagging][:deck_id])
     # @tag = Tagging.find_using_tag_name(params[:tagging][:name])
-
     @tagging = Tagging.find_by(id: params[:id])
+
     if @tagging
       @tagging.destroy
       render :delete

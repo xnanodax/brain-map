@@ -6,6 +6,7 @@ class Api::TagsController < ApplicationController
 
   def create
     @tag = Tag.new(tag_params)
+
     if @tag.save
       render :show
     else
@@ -15,6 +16,7 @@ class Api::TagsController < ApplicationController
 
   def show
     @tag = Tag.find_by(id: params[:id])
+
     if @tag
       render :show
     else
@@ -24,6 +26,7 @@ class Api::TagsController < ApplicationController
 
   def destroy
     @tag = Tag.find_by(id: params[:id])
+    
     if @tag.destroy
       render :delete
     else

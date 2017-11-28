@@ -7,6 +7,7 @@ class Api::CardsController < ApplicationController
     @card = Card.new(card_params)
     @card.author_id = current_user.id
     @card.deck_id = params[:deck_id]
+
     if @card.save
       render :show
     else
@@ -17,12 +18,12 @@ class Api::CardsController < ApplicationController
 
   def show
     @card = Card.find_by(id: params[:id])
+
     if @card
       render :show
     else
       render json: ["this card does not exist"], status: 422
     end
-
   end
 
   def edit
@@ -31,6 +32,7 @@ class Api::CardsController < ApplicationController
 
   def update
     @card = current_user.cards.find_by(id: params[:id])
+
     if @card
       @card.update_attributes(card_params)
       render :show
@@ -41,6 +43,7 @@ class Api::CardsController < ApplicationController
 
   def destroy
     @card = current_user.cards.find_by(id: params[:id])
+    
     if @card
       @card.destroy
       render :delete

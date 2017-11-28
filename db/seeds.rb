@@ -6,12 +6,21 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.destroy_all
-Deck.destroy_all
-Card.destroy_all
-Tag.destroy_all
-Tagging.destroy_all
-Studyscore.destroy_all
+
+def reset_pk_num
+  model_names = [User, Deck, Card, Tag, Tagging, Studyscore]
+
+  model_names.each do |model_name|
+    model_name.destroy_all
+  end
+
+  table_names = ["users", "decks", "cards", "tags", "taggings", "studyscores"]
+
+  table_names.each do |table_name|
+    ActiveRecord::Base.connection.reset_pk_sequence!(table_name)
+  end
+end
+reset_pk_num
 
 user1 = User.create!({
   username: "password",
@@ -100,21 +109,21 @@ cardDefault2 = Card.create({
 
 card1 = Card.create!({
   keyword: ".select",
-  body: "body1",
+  body: "Returns an array containing all elements of enum for which the given block returns a true value.",
   author_id: user1.id,
   deck_id: deck1.id
   })
 
 card2 = Card.create!({
   keyword: ".reject",
-  body: "body2",
+  body: "Returns an array for all elements of enum for which the given block returns false.",
   author_id: user1.id,
   deck_id: deck1.id
   })
 
 card3 = Card.create!({
   keyword: ".uniq",
-  body: "body2",
+  body: "Returns a new array by removing duplicate values in self.",
   author_id: user1.id,
   deck_id: deck1.id
   })
@@ -158,7 +167,7 @@ tag14 = Tag.create!({name: "7-12"})
 tag15 = Tag.create!({name: "university"})
 
 tagging1 = Tagging.create!({deck_id: deck1.id, tag_id: tag7.id})
-tagging2 = Tagging.create!({deck_id: deck1.id, tag_id: tag13.id})
+tagging2 = Tagging.create!({deck_id: deck1.id, tag_id: tag6.id})
 tagging3 = Tagging.create!({deck_id: deck2.id, tag_id: tag1.id})
 tagging4 = Tagging.create!({deck_id: deck2.id, tag_id: tag13.id})
 

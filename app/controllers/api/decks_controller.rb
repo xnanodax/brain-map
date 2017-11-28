@@ -8,6 +8,7 @@ class Api::DecksController < ApplicationController
   def create
     @deck = Deck.new(deck_params)
     @deck.author_id = current_user.id
+
     if @deck.save
       render :show
     else
@@ -17,6 +18,7 @@ class Api::DecksController < ApplicationController
 
   def show
     @deck = Deck.find_by(id: params[:id])
+
     if @deck
       render :show
     else
@@ -30,6 +32,7 @@ class Api::DecksController < ApplicationController
 
   def update
     @deck = current_user.decks.find_by(id: params[:id])
+
     if @deck
       @deck.update_attributes(deck_params)
       render :show
@@ -40,6 +43,7 @@ class Api::DecksController < ApplicationController
 
   def destroy
     @deck = current_user.decks.find_by(id: params[:id])
+    
     if @deck
       @deck.destroy
       render :delete
