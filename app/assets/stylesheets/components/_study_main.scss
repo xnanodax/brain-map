@@ -12,6 +12,10 @@
   // align-items: center;
 }
 
+.transform-text {
+  transform: scaleX(-1);
+}
+
 span .index {
   position: absolute;
 

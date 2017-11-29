@@ -9,7 +9,7 @@ class Main extends React.Component {
       currSum: 0,
       currentMastery: 0
     };
-    this.rotateCard = this.rotateCard.bind(this);
+    this.rotateCardOutline = this.rotateCardOutline.bind(this);
     this.revealAns = this.revealAns.bind(this);
     this.play = this.play.bind(this);
   }
@@ -38,7 +38,7 @@ class Main extends React.Component {
   }
 
 
-  rotateCard(e) {
+  rotateCardOutline(e) {
     if (this.card.classList.contains('rotate')) {
       return this.card.classList.remove('rotate');
     } else {
@@ -47,9 +47,18 @@ class Main extends React.Component {
 
   }
 
+  rotateText(e){
+    if (this.text.classList.contains('transform-text')) {
+      return this.text.classList.remove('transform-text');
+    } else {
+      return this.text.classList.add('transform-text');
+    }
+  }
+
   play(e) {
     this.revealAns(e);
-    this.rotateCard(e);
+    this.rotateCardOutline(e);
+    this.rotateText(e);
   }
 
   nextCard() {
@@ -84,7 +93,11 @@ class Main extends React.Component {
               ref={(el) => {this.card = el;} }
               onClick={(e) => this.play(e)}
               className="display-card flip">
-              <div className="index">{ displayAns === false ? card.keyword : card.body }</div>
+
+              <div className="index"
+                ref={(el) => {this.text = el;} } >
+                { displayAns === false ? card.keyword : card.body }
+              </div>
             </div>
           </div>
 
