@@ -9,14 +9,17 @@ class CardForm extends React.Component {
     };
   }
 
-
+  componentWillReceiveProps(newProps) {
+    const { card, errors, deckId } = newProps;
+    if (errors.length > 0) return undefined;
+    this.props.history.push(`/deck/view/${deckId}`);
+  }
 
   handleSubmit() {
     const { deckId, createCard } = this.props;
     return(e) => {
       e.preventDefault();
-      createCard(deckId, this.state)
-        .then(() => this.props.history.push(`/deck/view/${deckId}`));
+      createCard(deckId, this.state);
     };
   }
 

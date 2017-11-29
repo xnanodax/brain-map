@@ -49,7 +49,12 @@ class Deck < ApplicationRecord
 
   def self.top_five_results(query_params)
     param = '%' + query_params.downcase + '%' #i can use sql query like
-    Deck.where('lower(title) LIKE ?', param).limit(5)
+    if query_params != ""
+      @decks = Deck.where('lower(title) LIKE ? ', param).limit(5).to_a
+      @decks.select { |deck| deck.cards.count > 0 }
+    else
+      Deck.where('').limit(0)
+    end
   end
 
 end

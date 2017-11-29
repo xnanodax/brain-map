@@ -10,6 +10,7 @@ import DeckFormContainer from './decks/deck_form/deck_form_container';
 import CardIndexContainer from './cards/index/card_index_container';
 import CardFormContainer from './cards/form/card_form_container';
 import StudyContainer from './study/study_container';
+import SearchContainer from './search/search_container';
 
 import {
   AuthRoute,
@@ -36,6 +37,7 @@ const App = () => (
       <Route path="/deck/view/:deckId/new" component={CardFormContainer} />
       <Route path="/study/:deckId/" component={NavBarLoggedInContainer} />
       <Route path="/study/:deckId/" component={StudyContainer} />
+      <Route path="/search/" component={SearchContainer} />
     </div>
 );
 

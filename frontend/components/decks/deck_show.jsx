@@ -10,6 +10,14 @@ class DeckShow extends React.Component {
     fetchDeck(deckId);
   }
 
+  componentWillReceiveProps(newProps) {
+    console.log(newProps);
+    const { deck, deckId, fetchDeck } = newProps;
+    if (newProps.deckId !== this.props.deckId) {
+      fetchDeck(newProps.deckId);
+    }
+  }
+
   render() {
     return (
       <div className="deck-show-container">

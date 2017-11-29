@@ -4,7 +4,8 @@ import DeckForm from './deck_form';
 import { createDeck } from './../../../actions/deck_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  return { deck: state.entities.decks[ownProps.match.params.deckId],
+  const lastId = Math.max(...Object.keys(state.entities.decks));
+  return { deck: state.entities.decks[lastId],
   errors: state.errors.decks
   };
 };

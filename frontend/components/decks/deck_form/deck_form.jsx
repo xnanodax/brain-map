@@ -16,12 +16,15 @@ class DeckForm extends React.Component {
       if (this.state.title === "") {
         return createDeck(this.state);
       } else {
-        return createDeck(this.state).then(()=> history.push('/deck'));
+        return createDeck(this.state);
       }
   }
 
-  componentWillUnmount() {
 
+  componentWillReceiveProps(newProps) {
+    const { deck, errors } = newProps;
+    if (errors.length > 0) return undefined; 
+    this.props.history.push(`/deck/view/${deck.id}`);
   }
 
   handleUpdating(field) {
@@ -42,21 +45,22 @@ class DeckForm extends React.Component {
         <div className="form-header">
           <h1>Create Deck
           </h1>
-          <i className="fa fa-times fa-2x" aria-hidden="true" onClick={() => history.go(-1)}></i>
-          </div>
-            <ul className="session-errors">
-              {errors.map((error,idx) => <li key={idx}>{ error }</li>)}
-            </ul>
+          <i className="fa fa-times fa-2x"
+            aria-hidden="true"
+            onClick={() => history.go(-1)}></i>
+        </div>
+          <ul className="session-errors">
+            {errors.map((error,idx) => <li key={idx}>{ error }</li>)}
+          </ul>
 
 
         <form onSubmit={(e) => this.handleSubmit(e)}>
           <label>
-            <input
-              autoFocus
+            <input autoFocus
               type="text"
               placeholder="title"
               onChange={this.handleUpdating('title')}
-              value={title}/>
+              value={title} />
 
             <button>
               Create New

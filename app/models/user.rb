@@ -34,14 +34,13 @@ class User < ApplicationRecord
   foreign_key: :tester_id,
   class_name: :Studyscore
 
-  def average(arr)
-    arr.inject{ |sum, el| sum + el }.to_f / arr.size
-  end
 
   def mastery_score(deck_id)
     @deck = Deck.find(deck_id)
     if @deck
-      average(@deck.studyscores.where(tester_id: current_user.id))
+      p "summmmm"
+      p @deck.studyscores.where(tester_id: 1).sum(:learning_score)
+      @deck.studyscores.where(tester_id: 1).sum(:learning_score) / (@deck.cards.count * 5)
     else
       0
     end

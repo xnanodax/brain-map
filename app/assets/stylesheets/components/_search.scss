@@ -1,0 +1,28 @@
+.search-list-item {
+  padding: 10px
+}
+
+.button-search-study {
+  width: 70px;
+  border-radius: 20px;
+  font-size: 10px;
+  padding: 0px;
+  height: 30px;
+}
+
+.button-search-study i {
+  color: white;
+}
+
+.result-spacing {
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-text {
+  width: 220px;
+  border: solid 1px black;
+}
