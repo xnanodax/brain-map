@@ -5,6 +5,7 @@ export const RECEIVE_DECK = "RECEIVE_DECK";
 export const REMOVE_DECK = "REMOVE_DECK";
 export const RECEIVE_DECK_ERRORS = "RECEIVE_DECK_ERRORS";
 export const CLEAR_DECKS = "CLEAR_DECKS";
+export const RECEIVE_DECK_SEARCH_RESULTS = "RECEIVE_DECK_SEARCH_RESULTS";
 
 const receiveDecks = decks => ({
   type: RECEIVE_DECKS,
@@ -29,6 +30,11 @@ const receiveDeckErrors = errors => ({
 const removeDecks = () => ({
   type: CLEAR_DECKS,
   decks: []
+});
+
+const receiveDeckSearchResults = (searchResults) => ({
+  type: RECEIVE_DECK_SEARCH_RESULTS,
+  searchResults
 });
 
 
@@ -65,3 +71,7 @@ export const deleteDeck = id => dispatch => (
 export const clearDecks = () => dispatch => (
   dispatch(receiveDecks([]))
 );
+
+// export const searchDatabase = (query) => dispatch => (
+//
+// );

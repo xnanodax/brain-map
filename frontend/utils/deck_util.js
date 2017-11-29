@@ -34,3 +34,11 @@ export const deleteDeck = id => (
     url: `/api/decks/${id}`,
   })
 );
+
+export const searchDecks = (title) => (
+  $.ajax({
+    method: 'GET',
+    url: '/api/deck_searches/index',
+    data: { search: { title }}
+  })
+);

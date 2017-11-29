@@ -6,6 +6,7 @@ class Main extends React.Component {
     this.state = {
       currIndex: 0,
       displayAns: false,
+      currSum: 0,
       currentMastery: 0
     };
   }

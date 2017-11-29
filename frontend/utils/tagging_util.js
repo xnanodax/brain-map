@@ -42,3 +42,11 @@ export const fetchAllTags = (name) => (
     }
   })
 );
+
+export const searchTags = (name) => (
+  $.ajax({
+    method: 'GET',
+    url: '/api/tag_searches/index',
+    data: { search: { name } }
+  })
+);

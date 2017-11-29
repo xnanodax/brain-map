@@ -19,6 +19,9 @@ import Root from './components/root';
 // // window.login = login;
 // window.logout = logout;
 
+import * as searchAPIUtil from './utils/search_util';
+window.searchTags = searchAPIUtil.searchTags;
+window.searchDecks = searchAPIUtil.searchDecks;
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById('root');
