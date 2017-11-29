@@ -35,12 +35,12 @@ class User < ApplicationRecord
   class_name: :Studyscore
 
 
-  def mastery_score(deck_id)
+  def mastery_score(user_id, deck_id)
     @deck = Deck.find(deck_id)
     if @deck
-      p "summmmm"
-      p @deck.studyscores.where(tester_id: 1).sum(:learning_score)
-      @deck.studyscores.where(tester_id: 1).sum(:learning_score) / (@deck.cards.count * 5)
+      sum = User.find(user_id).decks.find(deck_id).studyscores.sum(:learning_score)
+      total_score = (@deck.cards.count * 5)
+      sum * 100 / total_score
     else
       0
     end

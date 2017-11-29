@@ -9,6 +9,9 @@ class Main extends React.Component {
       currSum: 0,
       currentMastery: 0
     };
+    this.rotateCard = this.rotateCard.bind(this);
+    this.revealAns = this.revealAns.bind(this);
+    this.play = this.play.bind(this);
   }
 
   componentDidMount() {
@@ -27,13 +30,26 @@ class Main extends React.Component {
     }
   }
 
-  flipCard() {
+  revealAns(e) {
     const { remainingCards, currentCard } = this.state;
-    return(e) => {
-      this.setState({
-        displayAns: !this.state.displayAns
-      });
-    };
+    return this.setState({
+      displayAns: !this.state.displayAns
+    });
+  }
+
+
+  rotateCard(e) {
+    if (this.card.classList.contains('rotate')) {
+      return this.card.classList.remove('rotate');
+    } else {
+      return this.card.classList.add('rotate');
+    }
+
+  }
+
+  play(e) {
+    this.revealAns(e);
+    this.rotateCard(e);
   }
 
   nextCard() {
@@ -43,15 +59,6 @@ class Main extends React.Component {
         displayAns: false
       });
     };
-  }
-
-  rotateCard(e) {
-    if (this.card.classList.contains('rotate')) {
-      this.card.classList.remove('rotate');
-    } else {
-      this.card.classList.add('rotate');
-    }
-
   }
 
   recordScore(e) {
@@ -72,14 +79,16 @@ class Main extends React.Component {
       <div className="study-main-container">
         { currIndex < cards.length - 1 ? (
           <div>
-            <button
+          <div className='relative-card'>
+            <div
               ref={(el) => {this.card = el;} }
-              onClick={this.rotateCard.bind(this)}
+              onClick={(e) => this.play(e)}
               className="display-card flip">
-              { displayAns === false ? card.keyword : card.body }
-            </button>
+              <span className="index">{ displayAns === false ? card.keyword : card.body }</span>
+            </div>
+          </div>
 
-            <button className="study-button" onClick={this.flipCard()}>
+            <button className="study-button" onClick={(e) => this.play(e)}>
               Reveal Answer!
             </button>
 
@@ -131,7 +140,7 @@ class Main extends React.Component {
             </div>
           </div>
         ) : ("you finished!") }
-      </div>
+        </div>
 
     );
   }
