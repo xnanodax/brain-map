@@ -21,7 +21,13 @@
   // justify-content: space-between;
 }
 
-
+.confirm-delete {
+  position: absolute;
+  left: 50vh;
+  width: 300px;
+  background: $light-gray;
+  float:left;
+}
 
 .deck-show-item-header-text {
   font-size: 2em;

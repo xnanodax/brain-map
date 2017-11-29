@@ -11,7 +11,6 @@ class DeckShow extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    console.log(newProps);
     const { deck, deckId, fetchDeck } = newProps;
     if (newProps.deckId !== this.props.deckId) {
       fetchDeck(newProps.deckId);

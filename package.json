@@ -9,6 +9,7 @@
     "jquery": "^3.2.1",
     "react": "^16.1.1",
     "react-click-to-edit": "^0.3.0",
+    "react-confirm-alert": "^1.0.8",
     "react-dom": "^16.1.1",
     "react-highlight": "^0.10.0",
     "react-redux": "^5.0.6",

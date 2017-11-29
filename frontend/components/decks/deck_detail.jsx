@@ -4,7 +4,7 @@ import { BarLoader } from 'react-spinners';
 import CardIndexContainer from './../cards/index/card_index_container';
 import TagIndexContainer from './../tags/tag_index_container';
 import ClickToEdit from './../click_to_edit/index.js';
-
+import ReactConfirmAlert, { confirmAlert } from 'react-confirm-alert';
 
 
 class DeckDetail extends React.Component {
@@ -12,7 +12,8 @@ class DeckDetail extends React.Component {
     super(props);
     this.state = {
       loading: true,
-      deck: this.props.deck
+      deck: this.props.deck,
+      showDialog: false,
     };
   }
 
@@ -30,9 +31,22 @@ class DeckDetail extends React.Component {
 
   render() {
     const { deckId, deck, updateDeck } = this.props;
-    console.log(deck);
     return (
       <div className="deck-show">
+
+        <div className="confirm-delete">
+          {
+            this.state.showDialog &&
+            <ReactConfirmAlert
+              message={`Are you sure to delete?`}
+              confirmLabel="Confirm"
+              cancelLabel="Cancel"
+              onConfirm={this.handleDeleteAfterRedirect(deckId)}
+              onCancel={() => this.setState({showDialog: false})}
+              />
+            }
+          </div>
+
         { deck ? (
           <div className="deck-show-item">
             <ul className="deck-show-item-header">
@@ -49,11 +63,14 @@ class DeckDetail extends React.Component {
                 {deck.title}
               </ClickToEdit>
 
+
+
               <div className="deck-show-header-links">
+
                 <i
                   className="fa fa-trash-o fa-2x"
                   aria-hidden="true"
-                  onClick={this.handleDeleteAfterRedirect(deckId)}>
+                  onClick = {() => this.setState({showDialog: true})} >
                 </i>
 
               </div>
