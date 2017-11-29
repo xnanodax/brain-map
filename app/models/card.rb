@@ -13,7 +13,7 @@
 #
 
 class Card < ApplicationRecord
-  validates :keyword, :body, :author_id, :deck_id, presence: true
+  validates :author_id, :deck_id, presence: true
 
   belongs_to :deck,
   primary_key: :id,

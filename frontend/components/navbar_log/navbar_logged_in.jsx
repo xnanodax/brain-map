@@ -17,7 +17,7 @@ const NavBar = ({ loggedIn, logout, props }) => (
       </ul>
 
       <ul className="navbar-icon-list-middle">
-        <i className="fa fa-search" aria-hidden="true"></i>
+        <Link to="/search"><i className="fa fa-search" aria-hidden="true"></i></Link>
         <i className="fa fa-book" aria-hidden="true"></i>
         <i className="fa fa-sticky-note" aria-hidden="true"></i>
       </ul>

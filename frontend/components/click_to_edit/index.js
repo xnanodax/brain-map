@@ -63,7 +63,7 @@ const makeContentEditable = WrappedComponent =>
             <input
               type="text"
               autoFocus
-              value={this.state.value}
+              value={(this.state.value)}
               onChange={this.changeValue}
               onKeyPress={this.handleEnterKey}
               onBlur={this.getOffEditMode}

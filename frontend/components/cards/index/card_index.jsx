@@ -22,15 +22,17 @@ class CardIndex extends React.Component {
   }
 
   render() {
-    const { cards, deckId, updateCard, deleteCard } = this.props;
+    const { cards, deckId, updateCard, deleteCard, createCard } = this.props;
+
+    const blankCard = { keyword: "tap to edit", body: "tap to edit" };
 
     return (
       <div>
         <div className="card-header">
 
-          <Link to={`/deck/view/${deckId}/new`}>
-            <i className="fa fa-plus" aria-hidden="true"></i>              
-          </Link>
+          <i className="fa fa-plus"
+            aria-hidden="true"
+            onClick={() => createCard(deckId, blankCard)}></i>
           <h3>Cards:</h3>
         </div>
 

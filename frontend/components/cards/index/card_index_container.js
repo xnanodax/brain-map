@@ -7,7 +7,8 @@ import {
   fetchCards,
   fetchCard,
   updateCard,
-  deleteCard
+  deleteCard,
+  createCard
 } from './../../../actions/card_actions';
 
 const mapStateToProps = (state, ownProps) => ({
@@ -16,6 +17,7 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
+  createCard: (deckId, card) => dispatch(createCard(deckId, card)),
   fetchCards: (deckId) => dispatch(fetchCards(deckId)),
   updateCard: (deckId, card) => dispatch(updateCard(deckId, card)),
   deleteCard: (deckId, cardId) => dispatch(deleteCard(deckId, cardId))

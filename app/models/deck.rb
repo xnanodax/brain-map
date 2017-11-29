@@ -55,4 +55,14 @@ class Deck < ApplicationRecord
     end
   end
 
+  def mastery_score(user_id)
+    if self && self.cards.count > 0
+      sum = User.find(user_id).decks.find(self.id).studyscores.sum(:learning_score)
+      total_score = (self.cards.count * 5)
+      sum * 100 / total_score
+    else
+      0
+    end
+  end
+
 end

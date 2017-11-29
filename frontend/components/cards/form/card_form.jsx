@@ -4,8 +4,8 @@ class CardForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      keyword: "",
-      body: ""
+      keyword: "tap to edit",
+      body: "tap to edit"
     };
   }
 

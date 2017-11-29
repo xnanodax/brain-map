@@ -74,22 +74,27 @@ class DeckDetail extends React.Component {
             </ul>
 
             <ul className ="deck-show-attributes">
-              <li>
-                <Link to={`/study/${deckId}`} >
-                  <button
-                    disabled={ deck.cards.length === 0}
-                    className="deck-show-attributes-button">
-                    <i className="fa fa-play" aria-hidden="true">
-                    </i>
+
+              {deck.cards.length !== 0 ? (
+                <li>
+                  <Link to={`/study/${deckId}`} >
+                    <button
+                      disabled={ deck.cards.length === 0}
+                      className="deck-show-attributes-button">
+                      <i className="fa fa-play" aria-hidden="true">
+                      </i>
                       &nbsp;&nbsp;Study
-                  </button>
-                </Link>
-              </li>
+                    </button>
+                  </Link>
+                </li>
+              ) : (
+                <div className="green">Add cards to study!</div>
+              ) }
 
               <li>
                 <ul className="attributes-side-by-side1">
                   <h3>Mastery:</h3>
-                  <div className="percentageColor">{deck.mastery_percentage}%</div>
+                  <div className="percentageColor">{deck.mastery_score}%</div>
                 </ul>
               </li>
               <ul className="tag-list">

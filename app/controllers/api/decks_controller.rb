@@ -18,8 +18,8 @@ class Api::DecksController < ApplicationController
 
   def show
     @deck = Deck.find_by(id: params[:id])
-
     if @deck
+      @deck_score = @deck.mastery_score(current_user.id)
       render :show
     else
       render json: ["this deck does not exist"], status: 422
@@ -43,7 +43,7 @@ class Api::DecksController < ApplicationController
 
   def destroy
     @deck = current_user.decks.find_by(id: params[:id])
-    
+
     if @deck
       @deck.destroy
       render :delete

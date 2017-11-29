@@ -18,7 +18,8 @@ const CardIndexListItem = ({num, card, deckId, updateCard, deleteCard}) => (
             className = "text-short"
             endEditing={
               (value) => {
-                card.keyword = value;
+                console.log(value);
+                card.keyword = ( value === "" ? "tap to edit": card.keyword) ;
                 updateCard(deckId, card);
               }
             }

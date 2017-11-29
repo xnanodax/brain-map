@@ -84,7 +84,7 @@ class Main extends React.Component {
               ref={(el) => {this.card = el;} }
               onClick={(e) => this.play(e)}
               className="display-card flip">
-              <span className="index">{ displayAns === false ? card.keyword : card.body }</span>
+              <div className="index">{ displayAns === false ? card.keyword : card.body }</div>
             </div>
           </div>
 
