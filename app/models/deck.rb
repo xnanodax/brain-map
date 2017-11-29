@@ -52,8 +52,6 @@ class Deck < ApplicationRecord
     if query_params != ""
       @decks = Deck.where('lower(title) LIKE ? ', param).limit(5).to_a
       @decks.select { |deck| deck.cards.count > 0 }
-    else
-      Deck.where('').limit(0)
     end
   end
 

@@ -2,6 +2,7 @@ import React from 'react';
 import SearchIndexItem from './search_index_item';
 
 const searchIndex = ({ firstTime, searchItems, searchVal, clearState }) => {
+  if (searchVal === "") return null;
   let deckResults;
 
   if (searchItems.length === 0 && !firstTime) {
