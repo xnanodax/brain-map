@@ -18,6 +18,7 @@ import {
 const mapStateToProps = (state, ownProps) => {
   const deckId = ownProps.match.params.deckId;
   const deck = state.entities.decks[deckId];
+  // const emptyDeck = deck.length > 0 ? true : false;
   return { deckId, deck };
 };
 

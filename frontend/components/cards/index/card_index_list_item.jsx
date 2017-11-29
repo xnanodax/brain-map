@@ -7,6 +7,9 @@ const CardIndexListItem = ({num, card, deckId, updateCard, deleteCard}) => (
       <div className="table-row wrapper">
 
         <div className="text-xsmall">
+
+          <i className="fa fa-times fa-1x" aria-hidden="true" onClick={() => deleteCard(deckId, card.id)}>
+          </i>&nbsp;&nbsp;
           {num}
         </div>
 
@@ -37,10 +40,6 @@ const CardIndexListItem = ({num, card, deckId, updateCard, deleteCard}) => (
           {card.body}
           </ClickToEdit>
         </div>
-
-        <i className="fa fa-times fa-1x" aria-hidden="true" onClick={() => deleteCard(deckId, card.id)}>
-        </i>
-
 
       </div>
 

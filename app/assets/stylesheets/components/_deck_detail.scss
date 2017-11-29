@@ -2,8 +2,8 @@
   position: absolute;
   left: 400px;
   color: $gray;
-  width: 80vw;
-  border-right: 1px solid $light-gray;
+  width: 70vw;
+  // border-right: 1px solid $light-gray;
   height: 100vh;
   overflow-y: auto;
 
@@ -29,11 +29,13 @@
   padding-top: 1em;
   box-sizing: border-box;
   width: 50vw;
+  text-decoration: underline;
 }
 
 
 .deck-show-item-header-text input {
   width: 50vw;
+  text-decoration: none;
 }
 
 .deck-show-header-links {
@@ -95,7 +97,6 @@ h1 {
 
 .text-xsmall {
   padding-left: 20px;
-
   width: 7vw;
 }
 
@@ -115,4 +116,12 @@ h1 {
 
 .card-container {
   width: 60vw;
+}
+
+.card-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 75px;
+  align-items: center;
 }

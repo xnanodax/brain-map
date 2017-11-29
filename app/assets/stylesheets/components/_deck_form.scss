@@ -8,3 +8,11 @@
 .deck-form-container input {
   width: 30vh;
 }
+
+.form-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 30vh;
+  align-items: center;
+}

@@ -15,6 +15,12 @@ class SessionForm extends React.Component {
     this.props.clearErrors();
   }
 
+  componentDidMount() {
+    this.props.clearErrors();
+  }
+
+
+
   handleTyping(field) {
     return (e) => (
       this.setState({[field]: e.target.value})

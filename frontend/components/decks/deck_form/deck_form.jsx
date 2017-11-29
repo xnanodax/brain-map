@@ -20,6 +20,10 @@ class DeckForm extends React.Component {
       }
   }
 
+  componentWillUnmount() {
+
+  }
+
   handleUpdating(field) {
     return(e) => {
       this.setState({ [field]: e.target.value });
@@ -35,12 +39,14 @@ class DeckForm extends React.Component {
     return (
       <div className="deck-form-container">
 
-        <h1>Create Deck
-          <i className="fa fa-times" aria-hidden="true" onClick={() => history.go(-1)}></i>
-        </h1>
-          <ul className="session-errors">
-            {errors.map((error,idx) => <li key={idx}>{ error }</li>)}
-          </ul>
+        <div className="form-header">
+          <h1>Create Deck
+          </h1>
+          <i className="fa fa-times fa-2x" aria-hidden="true" onClick={() => history.go(-1)}></i>
+          </div>
+            <ul className="session-errors">
+              {errors.map((error,idx) => <li key={idx}>{ error }</li>)}
+            </ul>
 
 
         <form onSubmit={(e) => this.handleSubmit(e)}>

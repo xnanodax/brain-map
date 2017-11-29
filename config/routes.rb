@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+
+
   namespace :api, defaults: { format: :json } do
     resource :session, only: [:create, :destroy]
     resources :users, only: [:create]
@@ -7,6 +9,9 @@ Rails.application.routes.draw do
       resources :taggings, only: [:index, :create, :show, :destroy]
       resources :cards, only: [:index, :create, :show, :edit, :update, :destroy]
       resources :studyscore, only: [:index]
+      resources :masteries, only: [:index] do
+        patch "record", on: :collection
+      end
     end
 
     resources :studyscore, only: [] do

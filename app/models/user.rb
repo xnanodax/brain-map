@@ -34,6 +34,18 @@ class User < ApplicationRecord
   foreign_key: :tester_id,
   class_name: :Studyscore
 
+  def average(arr)
+    arr.inject{ |sum, el| sum + el }.to_f / arr.size
+  end
+
+  def mastery_score(deck_id)
+    @deck = Deck.find(deck_id)
+    if @deck
+      average(@deck.studyscores.where(tester_id: current_user.id))
+    else
+      0
+    end
+  end
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)

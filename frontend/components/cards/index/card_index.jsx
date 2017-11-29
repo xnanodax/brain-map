@@ -26,10 +26,17 @@ class CardIndex extends React.Component {
 
     return (
       <div>
-        <h3>Cards:</h3>
+        <div className="card-header">
+
+          <Link to={`/deck/view/${deckId}/new`}>
+            <i className="fa fa-plus" aria-hidden="true"></i>              
+          </Link>
+          <h3>Cards:</h3>
+        </div>
+
           <div className="card-container">
             <div className="table-row header wrapper">
-              <div className="text-xsmall">#</div>
+              <div className="text-xsmall">&nbsp;#</div>
               <div className="text-short">Question</div>
               <div className="text-long">Answer</div>
             </div>
@@ -46,10 +53,8 @@ class CardIndex extends React.Component {
                     deleteCard={deleteCard} />)
               }
             </ul>
-            <Link to={`/deck/view/${deckId}/new`}>
-              <i className="fa fa-plus" aria-hidden="true"></i>
-              Add Card
-            </Link>
+
+
 
           </div>
       </div>

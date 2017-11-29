@@ -24,7 +24,7 @@ const NavBar = ({ loggedIn, logout, props }) => (
 
 
       <ul className="nav-bar-icon-list-bottom">
-        <i className="fa fa-sign-out" aria-hidden="true" onClick={logout}></i>
+        <i className="fa fa-sign-out fa-2x" aria-hidden="true" onClick={logout}></i>
       </ul>
     </div>
   </nav>

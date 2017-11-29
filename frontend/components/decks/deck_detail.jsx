@@ -26,6 +26,7 @@ class DeckDetail extends React.Component {
 
   render() {
     const { deckId, deck, updateDeck } = this.props;
+    console.log(deck);
     return (
       <div className="deck-show">
         { deck ? (
@@ -46,19 +47,20 @@ class DeckDetail extends React.Component {
 
               <div className="deck-show-header-links">
                 <i
-                  className="fa fa-trash-o"
+                  className="fa fa-trash-o fa-2x"
                   aria-hidden="true"
                   onClick={this.handleDeleteAfterRedirect(deckId)}>
                 </i>
 
-                <i className="fa fa-cog" aria-hidden="true"></i>
               </div>
             </ul>
 
             <ul className ="deck-show-attributes">
               <li>
                 <Link to={`/study/${deckId}`} >
-                  <button className="deck-show-attributes-button">
+                  <button
+                    disabled={ deck.cards.length === 0}
+                    className="deck-show-attributes-button">
                     <i className="fa fa-play" aria-hidden="true">
                     </i>
                       &nbsp;&nbsp;Study
