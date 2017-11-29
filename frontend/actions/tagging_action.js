@@ -4,25 +4,31 @@ export const RECEIVE_TAGGINGS = "RECEIVE_TAGGINGS";
 export const RECEIVE_TAGGING = "RECEIVE_TAGGING";
 export const REMOVE_TAGGING = "REMOVE_TAGGING";
 export const RECEIVE_TAGGING_ERRORS = "RECEIVE_TAGGING_ERRORS";
+export const RECEIVE_TAG_SEARCH_RESULTS = "RECEIVE_TAG_SEARCH_RESULTS";
 
-const receiveTaggings = (taggings) => ({
+const receiveTaggings = taggings => ({
   type: RECEIVE_TAGGINGS,
   taggings
 });
 
-const receiveTagging = (tagging) => ({
+const receiveTagging = tagging => ({
   type: RECEIVE_TAGGING,
   tagging
 });
 
-const removeTagging = (tagging) => ({
+const removeTagging = tagging => ({
   type: REMOVE_TAGGING,
   tagging
 });
 
-const receiveTaggingErrors = (errors) => ({
+const receiveTaggingErrors = errors => ({
   type: RECEIVE_TAGGING_ERRORS,
   errors
+});
+
+const receiveTagSearchResults = searchResults => ({
+  type: RECEIVE_TAG_SEARCH_RESULTS,
+  searchResults
 });
 
 export const fetchTaggings = (deckId) => dispatch => (
@@ -63,4 +69,9 @@ export const fetchAllTags = (name) => dispatch => (
   TaggingAPIUtil.fetchAllTags(name)
     .then((tags) => dispatch(receiveTags(tags)),
       errors => dispatch(receiveTaggingErrors(errors.responseJSON)))
+);
+
+export const searchTags = (name) => dispatch => (
+  TaggingAPIUtil.searchTags(name)
+    .then(searchResults => dispatch(receiveTagSearchResults(searchResults)))
 );

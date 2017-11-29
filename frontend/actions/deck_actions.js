@@ -32,7 +32,7 @@ const removeDecks = () => ({
   decks: []
 });
 
-const receiveDeckSearchResults = (searchResults) => ({
+const receiveDeckSearchResults = searchResults => ({
   type: RECEIVE_DECK_SEARCH_RESULTS,
   searchResults
 });
@@ -72,6 +72,7 @@ export const clearDecks = () => dispatch => (
   dispatch(receiveDecks([]))
 );
 
-// export const searchDatabase = (query) => dispatch => (
-//
-// );
+export const searchDecks = title => dispatch => (
+  DeckAPIUtil.searchDecks(title)
+    .then(decks => dispatch(receiveDeckSearchResults(decks)))
+);
