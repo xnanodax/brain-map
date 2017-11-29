@@ -88,22 +88,22 @@ class Main extends React.Component {
       <div className="study-main-container">
         { currIndex < cards.length - 1 ? (
           <div>
-          <div className='relative-card'>
-            <div
-              ref={(el) => {this.card = el;} }
-              onClick={(e) => this.play(e)}
-              className="display-card flip">
+            <div className='relative-card'>
+              <div
+                ref={(el) => {this.card = el;} }
+                onClick={(e) => this.play(e)}
+                className="display-card flip">
 
-              <div className="index"
-                ref={(el) => {this.text = el;} } >
-                { displayAns === false ? card.keyword : card.body }
+                <div className="index"
+                  ref={(el) => {this.text = el;} } >
+                  { displayAns === false ? card.keyword : card.body }
               </div>
             </div>
           </div>
 
-            <button className="study-button" onClick={(e) => this.play(e)}>
-              Reveal Answer!
-            </button>
+          <button className="study-button" onClick={(e) => this.play(e)}>
+            Reveal Answer!
+          </button>
 
             <div className="button-control">
               <div>

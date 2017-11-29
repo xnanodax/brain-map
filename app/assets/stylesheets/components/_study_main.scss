@@ -54,15 +54,16 @@ button .study-button {
   width: 50vw;
 }
 
-.display-card{display:block;
+.display-card {
+  display:block;
     width: 50%;
      z-index: -1;
-    -webkit-transition: -webkit-transform 1s, z-index 0s 0.25s;
+    -webkit-transition: -webkit-transform 0.35s, z-index 0s 0.2s;
     -webkit-transform: rotateY(0deg);
 }
 
 .rotate {
     -webkit-transform: rotateY(180deg);
-    -webkit-transition: -webkit-transform 1s, z-index 0s 0.25s;
+    -webkit-transition: -webkit-transform 0.35s, z-index 0s 0.2s;
     z-index: -2;
 }

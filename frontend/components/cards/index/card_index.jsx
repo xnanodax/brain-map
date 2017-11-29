@@ -24,7 +24,7 @@ class CardIndex extends React.Component {
   render() {
     const { cards, deckId, updateCard, deleteCard, createCard } = this.props;
 
-    const blankCard = { keyword: "tap to edit", body: "tap to edit" };
+    const blankCard = { keyword: "tap", body: "tap to edit" };
 
     return (
       <div>
