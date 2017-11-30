@@ -26,5 +26,4 @@ class Studyscore < ApplicationRecord
   class_name: :Card
 
 
-
 end

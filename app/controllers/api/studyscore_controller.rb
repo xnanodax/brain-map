@@ -7,8 +7,8 @@ class Api::StudyscoreController < ApplicationController
     card = Card.find_by(id: params[:studyscore][:card_id])
 
     if card
-      @studyscore = card.studyscores.find_by(tester_id: current_user.id)
-      render :show
+      @deck = card.deck
+      render 'api/decks/show'
     else
       render json: ["cannot find card"], status: 424
     end
@@ -20,11 +20,14 @@ class Api::StudyscoreController < ApplicationController
 
     if card && @studyscore
       @studyscore.update_attributes(studyscore_params)
-      render :show
+      @deck = card.deck
+      render 'api/decks/show'
     elsif card
       @studyscore = Studyscore.new(studyscore_params)
       @studyscore.tester_id = current_user.id
       @studyscore.save
+      @deck = card.deck
+
       render :show
     else
       render json: ["cannot update card to update score"], status: 424
