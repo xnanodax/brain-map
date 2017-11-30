@@ -2280,6 +2280,10 @@ react-click-to-edit@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/react-click-to-edit/-/react-click-to-edit-0.3.0.tgz#50adecd937d385436e6d0bb1ebae4050a9e12792"
 
+react-confirm-alert@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/react-confirm-alert/-/react-confirm-alert-1.0.8.tgz#13cbbcf3d992a245b315ef18cc20382556e3f033"
+
 react-dom@^15.5.4:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.6.2.tgz#41cfadf693b757faf2708443a1d1fd5a02bef730"
