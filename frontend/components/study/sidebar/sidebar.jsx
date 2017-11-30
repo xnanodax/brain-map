@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import CircularProgressbar from 'react-circular-progressbar';
 
 class Sidebar extends React.Component {
 
@@ -13,17 +14,20 @@ class Sidebar extends React.Component {
               <i className="fa fa-chevron-left" aria-hidden="true"></i>&nbsp;&nbsp;Done
             </button>
           </Link>
-          <div className="mastery">
-            <div className="mastery-num">
-              <div className="mastery-big">{deck.mastery_score}</div>
-              <div className="mastery-small">&nbsp;%</div>
+
+          <div className="progress">
+            <div style={{ position: 'relative', width: '40%', height: '40%', padding: '0%' }}>
+              <CircularProgressbar className="CircularProgressbar-inverted"
+                backgroundPadding={0}
+                strokeWidth={6}
+                initialAnimation
+                percentage={deck.mastery_score} />
             </div>
 
-            <div className="mastery-small">Mastery</div>
+            <div>
+              { currIndex } out of {numCards.length} cards done
+            </div>
           </div>
-
-          { currIndex } out of {numCards.length} cards done
-
         </div>
       ) : (
         "loading"

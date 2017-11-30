@@ -31,8 +31,8 @@ class DeckDetail extends React.Component {
   }
 
   render() {
-    const { deckId, deck, updateDeck, cards } = this.props;
-    console.log("cards", cards);
+    const { deckId, deck, updateDeck, numCards } = this.props;
+
     return (
       <div className="deck-show">
 
@@ -80,7 +80,7 @@ class DeckDetail extends React.Component {
 
             <ul className ="deck-show-attributes">
 
-              {cards.length > 0 ? (
+              {numCards > 0 ? (
                 <li>
                   <Link to={`/study/${deckId}`} >
                     <button
