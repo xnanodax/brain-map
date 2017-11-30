@@ -9,7 +9,6 @@ class DeckIndex extends React.Component {
   }
 
 
-
   componentWillUnmount() {
     this.props.clearDecks();
   }

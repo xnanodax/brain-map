@@ -28,7 +28,7 @@ class Api::StudyscoreController < ApplicationController
       @studyscore.save
       @deck = card.deck
 
-      render :show
+      render 'api/decks/show'
     else
       render json: ["cannot update card to update score"], status: 424
     end

@@ -16,22 +16,36 @@ class Main extends React.Component {
   }
 
   componentDidMount() {
-    const { deckId, cards, fetchDeck, fetchCards } = this.props;
+    const { deckId, cards, fetchDeck, fetchCards, recordScore } = this.props;
+    const { currIndex } = this.state;
+
     fetchDeck(deckId);
     fetchCards(deckId);
+    // recordScore(cards[currIndex].id, 0);
+
   }
 
   componentWillReceiveProps(newProps) {
+    const { deckId, cards, recordScore } = this.props;
+    const { currIndex } = this.state;
+
+    if (currIndex < cards.length && newProps.deckId !== this.props.deckId) {
+      console.log(`record score = 0 for ${currIndex}`);
+      recordScore(cards[currIndex].id, 0);
+    }
+
     if (newProps.deckId !== this.props.deckId) {
       this.setState({
         currIndex: 0,
         displayAns: false
       });
     }
+
+
+
   }
 
   revealAns(e) {
-    const { remainingCards, currentCard } = this.state;
     return this.setState({
       displayAns: !this.state.displayAns
     });
@@ -53,13 +67,13 @@ class Main extends React.Component {
     }
   }
 
-  nextCard(e) {
-    if (this.card.classList.contains('zoomOutDown')) {
-      return this.card.classList.remove('zoomOutDown');
-    } else {
-      return ;
-    }
-  }
+  // nextCard(e) {
+  //   if (this.card.classList.contains('zoomOutDown')) {
+  //     return this.card.classList.remove('zoomOutDown');
+  //   } else {
+  //     return ;
+  //   }
+  // }
 
 
   play(e) {
@@ -68,8 +82,7 @@ class Main extends React.Component {
     this.rotateText(e);
   }
 
-  recordScore(e) {
-    e.preventDefault();
+  recordingScore(e) {
     const { cards, recordScore } = this.props;
     const { currIndex } = this.state;
     recordScore(cards[currIndex].id, e.target.value);
@@ -77,8 +90,6 @@ class Main extends React.Component {
       currIndex: this.state.currIndex + 1,
       displayAns: false
     });
-    this.nextCard(e);
-    console.log("hey");
   }
 
 
@@ -102,27 +113,27 @@ class Main extends React.Component {
     const buttonList = (
       <ul ref={(el) => {this.buttonList = el;}}
         className="button-list" >
-        <button onClick={(e) => this.recordScore(e)}
+        <button onClick={(e) => this.recordingScore(e)}
           className="study-button score-1"
           value="1">1 Not At All
         </button>
 
-        <button onClick={(e) => this.recordScore(e)}
+        <button onClick={(e) => this.recordingScore(e)}
           className="study-button score-2"
           value="2">2
         </button>
 
-        <button onClick={(e) => this.recordScore(e)}
+        <button onClick={(e) => this.recordingScore(e)}
           className="study-button score-3"
           value="3">3
         </button>
 
-        <button onClick={(e) => this.recordScore(e)}
+        <button onClick={(e) => this.recordingScore(e)}
           className="study-button score-4"
           value="4">4
         </button>
 
-        <button onClick={(e) => this.recordScore(e)}
+        <button onClick={(e) => this.recordingScore(e)}
           className="study-button score-5"
           value="5">5 Perfectly
         </button>

@@ -7,8 +7,8 @@ class brainMapSearch extends React.Component {
     super(props);
     this.state = {
       name: "",
-      firstTime: true,
       title: "",
+      firstTime: true,
     };
   }
 
@@ -27,14 +27,6 @@ class brainMapSearch extends React.Component {
       });
     };
   }
-
-  handleClickOutside() {
-    return(e) => {
-      this.clearState();
-    };
-  }
-
-
 
   render() {
     return (

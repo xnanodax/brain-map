@@ -19,7 +19,8 @@ class Api::DecksController < ApplicationController
   def show
     @deck = Deck.find_by(id: params[:id])
     if @deck
-      @deck_score = @deck.mastery_score(current_user.id)
+      @deck.mastery_score(current_user.id)
+
       render :show
     else
       render json: ["this deck does not exist"], status: 422
@@ -34,6 +35,8 @@ class Api::DecksController < ApplicationController
     @deck = current_user.own_decks.find_by(id: params[:id])
 
     if @deck
+
+
       @deck.update_attributes(deck_params)
       render :show
     else
