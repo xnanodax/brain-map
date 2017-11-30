@@ -1,9 +1,12 @@
 import * as CardAPIUtil from '../utils/card_util';
+import { fetchDecks } from './deck_actions';
 
 export const RECEIVE_CARDS = "RECEIVE_CARDS";
 export const RECEIVE_CARD = "RECEIVE_CARD";
 export const REMOVE_CARD = "REMOVE_CARD";
 export const RECEIVE_CARD_ERRORS = "RECEIVE_CARD_ERRORS";
+
+
 
 const receiveCards = cards => ({
   type: RECEIVE_CARDS,
@@ -40,7 +43,7 @@ export const fetchCard = (deckId, cardId) => dispatch => (
 export const createCard = (deckId, card) => dispatch => (
   CardAPIUtil.createCard(deckId, card)
     .then((newCard) => dispatch(receiveCard(newCard)),
-          (errors) => dispatch(receiveCardErrors(errors.responseJSON)))
+          (errors) => dispatch(receiveCardErrors(errors.responseJSON))).then(() => dispatch(fetchDecks()))
 );
 
 export const updateCard = (deckId, card) => dispatch => (
@@ -52,5 +55,5 @@ export const updateCard = (deckId, card) => dispatch => (
 export const deleteCard = (deckId, cardId) => dispatch => (
   CardAPIUtil.deleteCard(deckId, cardId)
     .then((delCard) => dispatch(removeCard(delCard)),
-          (errors) => dispatch(receiveCardErrors(errors.responseJSON)))
+          (errors) => dispatch(receiveCardErrors(errors.responseJSON))).then(() => dispatch(fetchDecks()))
 );

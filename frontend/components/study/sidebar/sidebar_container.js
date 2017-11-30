@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import Sidebar from './sidebar';
 import { fetchCard } from '../../../actions/card_actions';
-import { recordScore } from './../../../actions/study_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const deckId = ownProps.match.params.deckId;
@@ -15,7 +14,6 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  recordScore: (cardId, learningScore) => dispatch(recordScore(cardId, learningScore)),
   fetchCard: (deckId, cardId) => (dispatch(fetchCard(deckId, cardId)))
 });
 

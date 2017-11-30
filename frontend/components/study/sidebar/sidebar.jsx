@@ -11,14 +11,6 @@ class Sidebar extends React.Component {
     };
   }
 
-  componentWillReceiveProps(newProps){
-    // const { currIndex, recordScore, cards } = this.props;
-    //
-    // if (newProps.currIndex !== this.props.currIndex) {
-    //   recordScore(cards[currIndex].id, 0);
-    // }
-  }
-
   render() {
     const { deck, numCards, currIndex } = this.props;
 
@@ -45,7 +37,7 @@ class Sidebar extends React.Component {
 
             { deck ? (
               <div class="progress">
-                {console.log("DECK MASTERY SCORE", deck.mastery_score)}
+                <div><h1 className="sidebar-title">{deck.title}</h1></div>
                 <div style={{ position: 'relative', width: '80%', height: '80%', padding: '5%' }}>
                   <CircularProgressbar className="CircularProgressbar-inverted"
                     backgroundPadding={0}
@@ -54,6 +46,8 @@ class Sidebar extends React.Component {
                     percentage={deck.mastery_score} />
                 </div>
                 {currCard}
+
+
               </div>
             ) : (
               <div className='loading'>

@@ -1,5 +1,15 @@
 import React from 'react';
 import SidebarContainer from '../sidebar/sidebar_container';
+import { Link } from 'react-router-dom';
+import Confetti from 'react-dom-confetti';
+
+const config = {
+  angle: 90,
+  spread: 60,
+  startVelocity: 20,
+  elementCount: 61,
+  decay: 0.95
+};
 
 class Main extends React.Component {
   constructor(props) {
@@ -8,12 +18,18 @@ class Main extends React.Component {
       loading: true,
       currIndex: 0,
       displayAns: false,
+      displayConfetti: false,
     };
     this.rotateCardOutline = this.rotateCardOutline.bind(this);
     this.revealAns = this.revealAns.bind(this);
     this.play = this.play.bind(this);
     this.nextCard = this.play.bind(this);
   }
+
+  completed() {
+    this.setState({displayConfetti: !this.state.displayConfetti});
+  }
+
 
   componentDidMount() {
     const { deckId, cards, fetchDeck, fetchCards, recordScore } = this.props;
@@ -94,7 +110,7 @@ class Main extends React.Component {
 
 
   render() {
-    const { cards } = this.props;
+    const { cards, deck } = this.props;
     const { currIndex, displayAns } = this.state;
     const card = cards[currIndex];
 
@@ -175,7 +191,27 @@ class Main extends React.Component {
         </div>
 
         </div>
-        ) : ("you finished!") }
+        ) : (
+          <div class="finished-container">
+            <h1>Woohoo!</h1>
+            <h1> You finished {deck.title}! </h1>
+              <Link to ="/deck">
+                <button className="studyButton">
+                  go back!
+                </button>
+              </Link>
+
+              <Link to ="/search">
+                <button className="studyButton">
+                  study other decks
+                </button>
+              </Link>
+
+
+              <Confetti active={ () => this.completed() } config={ config }/>
+
+          </div>
+        ) }
         </div>
 
     );

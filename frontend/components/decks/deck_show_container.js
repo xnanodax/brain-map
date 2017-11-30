@@ -27,7 +27,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     fetchDeck: (id) => dispatch(fetchDeck(id)),
     updateDeck: (deck)=> dispatch(updateDeck(deck)),
-    // action: (deck) => dispatch(action(deck)),
     deleteDeck: (deckId) => dispatch(deleteDeck(deckId))
    };
 };

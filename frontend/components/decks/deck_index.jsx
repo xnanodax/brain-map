@@ -8,6 +8,9 @@ class DeckIndex extends React.Component {
     fetchDecks();
   }
 
+  componentWillReceive(newProps) {
+    console.log(newProps);
+  }
 
   componentWillUnmount() {
     this.props.clearDecks();

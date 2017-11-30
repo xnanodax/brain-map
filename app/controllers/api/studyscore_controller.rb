@@ -27,7 +27,6 @@ class Api::StudyscoreController < ApplicationController
       @studyscore.tester_id = current_user.id
       @studyscore.save
       @deck = card.deck
-
       render 'api/decks/show'
     else
       render json: ["cannot update card to update score"], status: 424

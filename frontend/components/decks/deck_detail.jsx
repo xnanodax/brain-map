@@ -81,7 +81,6 @@ class DeckDetail extends React.Component {
                 <li>
                   <Link to={`/study/${deckId}`} >
                     <button
-                      disabled={ deck.cards.length === 0}
                       className="deck-show-attributes-button">
                       <i className="fa fa-play" aria-hidden="true">
                       </i>
