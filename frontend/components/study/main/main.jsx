@@ -192,7 +192,7 @@ class Main extends React.Component {
 
         </div>
         ) : (
-          <div class="finished-container">
+          <div className="finished-container">
             <h1>Woohoo!</h1>
             <h1> You finished {deck.title}! </h1>
               <Link to ="/deck">

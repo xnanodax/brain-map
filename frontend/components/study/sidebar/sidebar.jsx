@@ -36,7 +36,7 @@ class Sidebar extends React.Component {
             {studyButton}
 
             { deck ? (
-              <div class="progress">
+              <div className="progress">
                 <div><h1 className="sidebar-title">{deck.title}</h1></div>
                 <div style={{ position: 'relative', width: '80%', height: '80%', padding: '5%' }}>
                   <CircularProgressbar className="CircularProgressbar-inverted"

@@ -6,7 +6,7 @@ const SearchListItem = ({searchItem}) => (
 
     <Link to={`/study/${searchItem.id}`} >
       <div className="result-spacing">
-        <div class="search-text">
+        <div className="search-text">
           {searchItem.title}
         </div>
         <button className="button-search-study">
