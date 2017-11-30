@@ -5,6 +5,9 @@ import {
   CLEAR_DECKS
 } from '../actions/deck_actions';
 
+import {
+  RECEIVE_SCORE
+} from '../actions/study_actions';
 
 import merge from 'lodash/merge';
 
@@ -16,6 +19,8 @@ const decksReducer = (state = {}, action) => {
       return merge({}, action.decks);
     case RECEIVE_DECK:
       return merge({}, state, action.deck);
+    case RECEIVE_SCORE:
+      return merge({}, action.deck);
     case REMOVE_DECK:
       newState = merge({}, state);
       delete newState[action.deck.id];

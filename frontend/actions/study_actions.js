@@ -1,17 +1,17 @@
 import * as StudyAPIUtil from './../utils/studyscore_util';
 
-export const RECEIVE_SCORES = "RECEIVE_SCORES";
+// export const RECEIVE_SCORES = "RECEIVE_SCORES";
 export const RECEIVE_SCORE = "RECEIVE_SCORE";
 export const RECEIVE_STUDY_ERROR = "RECEIVE_STUDY_ERROR";
 
-const receiveScores = (scores) => ({
-  type: RECEIVE_SCORES,
-  scores
-});
+// const receiveScores = (decks) => ({
+//   type: RECEIVE_SCORES,
+//   decks
+// });
 
-const receiveScore = (score) => ({
+const receiveScore = (deck) => ({
   type: RECEIVE_SCORE,
-  score
+  deck
 });
 
 const receiveStudyError = (errors) => ({
@@ -19,11 +19,11 @@ const receiveStudyError = (errors) => ({
   errors
 });
 
-export const fetchScores = (deckId) => dispatch => (
-  StudyAPIUtil.fetchStudyScores(deckId)
-    .then(scores => dispatch(receiveScores(scores)),
-      (errors) => dispatch(receiveStudyError(errors)))
-);
+// export const fetchScores = (deckId) => dispatch => (
+//   StudyAPIUtil.fetchStudyScores(deckId)
+//     .then(scores => dispatch(receiveScores(scores)),
+//       (errors) => dispatch(receiveStudyError(errors)))
+// );
 
 export const fetchScore = (cardId) => dispatch => (
   StudyAPIUtil.fetchStudyScore(cardId)

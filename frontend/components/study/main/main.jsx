@@ -86,7 +86,7 @@ class Main extends React.Component {
 
     return (
       <div className="study-main-container">
-        { currIndex < cards.length - 1 ? (
+        { currIndex < cards.length ? (
           <div>
             <div className='relative-card'>
               <div
