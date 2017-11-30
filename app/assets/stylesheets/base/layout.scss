@@ -3,6 +3,10 @@ html {
 	height: 100%;
 }
 
+.hidden {
+	display:none;
+}
+
 .app {
 	position: relative;
 	box-sizing: border-box;
@@ -72,10 +76,17 @@ input {
 input:hover {
 	border-bottom: 2px solid lightblue;
 }
+input:focus {
+	border-bottom: 2px solid lightblue;
+}
 
 .green {
 	display: inline-block;
-	color: $green
+	color: $green;
+}
+
+.gray{
+	color: $gray;
 }
 
 .green:hover {

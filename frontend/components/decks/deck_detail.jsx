@@ -18,9 +18,6 @@ class DeckDetail extends React.Component {
     };
   }
 
-  // componentWillReceiveProps(newProps) {
-  //   this.props.___ !== newProps.deckO
-  // }
 
   handleDeleteAfterRedirect(id) {
     const { deleteDeck, history } = this.props;

@@ -35,7 +35,7 @@ class DeckIndex extends React.Component {
               </div>
             </ul>
 
-            <ul>
+            <ul className="gray">
               {
                 decks.map((deck, idx) =>
                   <DeckIndexListItem key={idx} deck={deck} />

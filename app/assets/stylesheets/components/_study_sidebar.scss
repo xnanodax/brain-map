@@ -1,14 +1,14 @@
 .study-sidebar-container {
   background: $dark-gray;
-  border: 1px solid $light-gray;
-  position: absolute;
-  right: 0px;
   height: 100vh;
   width: 300px;
-  font-size: 15px;
+  font-size: 20px;
   color: $light-gray;
-  overflow-y: auto;
   padding: 1em;
+}
+
+.relative{
+  position: relative;
 }
 
 .inline {
@@ -18,13 +18,14 @@
 
 .study-button{
   width: 120px;
+  margin-bottom: 75px;
 }
 
 .study-button i {
   color: white;
 }
 
-.progress{
+.progress {
   display: flex;
   flex-direction: column;
   justify-content: center;

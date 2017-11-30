@@ -1,15 +1,29 @@
-.study-main-container {
+.study-container {
   position: absolute;
-  left: 400px;
-  color: $gray;
-  width: 70vw;
-  border-right: 1px solid $light-gray;
+  // top: 0px;
+  left: 60px;
+  color: $dark-gray;
+  width: 100%;
   height: 100vh;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   // align-items: center;
+}
+
+@media screen and (min-width: 1080px) {
+  .study-container {
+    width: 1400px;
+  }
+
+}
+
+.study-main{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
 }
 
 .transform-text {
@@ -22,48 +36,86 @@ span .index {
 }
 
 .relative-card {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
 }
 
 .button-list {
   padding: 20px;
   display: flex;
   justify-content: space-between;
-  width: 50vw;
+  // width: 700px;
   align-items: center;
+}
+
+.position-card {
+  padding: 40px;
 }
 
 button .study-button {
   width: 10px;
-  // font-size: 0.3em;
 }
 
 .display-card {
-  padding: 40px;
+  top: 20px;
+  padding: 80px;
   margin: 20px;
   font-size: 1.5em;
-  height: 35vh;
-  width: 50vw;
+  height: 400px;
+  width: 600px;
   border: 1px solid black;
+  z-index: -1;
+ -webkit-transition: -webkit-transform 0.35s, z-index 0s 0.2s;
+ -webkit-transform: rotateY(0deg);
+}
+
+.card-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 .button-control {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  width: 50vw;
-}
+  width: 600px;
+  // border: 1px red solid;
 
-.display-card {
-  display:block;
-    width: 50%;
-     z-index: -1;
-    -webkit-transition: -webkit-transform 0.35s, z-index 0s 0.2s;
-    -webkit-transform: rotateY(0deg);
 }
 
 .rotate {
     -webkit-transform: rotateY(180deg);
     -webkit-transition: -webkit-transform 0.35s, z-index 0s 0.2s;
     z-index: -2;
+}
+
+.study-button:focus{
+  border-bottom: 2px solid black;
+}
+.study-button:target {
+  border-bottom: 2px solid black;
+}
+
+.score-1{
+  background-color: $button-1;
+}
+.score-2{
+  background-color: $button-2;
+}
+.score-3{
+  background-color: $button-3;
+  // color: black;
+}
+.score-4{
+  background-color: $button-4;
+}
+.score-5{
+  background-color: $button-5;
 }
