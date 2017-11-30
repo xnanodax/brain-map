@@ -13,7 +13,8 @@ class DeckDetail extends React.Component {
     this.state = {
       loading: true,
       deck: this.props.deck,
-      showDialog: false,
+      displayDeleteConfirm: false,
+      addedNewCard: false,
     };
   }
 
@@ -30,19 +31,20 @@ class DeckDetail extends React.Component {
   }
 
   render() {
-    const { deckId, deck, updateDeck } = this.props;
+    const { deckId, deck, updateDeck, cards } = this.props;
+    console.log("cards", cards);
     return (
       <div className="deck-show">
 
         <div className="confirm-delete">
           {
-            this.state.showDialog &&
+            this.state.displayDeleteConfirm &&
             <ReactConfirmAlert
               message={`Are you sure to delete?`}
               confirmLabel="Confirm"
               cancelLabel="Cancel"
               onConfirm={this.handleDeleteAfterRedirect(deckId)}
-              onCancel={() => this.setState({showDialog: false})}
+              onCancel={() => this.setState({displayDeleteConfirm: false})}
               />
             }
           </div>
@@ -70,7 +72,7 @@ class DeckDetail extends React.Component {
                 <i
                   className="fa fa-trash-o fa-2x"
                   aria-hidden="true"
-                  onClick = {() => this.setState({showDialog: true})} >
+                  onClick = {() => this.setState({displayDeleteConfirm: true})} >
                 </i>
 
               </div>
@@ -78,7 +80,7 @@ class DeckDetail extends React.Component {
 
             <ul className ="deck-show-attributes">
 
-              {deck.cards.length !== 0 ? (
+              {cards.length > 0 ? (
                 <li>
                   <Link to={`/study/${deckId}`} >
                     <button

@@ -7,7 +7,8 @@ const mapStateToProps = (state, ownProps) => {
   const deckId = ownProps.match.params.deckId;
   return {
     deck: state.entities.decks[deckId],
-    cards: state.entities.cards
+    numCards: Object.keys(state.entities.cards),
+    currIndex: ownProps.currIndex
   };
 };
 

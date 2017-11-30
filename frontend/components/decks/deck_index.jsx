@@ -22,7 +22,7 @@ class DeckIndex extends React.Component {
             <ul className="deck_index_item_border deck-index-item-outer-title">
               <div className="deck-header-box">
                 <div className="deck-header-box-item1">
-                  <li className="deck-header-font">Decks</li>
+                  <li className="deck-header-font">Your Decks</li>
                   <li> { deckCount } { deckCount === 1 ? (<p className="inline">Deck</p>) : (<p className="inline">Decks</p>) }</li>
                 </div>
 

@@ -18,8 +18,9 @@ import {
 const mapStateToProps = (state, ownProps) => {
   const deckId = ownProps.match.params.deckId;
   const deck = state.entities.decks[deckId];
+  const cards = Object.keys(state.entities.cards);
   // const emptyDeck = deck.length > 0 ? true : false;
-  return { deckId, deck };
+  return { deckId, deck, cards };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {

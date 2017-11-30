@@ -20,31 +20,26 @@ class User < ApplicationRecord
 
   attr_reader :password
 
-  has_many :decks,
+  has_many :own_decks,
   primary_key: :id,
   foreign_key: :author_id,
   class_name: :Deck
 
-  has_many :cards,
-  through: :decks,
+  # has_many :played_decks,
+  # through: :studyscores,
+  # source:
+
+  has_many :own_cards,
+  through: :own_decks,
   source: :cards
 
+#------------
   has_many :studyscores,
   primary_key: :id,
   foreign_key: :tester_id,
   class_name: :Studyscore
 
 
-  def mastery_score(user_id, deck_id)
-    @deck = Deck.find(deck_id)
-    if @deck
-      sum = User.find(user_id).decks.find(deck_id).studyscores.sum(:learning_score)
-      total_score = (@deck.cards.count * 5)
-      sum * 100 / total_score
-    else
-      0
-    end
-  end
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)

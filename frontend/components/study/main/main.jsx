@@ -1,4 +1,5 @@
 import React from 'react';
+import SidebarContainer from '../sidebar/sidebar_container';
 
 class Main extends React.Component {
   constructor(props) {
@@ -86,6 +87,8 @@ class Main extends React.Component {
 
     return (
       <div className="study-main-container">
+        <SidebarContainer currIndex={currIndex}/>
+
         { currIndex < cards.length ? (
           <div>
             <div className='relative-card'>

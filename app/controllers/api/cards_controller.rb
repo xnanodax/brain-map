@@ -27,11 +27,11 @@ class Api::CardsController < ApplicationController
   end
 
   def edit
-    @card = current_user.cards.find_by(id: params[:id])
+    @card = current_user.own_cards.find_by(id: params[:id])
   end
 
   def update
-    @card = current_user.cards.find_by(id: params[:id])
+    @card = current_user.own_cards.find_by(id: params[:id])
 
     if @card
       @card.update_attributes(card_params)
@@ -42,8 +42,8 @@ class Api::CardsController < ApplicationController
   end
 
   def destroy
-    @card = current_user.cards.find_by(id: params[:id])
-    
+    @card = current_user.own_cards.find_by(id: params[:id])
+
     if @card
       @card.destroy
       render :delete

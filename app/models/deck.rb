@@ -18,6 +18,7 @@ class Deck < ApplicationRecord
   foreign_key: :author_id,
   class_name: :User
 
+
   has_many :cards,
   primary_key: :id,
   foreign_key: :deck_id,
@@ -56,10 +57,13 @@ class Deck < ApplicationRecord
   end
 
   def mastery_score(user_id)
+    p "------------------------------"
+    p self
     if self.cards.count > 0
-      sum = User.find(user_id).decks.find(self.id).studyscores.sum(:learning_score)
-      total_score = (self.cards.count * 5)
-      sum * 100 / total_score
+      # sum = User.find(user_id).decks.find(self.id).studyscores.sum(:learning_score)
+      p "sum", sum = Deck.fetch_user_score(self.id, user_id).sum(:learning_score)
+      p "total_score", total_score = (self.cards.count * 5)
+      p sum * 100 / total_score
     else
       0
     end

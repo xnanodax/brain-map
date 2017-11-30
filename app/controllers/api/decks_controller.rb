@@ -31,7 +31,7 @@ class Api::DecksController < ApplicationController
   end
 
   def update
-    @deck = current_user.decks.find_by(id: params[:id])
+    @deck = current_user.own_decks.find_by(id: params[:id])
 
     if @deck
       @deck.update_attributes(deck_params)
@@ -42,7 +42,7 @@ class Api::DecksController < ApplicationController
   end
 
   def destroy
-    @deck = current_user.decks.find_by(id: params[:id])
+    @deck = current_user.own_decks.find_by(id: params[:id])
 
     if @deck
       @deck.destroy

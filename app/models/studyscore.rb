@@ -15,6 +15,7 @@ class Studyscore < ApplicationRecord
   validates :tester_id, uniqueness: { scope: :card_id }
   validates :learning_score, :inclusion => { :in => 0..5 }
 
+#------------
   belongs_to :user,
   primary_key: :id,
   foreign_key: :tester_id,
@@ -24,6 +25,7 @@ class Studyscore < ApplicationRecord
   primary_key: :id,
   foreign_key: :card_id,
   class_name: :Card
+
 
 
 end
