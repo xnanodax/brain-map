@@ -1,6 +1,8 @@
 import React from 'react';
 import SearchIndex from './search_index';
 // import onClickOutside from 'react-onclickoutside';
+import NavBarContainer from '../navbar_log/navbar_logged_in_container';
+import DeckIndexContainer from '../decks/deck_index_container';
 
 class brainMapSearch extends React.Component {
   constructor(props) {
@@ -30,15 +32,24 @@ class brainMapSearch extends React.Component {
 
   render() {
     return (
-      <div>
-        <input onChange={this.handleUpdatingDecks('title')}
-          placeholder={"search by deck name"}
-          value={this.state.title} />
+      <div className ="">
+        <NavBarContainer className="navbar"/>
+        <DeckIndexContainer />
 
-          <SearchIndex firstTime={this.state.firstTime}
-            searchItems={Object.values(this.props.searchResults)}
-            searchVal={this.state.title}
-            clearState={this.clearState}/>
+        <div className="search-container">
+          <h1>Search</h1>
+          <input className="search-input"
+            onChange={this.handleUpdatingDecks('title')}
+            placeholder={"search by deck name"}
+            value={this.state.title}>
+
+          </input>
+
+            <SearchIndex firstTime={this.state.firstTime}
+              searchItems={Object.values(this.props.searchResults)}
+              searchVal={this.state.title}
+              clearState={this.clearState}/>
+        </div>
       </div>
     );
   }

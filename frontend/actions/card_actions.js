@@ -43,7 +43,8 @@ export const fetchCard = (deckId, cardId) => dispatch => (
 export const createCard = (deckId, card) => dispatch => (
   CardAPIUtil.createCard(deckId, card)
     .then((newCard) => dispatch(receiveCard(newCard)),
-          (errors) => dispatch(receiveCardErrors(errors.responseJSON))).then(() => dispatch(fetchDecks()))
+          (errors) => dispatch(receiveCardErrors(errors.responseJSON)))
+    .then(() => dispatch(fetchDecks()))
 );
 
 export const updateCard = (deckId, card) => dispatch => (
@@ -55,5 +56,6 @@ export const updateCard = (deckId, card) => dispatch => (
 export const deleteCard = (deckId, cardId) => dispatch => (
   CardAPIUtil.deleteCard(deckId, cardId)
     .then((delCard) => dispatch(removeCard(delCard)),
-          (errors) => dispatch(receiveCardErrors(errors.responseJSON))).then(() => dispatch(fetchDecks()))
+          (errors) => dispatch(receiveCardErrors(errors.responseJSON)))
+    .then(() => dispatch(fetchDecks()))
 );

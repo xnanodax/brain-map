@@ -1,11 +1,31 @@
+.search-container {
+  position: absolute;
+  padding: 50px;
+  left: 350px;
+  color: $gray;
+}
+
+.search-input {
+  width: 550px;
+  font-size: 1.5em;
+}
+
+.search-container h1 {
+  color: $gray;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  font-size: 2em;
+}
+
 .search-list-item {
-  padding: 10px
+  padding: 20px;
+  border-bottom: 1px solid $gray;
 }
 
 .button-search-study {
-  width: 70px;
+  width: 100px;
   border-radius: 20px;
-  font-size: 10px;
+  font-size: 20px;
   padding: 0px;
   height: 30px;
 }
@@ -17,12 +37,12 @@
 .result-spacing {
   display: flex;
   flex-direction: row;
-  width: 300px;
+  width: 500px;
   justify-content: space-between;
   align-items: center;
 }
 
 .search-text {
-  width: 220px;
-  border: solid 1px black;
+  font-size: 2em;
+  color: $gray
 }
