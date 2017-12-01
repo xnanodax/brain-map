@@ -12,6 +12,11 @@
   padding-top: 30px;
 }
 
+.confirm-delete button{
+  width: 30%;
+  margin-right: 20px;
+}
+
 .deck-show-item-header {
   display: flex;
   flex-direction: row;
@@ -22,8 +27,8 @@
   position: absolute;
   left: 50vh;
   width: 300px;
-  background: $light-gray;
   float:left;
+  background: $white;
 }
 
 .deck-show-item-header-text {

@@ -7,8 +7,13 @@ class SessionForm extends React.Component {
     this.state = {
       username: "",
       email: "",
-      password: ""
+      password: "",
+      displayAns: true
     };
+    this.rotateCardOutline = this.rotateCardOutline.bind(this);
+    this.revealAns = this.revealAns.bind(this);
+    this.play = this.play.bind(this);
+
   }
 
   componentWillUnmount() {
@@ -33,18 +38,71 @@ class SessionForm extends React.Component {
     };
   }
 
+
+
+  rotateCardOutline(e) {
+    if (this.card.classList.contains('rotate')) {
+      return this.card.classList.remove('rotate');
+    } else {
+      return this.card.classList.add('rotate');
+    }
+  }
+
+  rotateText(e){
+    if (this.text.classList.contains('transform-text')) {
+      return this.text.classList.remove('transform-text');
+    } else {
+      return this.text.classList.add('transform-text');
+    }
+  }
+
+  revealAns(e) {
+    return this.setState({
+      displayAns: !this.state.displayAns
+    });
+  }
+
+  play(e) {
+    this.revealAns(e);
+    this.rotateCardOutline(e);
+    this.rotateText(e);
+  }
+
+
+
   render() {
     const { formType, action, errors, loggedIn, logout } = this.props;
+    const { displayAns } = this.state;
     return (
       <ul className="session-form-container">
         <div className="intro-ad">
-          <h1>Get smarter, faster.</h1>
-          <div className="intro-ad-small-text">
-            Learn new concepts, review old things, track your progress with our online flashcards.
-          </div>
-        </div>
 
-        <div className="session-form">
+          <div className="inner-card-container">
+            <div className='position-intro-card'>
+              <div ref={(el) => {this.card = el;} }
+                onClick={(e) => this.play(e)}
+                className="intro-card flip">
+
+                <div className="intro-card-text"
+                  ref={(el) => {this.text = el;} } >
+                  { displayAns === true ?
+                    <div>
+                      <div className="intro-ad-small-text">
+                        Get smarter, faster...
+                      </div>
+                      <div className="gray">click me!</div>
+                    </div>
+                    : "...by studying with brainMap's index cards" }</div>
+                </div>
+              </div>
+              <div className="caption gray">Learn new concepts, review old things, track your progress with our online flashcards.</div>
+            </div>
+          </div>
+
+
+
+        <div className="session-form-outer">
+          <div className="session-form">
           { formType === "Sign Up" ? <h1>{ formType } for free</h1> : <h1>{ formType }</h1> }
           <form onSubmit={this.handleSubmit()} >
 
@@ -118,6 +176,7 @@ class SessionForm extends React.Component {
 
           </form>
         </div>
+        </div>
       </ul>
 
     );
@@ -125,3 +184,8 @@ class SessionForm extends React.Component {
 }
 
 export default SessionForm;
+
+// <h1>Get smarter, faster.</h1>
+// <div className="intro-ad-small-text">
+//   Learn new concepts, review old things, track your progress with our online flashcards.
+// </div>

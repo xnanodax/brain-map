@@ -37,19 +37,11 @@ class Main extends React.Component {
 
     fetchDeck(deckId);
     fetchCards(deckId);
-    // recordScore(cards[currIndex].id, 0);
-
   }
 
   componentWillReceiveProps(newProps) {
     const { deckId, cards, recordScore } = this.props;
     const { currIndex } = this.state;
-
-    if (currIndex < cards.length && newProps.deckId !== this.props.deckId) {
-      console.log(`record score = 0 for ${currIndex}`);
-      recordScore(cards[currIndex].id, 0);
-    }
-
     if (newProps.deckId !== this.props.deckId) {
       this.setState({
         currIndex: 0,
@@ -165,8 +157,7 @@ class Main extends React.Component {
         { currIndex < cards.length ? (
           <div className="relative-card">
             <div className='position-card'>
-              <div
-                ref={(el) => {this.card = el;} }
+              <div ref={(el) => {this.card = el;} }
                 onClick={(e) => this.play(e)}
                 className="display-card flip">
 

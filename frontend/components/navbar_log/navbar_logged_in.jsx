@@ -13,13 +13,12 @@ const NavBar = ({ loggedIn, logout, props }) => (
 
     <div className="navbar-icons-all">
       <ul className="navbar-icon-list-top">
-        <i className="fa fa-compress" aria-hidden="true"></i>
+
       </ul>
 
       <ul className="navbar-icon-list-middle">
-        <Link to="/search"><i className="fa fa-search" aria-hidden="true"></i></Link>
-        <i className="fa fa-book" aria-hidden="true"></i>
-        <i className="fa fa-sticky-note" aria-hidden="true"></i>
+        <Link to="/search"><i className="fa fa-search fa-2x" aria-hidden="true"></i></Link>
+        <Link to="/deck"><i className="fa fa-book fa-2x" aria-hidden="true"></i></Link>
       </ul>
 
 
@@ -31,3 +30,6 @@ const NavBar = ({ loggedIn, logout, props }) => (
 );
 
 export default NavBar;
+
+// <i className="fa fa-sticky-note" aria-hidden="true"></i>
+// <i className="fa fa-compress" aria-hidden="true"></i>

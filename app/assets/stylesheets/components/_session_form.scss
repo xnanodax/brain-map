@@ -1,21 +1,38 @@
 .session-form-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  width: 80%;
+  justify-content: space-evenly;
+  width: 60%;
   margin: 0 auto;
   align-items: center;
   height: 500px;
 }
 
 .intro-ad {
-  width: 450px;
   width: 30vw;
-  border-right: 1px solid $gray;
-  padding-right: 50px;
+  // padding-right: 50px;
+  padding: 80px 20px 20px 80px;
+  height: 100%;
+
+}
+
+.inner-card-container {
+  padding-right: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .intro-ad-small-text {
+  padding-top: 20px;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.session-form-outer {
+  padding-left: 10vh;
+  border-left: 1px solid $gray;
 }
 
 .session-form {
@@ -46,6 +63,34 @@
   font-size: 14px;
 }
 
+.caption {
+  padding-top: 10px;
+  font-size: 1.1em;
+  color: $dark-gray;
+  margin: 0 auto;
+}
+
 .session-errors {
   color: red;
+}
+
+.intro-card {
+  top: 20px;
+  padding: 20px;
+  margin: 20px;
+  font-size: 1.5em;
+  height: 275px;
+  width: 400px;
+  border: 1px solid black;
+}
+
+.intro-card-text {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.position-intro-card{
+  // padding: 15px;
 }
