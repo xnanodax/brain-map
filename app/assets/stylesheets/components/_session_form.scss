@@ -9,11 +9,13 @@
 }
 
 .intro-ad {
-  width: 30vw;
+  width: 600px;
   // padding-right: 50px;
   padding: 80px 20px 20px 80px;
   height: 100%;
-
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .inner-card-container {
@@ -79,8 +81,8 @@
   padding: 20px;
   margin: 20px;
   font-size: 1.5em;
-  height: 275px;
-  width: 400px;
+  height: 30vh;
+  width: 40vh;
   border: 1px solid black;
 }
 
