@@ -17,7 +17,7 @@ class DeckIndex extends React.Component {
   }
 
   render() {
-    const { decks, deckCount } = this.props;
+    const { decks, deckCount, cards } = this.props;
 
     return (
           <div className="deck-index-container">
@@ -40,7 +40,7 @@ class DeckIndex extends React.Component {
             <ul className="gray">
               {
                 decks.map((deck, idx) =>
-                  <DeckIndexListItem key={idx} deck={deck} />
+                  <DeckIndexListItem key={idx} deck={deck} cards={cards}/>
                 )
               }
             </ul>
