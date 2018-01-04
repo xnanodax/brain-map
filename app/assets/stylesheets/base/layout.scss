@@ -85,6 +85,16 @@ input:focus {
 	color: $green;
 }
 
+.small {
+	font-size: 0.5em;
+}
+
+.green-no-hover {
+	display: inline-block;
+	color: $green;
+}
+
+
 .gray{
 	color: $gray;
 }

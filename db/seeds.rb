@@ -149,7 +149,6 @@ card6 = Card.create!({
   deck_id: deck2.id
   })
 
-
 tag1 = Tag.create!({name: "science"})
 tag2 = Tag.create!({name: "mathematics"})
 tag3 = Tag.create!({name: "foreign language"})

@@ -88,12 +88,12 @@ class SessionForm extends React.Component {
                   { displayAns === true ?
                     <div>
                       <div className="intro-ad-small-text">
-                        Get smarter, <div className="green">faster</div>...
+                        Get smarter,&nbsp;<div className="green-no-hover">faster ...</div>
+                        <div className="gray small">click me!</div>
                       </div>
-                      <div className="gray">click me!</div>
                     </div>
-                    : <div>
-                      ...by studying with <div className="green">brainMap's</div> index cards</div> }</div>
+                    : <div className="intro-ad-small-text">
+                      ...by studying with <div className="green-no-hover">brainMap's</div> index cards</div> }</div>
                 </div>
               </div>
               <div className="caption gray">Learn new concepts, review old things, track your progress with our online flashcards.</div>

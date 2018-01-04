@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171129012229) do
+ActiveRecord::Schema.define(version: 20171127172045) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,15 +35,6 @@ ActiveRecord::Schema.define(version: 20171129012229) do
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_decks_on_author_id"
     t.index ["title"], name: "index_decks_on_title"
-  end
-
-  create_table "masteries", force: :cascade do |t|
-    t.integer "deck_id", null: false
-    t.integer "user_id", null: false
-    t.integer "mastery_score", default: 0
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id", "deck_id", "mastery_score"], name: "index_masteries_on_user_id_and_deck_id_and_mastery_score", unique: true
   end
 
   create_table "studyscores", force: :cascade do |t|
