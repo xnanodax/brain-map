@@ -48,7 +48,9 @@ class Main extends React.Component {
         currIndex: 0,
         displayAns: false
       });
+
     }
+
 
 
 
@@ -186,7 +188,7 @@ class Main extends React.Component {
         ) : (
           <div className="finished-container">
             <h1>Woohoo!</h1>
-            <h1> You finished {deck.title}! </h1>
+            <h1> You finished! </h1>
               <Link to ="/deck">
                 <button className="studyButton">
                   go back!

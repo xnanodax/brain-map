@@ -72,9 +72,13 @@ class User < ApplicationRecord
   end
 
   def find_last_5_mastery_scores
-    self.played_decks
-      .order(:updated_at)
-      .distinct
-      .limit(5)
+    self.studyscores
+      .scoping do
+        played_decks
+          .order('studyscores.updated_at DESC')
+          .limit(5)
+      end
+      .pluck('decks.id')
+      .uniq
   end
 end

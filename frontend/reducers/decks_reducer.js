@@ -2,7 +2,8 @@ import {
   RECEIVE_DECKS,
   RECEIVE_DECK,
   REMOVE_DECK,
-  CLEAR_DECKS
+  CLEAR_DECKS,
+  RECEIVE_DECK_SEARCH_RESULTS
 } from '../actions/deck_actions';
 
 import {

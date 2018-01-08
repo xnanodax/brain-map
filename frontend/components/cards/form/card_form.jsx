@@ -29,6 +29,12 @@ class CardForm extends React.Component {
     };
   }
 
+  handleFocus() {
+    return (e)=> {
+      event.target.select();
+    }
+  }
+
   render() {
     const { createCard, errors, history } = this.props;
     return (

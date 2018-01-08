@@ -25,6 +25,11 @@ const makeContentEditable = WrappedComponent =>
         value: this.props.children,
         onEditMode: true
       });
+
+    }
+
+    handleFocus(e) {
+      e.target.select();
     }
     getOffEditMode() {
       this.setState({
@@ -57,8 +62,8 @@ const makeContentEditable = WrappedComponent =>
       return (
         <section
           className={className || ""}
-          onClick={this.getIntoEditMode}
-        >
+          onClick={this.getIntoEditMode} >
+
           {this.state.onEditMode ? (
             <input
               type="text"
@@ -67,7 +72,7 @@ const makeContentEditable = WrappedComponent =>
               onChange={this.changeValue}
               onKeyPress={this.handleEnterKey}
               onBlur={this.getOffEditMode}
-            />
+              onFocus={this.handleFocus} />
           ) : (
             <span>{this.state.value}</span>
           )}

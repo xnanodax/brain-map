@@ -1,6 +1,8 @@
 import React from 'react';
 import ClickToEdit from './../../click_to_edit/index.js';
 
+
+
 const CardIndexListItem = ({num, card, deckId, updateCard, deleteCard}) => (
   <div>
     <div className="container">

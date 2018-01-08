@@ -14,6 +14,10 @@ class brainMapSearch extends React.Component {
     };
   }
 
+  componentDidUnmount() {
+    console.log("search component unmounted")
+  }
+
   handleUpdatingTags(field) {
     return(e) => {
       this.setState({[field]: e.target.value}, () => {
@@ -38,7 +42,9 @@ class brainMapSearch extends React.Component {
 
         <div className="search-container">
           <h1>Search</h1>
-          <input className="search-input"
+          <input
+            autoFocus
+            className="search-input"
             onChange={this.handleUpdatingDecks('title')}
             placeholder={"search by deck name"}
             value={this.state.title}>
