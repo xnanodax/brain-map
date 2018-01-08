@@ -24,7 +24,7 @@ class Sidebar extends React.Component {
     );
 
     const currCard = (
-      <div class="card-status">
+      <div className="card-status">
         {currIndex} / {numCards.length} cards
       </div>
     );

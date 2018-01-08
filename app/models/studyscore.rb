@@ -26,6 +26,9 @@ class Studyscore < ApplicationRecord
   foreign_key: :card_id,
   class_name: :Card
 
+  has_one :deck,
+  through: :card,
+  source: :deck
 
 
 end

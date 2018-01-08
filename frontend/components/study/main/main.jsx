@@ -26,9 +26,10 @@ class Main extends React.Component {
     this.nextCard = this.play.bind(this);
   }
 
-  completed() {
-    this.setState({displayConfetti: !this.state.displayConfetti});
-  }
+  // completed() {
+  //   this.setState({displayConfetti: !this.state.displayConfetti});
+  // }
+
 
 
   componentDidMount() {

@@ -25,10 +25,6 @@ class User < ApplicationRecord
   foreign_key: :author_id,
   class_name: :Deck
 
-  # has_many :played_decks,
-  # through: :studyscores,
-  # source:
-
   has_many :own_cards,
   through: :own_decks,
   source: :cards
@@ -38,6 +34,10 @@ class User < ApplicationRecord
   primary_key: :id,
   foreign_key: :tester_id,
   class_name: :Studyscore
+
+  has_many :played_decks,
+  through: :studyscores,
+  source: :deck
 
 
 
@@ -69,5 +69,12 @@ class User < ApplicationRecord
 
   def ensure_session_token
     self.session_token ||= generate_session_token
+  end
+
+  def find_last_5_mastery_scores
+    self.played_decks
+      .order(:updated_at)
+      .distinct
+      .limit(5)
   end
 end

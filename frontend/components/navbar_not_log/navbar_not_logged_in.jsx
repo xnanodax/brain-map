@@ -13,8 +13,8 @@ class NavBarNotLoggedIn extends React.Component {
       e.preventDefault();
       const { login, history } = this.props;
       const demoUser = {
-        username: "password",
-        password: "password",
+        username: "demodemo",
+        password: "demodemo",
       };
 
       login(demoUser)

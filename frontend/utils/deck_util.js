@@ -42,3 +42,14 @@ export const searchDecks = (title) => (
     data: { search: { title }}
   })
 );
+
+// export const searchQuizletDecks = (title) => (
+//   $.ajax({
+//     method: 'GET',
+//     url: 'https://api.quizlet.com/2.0/search/sets',
+//     data: { q: title, client_id: '4G6wYES65N' },
+//     beforeSend: function(request) {
+//   request.setRequestHeader("Access-Control-Allow-Origin", "http://localhost:3333");
+// },
+//   })
+// )

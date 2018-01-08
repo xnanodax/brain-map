@@ -11,10 +11,10 @@ class DeckDetail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: true,
       deck: this.props.deck,
       displayDeleteConfirm: false,
       addedNewCard: false,
+      loading: true
     };
   }
 

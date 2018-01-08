@@ -10,11 +10,9 @@ import {
 
 const mapStateToProps = (state, ownProps) => {
   const decksArr = Object.values(state.entities.decks);
-  const cardsArr = Object.values(state.entities.cards) || 0;
   return {
     decks: decksArr.reverse(),
     deckCount: decksArr.length,
-    cards: cardsArr
   };
 };
 

@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# deckDefault1 = Deck.create!({ title: "Tap Here To Edit", author_id: user1.id })
+# deckDefault2 = Deck.create!({ title: "Tap Here To Edit", author_id: user2.id })
+# cardDefault1 = Card.create({ keyword: "tap to edit", body: "tap to edit", author_id: user1.id, deck_id: deckDefault1.id })
+# cardDefault2 = Card.create({ keyword: "tap to edit", body: "tap to edit", author_id: user2.id, deck_id: deckDefault2.id })
 
 def reset_pk_num
   model_names = [User, Deck, Card, Tag, Tagging, Studyscore]
@@ -22,132 +26,50 @@ def reset_pk_num
 end
 reset_pk_num
 
-user1 = User.create!({
-  username: "password",
-  email: "password",
-  password: "password"
-});
+user1 = User.create!({ username: "demodemo", email: "demodemo", password: "demodemo" });
+user2 = User.create!({ username: "password", email: "password", password: "password" });
 
-user2 = User.create!({
-  username: "password1",
-  email: "password1",
-  password: "password1"
-});
+deck1 = Deck.create!({ title: "How To Get Into App Academy", author_id: user1.id, mastery_percentage: 50 })
+deck2 = Deck.create!({ title: "Chemistry", author_id: user1.id })
+deck3 = Deck.create!({ title: "Hiragana", author_id: user2.id })
 
-user3 = User.create!({
-  username: "password2",
-  email: "password2",
-  password: "password2"
-});
-
-user4 = User.create!({
-  username: "password3",
-  email: "password3",
-  password: "password3"
-});
-
-user5 = User.create!({
-  username: "password4",
-  email: "password4",
-  password: "password4"
-});
-
-user6 = User.create!({
-  username: "password5",
-  email: "password5",
-  password: "password5"
-});
-
-user7 = User.create!({
-  username: "password6",
-  email: "password6",
-  password: "password6"
-});
-
-user8 = User.create!({
-  username: "password7",
-  email: "password7",
-  password: "password7"
-});
-
-
-deckDefault1 = Deck.create!({
-  title: "Tap Here To Edit",
-  author_id: user1.id,
-  })
-
-deckDefault2 = Deck.create!({
-  title: "Tap Here To Edit",
-  author_id: user2.id,
-  })
-
-
-deck1 = Deck.create!({
-  title: "How To Get Into App Academy",
-  author_id: user1.id,
-  mastery_percentage: 50
-})
-
-deck2 = Deck.create!({
-  title: "Chemistry",
-  author_id: user1.id
-})
-
-cardDefault1 = Card.create({
-  keyword: "tap to edit",
-  body: "tap to edit",
-  author_id: user1.id,
-  deck_id: deckDefault1.id
-  })
-
-cardDefault2 = Card.create({
-  keyword: "tap to edit",
-  body: "tap to edit",
-  author_id: user2.id,
-  deck_id: deckDefault2.id
-  })
 
 card1 = Card.create!({
-  keyword: ".select",
-  body: "Returns an array containing all elements of enum for which the given block returns a true value.",
-  author_id: user1.id,
-  deck_id: deck1.id
-  })
+  keyword: ".select", author_id: user1.id, deck_id: deck1.id,
+  body: "Returns an array containing all elements of enum for which the given block returns a true value." })
 
 card2 = Card.create!({
-  keyword: ".reject",
-  body: "Returns an array for all elements of enum for which the given block returns false.",
-  author_id: user1.id,
-  deck_id: deck1.id
-  })
+  keyword: ".reject", author_id: user1.id, deck_id: deck1.id,
+  body: "Returns an array for all elements of enum for which the given block returns false." })
 
 card3 = Card.create!({
-  keyword: ".uniq",
-  body: "Returns a new array by removing duplicate values in self.",
-  author_id: user1.id,
-  deck_id: deck1.id
-  })
+  keyword: ".uniq", author_id: user1.id, deck_id: deck1.id,
+  body: "Returns a new array by removing duplicate values in self." })
 # -------
 card4 = Card.create!({
-  keyword: "electron",
-  body: "negatively charged particles",
-  author_id: user2.id,
-  deck_id: deck2.id
-  })
+  keyword: "electron", author_id: user2.id, deck_id: deck2.id,
+  body: "negatively charged particles" })
 
 card5 = Card.create!({
-  keyword: "protons",
-  body: "postively charged particles found in the nucleus",
-  author_id: user2.id,
-  deck_id: deck2.id
-  })
+  keyword: "protons", author_id: user2.id, deck_id: deck2.id,
+  body: "postively charged particles found in the nucleus" })
 
 card6 = Card.create!({
-  keyword: "neutrons",
-  body: "neutral charged particles found in the nucleus",
-  author_id: user2.id,
-  deck_id: deck2.id
-  })
+  keyword: "neutrons", author_id: user2.id, deck_id: deck2.id,
+  body: "neutral charged particles found in the nucleus" })
+
+Card.create!({ keyword: "あ", body: "a", author_id: user2.id, deck_id: deck3.id })
+Card.create!({ keyword: "い", body: "i", author_id: user2.id, deck_id: deck3.id})
+Card.create!({ keyword: "う", body: "u", author_id: user2.id, deck_id: deck3.id})
+Card.create!({ keyword: "え", body: "e", author_id: user2.id, deck_id: deck3.id})
+Card.create!({ keyword: "お", body: "o", author_id: user2.id, deck_id: deck3.id})
+Card.create!({ keyword: "か", body: "ka", author_id: user2.id, deck_id: deck3.id})
+Card.create!({ keyword: "き", body: "ki", author_id: user2.id, deck_id: deck3.id})
+Card.create!({ keyword: "く", body: "ku", author_id: user2.id, deck_id: deck3.id})
+Card.create!({ keyword: "け", body: "ke", author_id: user2.id, deck_id: deck3.id})
+Card.create!({ keyword: "こ", body: "ko", author_id: user2.id, deck_id: deck3.id})
+
+
 
 tag1 = Tag.create!({name: "science"})
 tag2 = Tag.create!({name: "mathematics"})
@@ -165,42 +87,16 @@ tag13 = Tag.create!({name: "k-6"})
 tag14 = Tag.create!({name: "7-12"})
 tag15 = Tag.create!({name: "university"})
 
-tagging1 = Tagging.create!({deck_id: deck1.id, tag_id: tag7.id})
-tagging2 = Tagging.create!({deck_id: deck1.id, tag_id: tag6.id})
-tagging3 = Tagging.create!({deck_id: deck2.id, tag_id: tag1.id})
-tagging4 = Tagging.create!({deck_id: deck2.id, tag_id: tag13.id})
+Tagging.create!({deck_id: deck1.id, tag_id: tag7.id})
+Tagging.create!({deck_id: deck1.id, tag_id: tag6.id})
+Tagging.create!({deck_id: deck2.id, tag_id: tag1.id})
+Tagging.create!({deck_id: deck2.id, tag_id: tag13.id})
 
-studyscore1 = Studyscore.create!({
-  card_id: card1.id,
-  tester_id: user1.id,
-  learning_score: 5})
 
-studyscore2 = Studyscore.create!({
-  card_id: card2.id,
-  tester_id: user1.id,
-  learning_score: 4});
-
-studyscore3 = Studyscore.create!({
-  card_id: card3.id,
-  tester_id: user1.id,
-  learning_score: 2});
-
-studyscore4 = Studyscore.create!({
-  card_id: card4.id,
-  tester_id: user2.id,
-  learning_score: 1})
-
-studyscore5 = Studyscore.create!({
-  card_id: card5.id,
-  tester_id: user2.id,
-  learning_score: 2})
-
-studyscore6 = Studyscore.create!({
-  card_id: card6.id,
-  tester_id: user2.id,
-  learning_score: 1})
-
-studyscore7 = Studyscore.create!({
-  card_id: card6.id,
-  tester_id: user1.id,
-  learning_score: 1})
+studyscore1 = Studyscore.create!({ card_id: card1.id, tester_id: user1.id, learning_score: 5})
+studyscore2 = Studyscore.create!({ card_id: card2.id, tester_id: user1.id, learning_score: 4});
+studyscore3 = Studyscore.create!({ card_id: card3.id, tester_id: user1.id, learning_score: 2});
+studyscore4 = Studyscore.create!({ card_id: card4.id, tester_id: user2.id, learning_score: 1})
+studyscore5 = Studyscore.create!({ card_id: card5.id, tester_id: user2.id, learning_score: 2})
+studyscore6 = Studyscore.create!({ card_id: card6.id, tester_id: user2.id, learning_score: 1})
+studyscore7 = Studyscore.create!({ card_id: card6.id, tester_id: user1.id, learning_score: 1})

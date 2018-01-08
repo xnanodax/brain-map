@@ -20,10 +20,15 @@ import Root from './components/root';
 // window.logout = logout;
 
 // import * as searchAPIUtil from './utils/search_util';
+// window.searchTags = searchTags;
+// window.searchDecks = searchDecks;
+
+import * as DeckAPIUtil from './utils/deck_util'
+window.searchQuizletDecks = DeckAPIUtil.searchQuizletDecks
+
+
 import { searchTags } from './actions/tagging_action';
 import { searchDecks } from './actions/deck_actions';
-window.searchTags = searchTags;
-window.searchDecks = searchDecks;
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById('root');
