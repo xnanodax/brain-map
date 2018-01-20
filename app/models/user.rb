@@ -40,7 +40,6 @@ class User < ApplicationRecord
   source: :deck
 
 
-
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
 
@@ -71,14 +70,22 @@ class User < ApplicationRecord
     self.session_token ||= generate_session_token
   end
 
-  def find_last_5_mastery_scores
-    self.studyscores
-      .scoping do
-        played_decks
-          .order('studyscores.updated_at DESC')
-          .limit(5)
-      end
-      .pluck('decks.id')
-      .uniq
+  def five_recently_played_decks
+
+    self.played_decks
+      .select('decks.id, MAX("studyscores"."updated_at") as last_updated_card')
+      .joins(:studyscores)
+      .group('decks.id')
+      .order('last_updated_card DESC')
+      .limit(5)
+  end
+
+  def most_popular_decks_created
+    self.own_decks
+      .select('decks.*, COUNT(*)/2 as studyscores')
+      .joins(:studyscores)
+      .group(:id)
+      .order('studyscores DESC')
+
   end
 end

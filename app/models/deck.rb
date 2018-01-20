@@ -22,7 +22,8 @@ class Deck < ApplicationRecord
   primary_key: :id,
   foreign_key: :deck_id,
   class_name: :Card,
-  dependent: :destroy
+  dependent: :destroy,
+  inverse_of: :deck
 
   has_many :taggings,
   primary_key: :id,

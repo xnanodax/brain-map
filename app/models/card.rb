@@ -18,7 +18,9 @@ class Card < ApplicationRecord
   belongs_to :deck,
   primary_key: :id,
   foreign_key: :deck_id,
-  class_name: :Deck
+  class_name: :Deck,
+  inverse_of: :cards
+
 
   has_many :studyscores,
   primary_key: :id,
