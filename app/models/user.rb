@@ -71,7 +71,6 @@ class User < ApplicationRecord
   end
 
   def five_recently_played_decks
-
     self.played_decks
       .select('decks.id, MAX("studyscores"."updated_at") as last_updated_card')
       .joins(:studyscores)
@@ -80,12 +79,22 @@ class User < ApplicationRecord
       .limit(5)
   end
 
-  def most_popular_decks_created
+  def most_played_decks
     self.own_decks
-      .select('decks.*, COUNT(*)/2 as studyscores')
-      .joins(:studyscores)
-      .group(:id)
-      .order('studyscores DESC')
+    .select("decks.id, COUNT(DISTINCT studyscores.tester_id) as num_plays")
+    .joins(:studyscores)
+    .group("decks.id")
+    .order('freq_counter DESC')
+    .limit(5)
+
 
   end
+  # self.own_decks
+  # .select('decks.*, COUNT("cards"."id")')
+  # .joins(:cards)
+  # .joins('LEFT OUTER JOIN "cards" ON "studyscores"."card_id" = "cards"."id"')
+  # .group('decks.id')
+  # .order('num_studyscores DESC')
+
+
 end
