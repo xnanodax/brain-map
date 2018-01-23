@@ -6,6 +6,8 @@ export const REMOVE_DECK = "REMOVE_DECK";
 export const RECEIVE_DECK_ERRORS = "RECEIVE_DECK_ERRORS";
 export const CLEAR_DECKS = "CLEAR_DECKS";
 export const RECEIVE_DECK_SEARCH_RESULTS = "RECEIVE_DECK_SEARCH_RESULTS";
+export const RECEIVE_POPULAR_DECKS = "RECEIVE_POPULAR_DECKS";
+export const RECEIVE_RECENT_DECKS = "RECEIVE_RECENT_DECKS";
 
 const receiveDecks = decks => ({
   type: RECEIVE_DECKS,
@@ -35,6 +37,16 @@ const removeDecks = () => ({
 const receiveDeckSearchResults = searchResults => ({
   type: RECEIVE_DECK_SEARCH_RESULTS,
   searchResults
+});
+
+const receievePopularDecks = popularDeckResults => ({
+  type: RECEIVE_POPULAR_DECKS,
+  popularDeckResults
+});
+
+const receiveRecentDecks = recentDeckResults => ({
+  type: RECEIVE_RECENT_DECKS,
+  recentDeckResults
 });
 
 
@@ -76,3 +88,7 @@ export const searchDecks = title => dispatch => (
   DeckAPIUtil.searchDecks(title)
     .then(decks => dispatch(receiveDeckSearchResults(decks)))
 );
+
+// export const popularDeck = () => (
+//
+// );

@@ -43,6 +43,20 @@ export const searchDecks = (title) => (
   })
 );
 
+export const popularDecks = () => (
+  $.ajax({
+    method: 'GET',
+    url: '/api/users/popular_decks'
+  })
+);
+
+export const recentDecks = () => (
+  $.ajax({
+    method: 'GET',
+    url: '/api/users/recent_decks'
+  })
+);
+
 // export const searchQuizletDecks = (title) => (
 //   $.ajax({
 //     method: 'GET',

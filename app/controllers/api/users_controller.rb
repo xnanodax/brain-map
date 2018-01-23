@@ -12,6 +12,8 @@ class Api::UsersController < ApplicationController
 
   def recent_decks
     @recent_decks = current_user.five_recently_played_decks
+    @recent_decks_order = @recent_decks.map(&:id)
+
 
     if @recent_decks
       render :recent_decks
@@ -23,6 +25,7 @@ class Api::UsersController < ApplicationController
   def popular_decks
     @popular_decks = current_user.five_most_popular_decks
 
+    @popular_decks_order = @popular_decks.map { |deck| deck.id }
     if @popular_decks
       render :popular_decks
     else

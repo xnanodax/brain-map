@@ -23,8 +23,7 @@ import Root from './components/root';
 // window.searchTags = searchTags;
 // window.searchDecks = searchDecks;
 
-import * as DeckAPIUtil from './utils/deck_util'
-window.searchQuizletDecks = DeckAPIUtil.searchQuizletDecks
+import * as DeckAPIUtil from './utils/deck_util';
 
 
 import { searchTags } from './actions/tagging_action';
@@ -47,7 +46,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.dispatch = store.dispatch;
   window.getState = store.getState;
-
+  window.popularDecks= DeckAPIUtil.popularDecks;
+  window.recentDecks = DeckAPIUtil.recentDecks;
 
   ReactDOM.render(<Root store={store} />, root);
 });

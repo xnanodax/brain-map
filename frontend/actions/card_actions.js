@@ -6,8 +6,6 @@ export const RECEIVE_CARD = "RECEIVE_CARD";
 export const REMOVE_CARD = "REMOVE_CARD";
 export const RECEIVE_CARD_ERRORS = "RECEIVE_CARD_ERRORS";
 
-
-
 const receiveCards = cards => ({
   type: RECEIVE_CARDS,
   cards
