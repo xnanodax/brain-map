@@ -27,6 +27,11 @@ Rails.application.routes.draw do
       patch "update_by_card", on: :collection
     end
     resources :tags, only: [:index, :create, :show, :destroy]
+
+    resources :users, only: [] do
+      get "recent_decks", on: :collection
+      get "popular_decks", on: :collection
+    end
   end
 
   root to: "static_pages#root"
