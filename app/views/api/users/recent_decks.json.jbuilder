@@ -1,5 +1,5 @@
 json.order do
-  json.array! @recent_decks_order
+  json.array! @recent_decks.pluck(:id)
 end
 
 @recent_decks.each do |deck|

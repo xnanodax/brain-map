@@ -75,7 +75,7 @@ class User < ApplicationRecord
       .select('decks.id, decks.title, MAX("studyscores"."updated_at") as last_updated_card')
       .joins(:studyscores)
       .group('decks.id')
-      .order('last_updated_card DESC')
+      .order('MAX("studyscores"."updated_at") DESC')
       .limit(5)
   end
 
@@ -84,7 +84,7 @@ class User < ApplicationRecord
     .select("decks.id, decks.title, COUNT(DISTINCT studyscores.tester_id) as num_plays")
     .joins(:studyscores)
     .group("decks.id")
-    .order('num_plays DESC')
+    .order('COUNT(DISTINCT studyscores.tester_id) DESC')
     .limit(5)
   end
 
