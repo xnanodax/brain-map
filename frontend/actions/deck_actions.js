@@ -89,6 +89,12 @@ export const searchDecks = title => dispatch => (
     .then(decks => dispatch(receiveDeckSearchResults(decks)))
 );
 
-// export const popularDeck = () => (
-//
-// );
+export const popularDecks = () => dispatch => (
+  DeckAPIUtil.popularDecks()
+    .then(serverDecks => dispatch(receievePopularDecks(serverDecks)))
+);
+
+export const recentDecks = () => dispatch => (
+  DeckAPIUtil.recentDecks()
+    .then(serverDecks => dispatch(receiveRecentDecks(serverDecks)))
+);

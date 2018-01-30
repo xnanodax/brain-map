@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-
 // import * as StudyScoreUtil from './utils/studyscore_util';
 // import { fetchScores, fetchScore, addScore, recordScore } from './actions/study_actions';
 // window.fetchScores = fetchScores;
@@ -23,11 +22,17 @@ import Root from './components/root';
 // window.searchTags = searchTags;
 // window.searchDecks = searchDecks;
 
-import * as DeckAPIUtil from './utils/deck_util';
+// import * as DeckAPIUtil from './utils/deck_util';
+
+
+
 
 
 import { searchTags } from './actions/tagging_action';
-import { searchDecks } from './actions/deck_actions';
+import {
+  popularDecks,
+  recentDecks
+} from './actions/deck_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById('root');
@@ -37,17 +42,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const preloadedState = {
       session: {currentUser: window.currentUser}
     };
-
     store = configureStore(preloadedState);
     delete window.currentUser;
   } else {
     store = configureStore();
   }
 
+  window.store = store;
   window.dispatch = store.dispatch;
   window.getState = store.getState;
-  window.popularDecks= DeckAPIUtil.popularDecks;
-  window.recentDecks = DeckAPIUtil.recentDecks;
+  window.popularDecks= popularDecks;
+  window.recentDecks = recentDecks;
 
   ReactDOM.render(<Root store={store} />, root);
 });

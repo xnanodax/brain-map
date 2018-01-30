@@ -2,8 +2,9 @@ import React from 'react';
 import { BarLoader } from 'react-spinners';
 import { Link } from 'react-router-dom';
 
-const DeckListIndexItem = ({deck}) => (
-  (deck ? (
+const DeckListIndexItem = (props) => {
+  const deck = props.deck;
+  return (deck ? (
     <Link to={`/deck/view/${deck.id}`}>
       <li className="deck-index-item-outer gray">
         <ul className="deck_index_item_border">
@@ -20,10 +21,10 @@ const DeckListIndexItem = ({deck}) => (
         loading={this.state.loading}
       />
     </div>
-  ) )
+  ) );
 
 
-);
+};
 
 
 

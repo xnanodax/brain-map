@@ -20,9 +20,8 @@ import merge from 'lodash/merge';
 
 const decksReducer = (state = {}, action) => {
   Object.freeze(state);
-  let newState;
-  let cardId;
-  let deckId;
+  let newState, cardId, deckId;
+
   switch(action.type) {
     case RECEIVE_DECKS:
       return merge({}, action.decks);
@@ -48,8 +47,6 @@ const decksReducer = (state = {}, action) => {
       const cardIndex = cardArr.indexOf(cardId);
       cardArr.splice(cardIndex, 1);
       return newState;
-      // newState[deckId].cards.push(cardId);
-      // return newState;
     default:
       return state;
   }

@@ -19,7 +19,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchDecks: () => dispatch(fetchDecks()),
   fetchDeck: (id) => dispatch(fetchDeck(id)),
-  clearDecks: () => dispatch(clearDecks())
+  clearDecks: () => dispatch(clearDecks()),
 });
 
 export default withRouter(

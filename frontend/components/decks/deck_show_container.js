@@ -31,8 +31,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
    };
 };
 
-export default withRouter(
+export default
   connect(
     mapStateToProps,
     mapDispatchToProps
-  )(DeckShow));
+  )(DeckShow);

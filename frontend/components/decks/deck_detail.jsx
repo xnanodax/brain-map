@@ -23,7 +23,7 @@ class DeckDetail extends React.Component {
     const { deleteDeck, history } = this.props;
     return (e) => {
       deleteDeck(id)
-        .then(() =>history.push("/deck"));
+        .then(() => history.push("/deck"));
     };
   }
 
