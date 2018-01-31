@@ -4,12 +4,13 @@ import { Link } from 'react-router-dom';
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
+    this.blankState = {
       username: "",
       email: "",
       password: "",
       displayAns: true
     };
+    this.state = this.blankState;
     this.rotateCardOutline = this.rotateCardOutline.bind(this);
     this.revealAns = this.revealAns.bind(this);
     this.play = this.play.bind(this);
@@ -20,8 +21,12 @@ class SessionForm extends React.Component {
     this.props.clearErrors();
   }
 
-  componentDidMount() {
-    this.props.clearErrors();
+
+  componentWillReceiveProps(newProps) {
+    if (this.props.match.path !== newProps.match.path) {
+      this.props.clearErrors();
+      this.setState(this.blankState);
+    }
   }
 
   handleTyping(field) {
@@ -34,7 +39,6 @@ class SessionForm extends React.Component {
     return (e) => {
       e.preventDefault();
       this.props.action(this.state);
-        // .then(() => this.props.history.push('/deck'));
     };
   }
 
@@ -117,6 +121,7 @@ class SessionForm extends React.Component {
                   <label>
                     <input
                       type="text"
+                      autoFocus
                       onChange= {this.handleTyping('username')}
                       value={this.state.username.trim()}
                       placeholder="Username"
