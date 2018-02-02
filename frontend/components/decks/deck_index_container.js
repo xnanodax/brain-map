@@ -9,6 +9,7 @@ import {
 } from '../../actions/deck_actions';
 
 const mapStateToProps = (state, ownProps) => {
+  console.log(ownProps);
   const decksArr = Object.values(state.entities.decks);
   return {
     decks: decksArr.reverse(),

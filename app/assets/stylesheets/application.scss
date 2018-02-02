@@ -15,12 +15,12 @@
  */
 
 /*CSS Reset*/
-@import "./base/reset.scss";
+@import "./base/reset";
 
 /*Core*/
-@import "./base/colors.scss";
-@import "./base/fonts.scss";
-@import "./base/layout.scss";
+@import "./base/colors";
+@import "./base/fonts";
+@import "./base/layout";
 
 /*Components*/
 @import "./components/*";

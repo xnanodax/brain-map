@@ -21,10 +21,7 @@ class DeckDetail extends React.Component {
 
   handleDeleteAfterRedirect(id) {
     const { deleteDeck, history } = this.props;
-    return (e) => {
-      deleteDeck(id)
-        .then(() => history.push("/deck"));
-    };
+    return (e) => deleteDeck(id);
   }
 
   render() {

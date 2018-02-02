@@ -29,6 +29,10 @@ a {
 	color: $dark-gray;
 }
 
+a:hover {
+	color:$green;
+}
+
 .logo a{
 	font-family: $serif;
 	color: $green;

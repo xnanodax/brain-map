@@ -23,11 +23,10 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  // let action = (ownProps.match.path === '/:deckId/edit') ? updateDeck : createDeck;
   return {
     fetchDeck: (id) => dispatch(fetchDeck(id)),
     updateDeck: (deck)=> dispatch(updateDeck(deck)),
-    deleteDeck: (deckId) => dispatch(deleteDeck(deckId))
+    deleteDeck: (deckId) => dispatch(deleteDeck(deckId)).then(() => history.push("/deck"))
    };
 };
 

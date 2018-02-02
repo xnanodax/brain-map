@@ -17,8 +17,7 @@ class NavBarNotLoggedIn extends React.Component {
         password: "demodemo",
       };
 
-      login(demoUser)
-        .then(() => history.push('/deck'));
+      login(demoUser);
     };
   }
 

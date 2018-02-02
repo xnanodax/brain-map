@@ -84,7 +84,7 @@ class SessionForm extends React.Component {
 
     if ( formType === "Sign Up") {
       sessionHeader = <h1>{ formType } for free</h1>;
-      bottomLink = <li>Have an account? <Link to="/login">Log In</Link></li>;
+      bottomLink = <li>Have an account? <Link to="/login" className="green-session">Log In</Link></li>;
       disclousure = (<li>
                         <div className="disclosure">
                           By clicking Sign up, I agree to the Terms of Service and Privacy Policy.
@@ -105,7 +105,7 @@ class SessionForm extends React.Component {
       );
     } else {
       sessionHeader = <h1>{ formType }</h1>;
-      bottomLink = <li>Need an account? <Link to="/signup">Sign Up</Link></li>;
+      bottomLink = <li>Need an account? <Link to="/signup" className="green-session">Sign Up</Link></li>;
     }
 
     if (displayAns) {
@@ -165,7 +165,7 @@ class SessionForm extends React.Component {
       <ul className="session-form-container">
         <div className="intro-ad">
           <div className="inner-card-container">
-            <div className='position-intro-card'>
+            <div>
               <div
                 ref={(el) => {this.card = el;} }
                 onClick={(e) => this.play(e)}
@@ -177,9 +177,9 @@ class SessionForm extends React.Component {
                 </div>
               </div>
             </div>
+          { cardDesc }
         </div>
-              { cardDesc }
-          </div>
+        </div>
 
         <div className="session-form-outer">
           <div className="session-form">

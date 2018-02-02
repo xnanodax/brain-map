@@ -22,22 +22,24 @@ import {
 // <Switch>
 const App = () => (
     <div className="app">
+
+
+      <Route path="/deck" component={NavBarLoggedInContainer} />
+      <ProtectedRoute path="/deck" component={DeckContainer} />
+      <ProtectedRoute exact path="/deck/view/:deckId" component={DeckShowContainer} />
+
+      <ProtectedRoute path="/deck/new" component={DeckFormContainer} />
+      <ProtectedRoute path="/deck/view/:deckId/new" component={CardFormContainer} />
+      <ProtectedRoute path="/study/:deckId/" component={NavBarLoggedInContainer} />
+      <ProtectedRoute path="/study/:deckId/" component={StudyContainer} />
+      <ProtectedRoute path="/search/" component={SearchContainer} />
+
       <Switch>
         <Redirect exact to="/login" from="/" />
         <AuthRoute exact path="/login" component={HomePageNotLoggedInContainer} />
         <AuthRoute exact path="/signup" component={HomePageNotLoggedInContainer} />
+        <Route render={() => <Redirect to="/" />} />
       </Switch>
-
-      <Route path="/deck" component={NavBarLoggedInContainer} />
-      <Route path="/deck" component={DeckContainer} />
-      <Route exact path="/deck/view/:deckId" component={DeckShowContainer} />
-
-
-      <Route path="/deck/new" component={DeckFormContainer} />
-      <Route path="/deck/view/:deckId/new" component={CardFormContainer} />
-      <Route path="/study/:deckId/" component={NavBarLoggedInContainer} />
-      <Route path="/study/:deckId/" component={StudyContainer} />
-      <Route path="/search/" component={SearchContainer} />
     </div>
 );
 

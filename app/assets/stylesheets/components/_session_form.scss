@@ -100,3 +100,12 @@
 .position-intro-card{
   // padding: 15px;
 }
+
+.green-session {
+	display: inline-block;
+	color: $green;
+}
+
+.green-session:hover {
+  color: $darkest-green;
+}
