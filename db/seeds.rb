@@ -11,6 +11,13 @@
 # cardDefault1 = Card.create({ keyword: "tap to edit", body: "tap to edit", author_id: user1.id, deck_id: deckDefault1.id })
 # cardDefault2 = Card.create({ keyword: "tap to edit", body: "tap to edit", author_id: user2.id, deck_id: deckDefault2.id })
 
+User.destroy_all
+Deck.destroy_all
+Card.destroy_all
+Tag.destroy_all
+Tagging.destroy_all
+Studyscore.destroy_all
+
 def reset_pk_num
   model_names = [User, Deck, Card, Tag, Tagging, Studyscore]
 
@@ -29,7 +36,7 @@ reset_pk_num
 user1 = User.create!({ username: "demodemo", email: "demodemo", password: "demodemo" });
 user2 = User.create!({ username: "password", email: "password", password: "password" });
 
-deck1 = Deck.create!({ title: "How To Get Into App Academy", author_id: user1.id, mastery_percentage: 50 })
+deck1 = Deck.create!({ title: "How To Get Into App Academy", author_id: user1.id })
 deck2 = Deck.create!({ title: "Chemistry", author_id: user1.id })
 deck3 = Deck.create!({ title: "Hiragana", author_id: user2.id })
 
