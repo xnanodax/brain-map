@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const DeckListIndexItem = (props) => {
   const deck = props.deck;
   return (deck ? (
-    <Link to={`/deck/${deck.id}`}>
+    <Link to={`/deck/view/${deck.id}`}>
       <li className="deck-index-item-outer gray">
         <ul className="deck_index_item_border">
           <li className="list-title">{deck.title}</li>

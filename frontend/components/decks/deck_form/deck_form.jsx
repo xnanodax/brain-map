@@ -12,7 +12,6 @@ class DeckForm extends React.Component {
   handleSubmit(e) {
     const { createDeck, history } = this.props;
       e.preventDefault();
-
       if (this.state.title === "") {
         return createDeck(this.state);
       } else {
@@ -24,7 +23,7 @@ class DeckForm extends React.Component {
   componentWillReceiveProps(newProps) {
     const { deck, errors } = newProps;
     if (errors.length > 0) return undefined;
-    this.props.history.push(`/deck/${deck.id}`);
+    this.props.history.push(`/deck/view/${deck.id}`);
   }
 
   handleUpdating(field) {

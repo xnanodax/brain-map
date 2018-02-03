@@ -25,17 +25,16 @@ const App = () => (
 
       <Redirect exact to="/login" from="/" />
       <ProtectedRoute path="/deck" component={DeckContainer} />
-      <ProtectedRoute exact path="/deck/:deckId" component={DeckShowContainer} />
+      <ProtectedRoute exact path="/deck/view/:deckId" component={DeckShowContainer} />
 
       <ProtectedRoute path="/deck/new" component={DeckFormContainer} />
-      <ProtectedRoute path="/deck/:deckId/new" component={CardFormContainer} />
+      <ProtectedRoute path="/deck/view/:deckId/new" component={CardFormContainer} />
       <ProtectedRoute path="/study/:deckId/" component={NavBarLoggedInContainer} />
       <ProtectedRoute path="/study/:deckId/" component={StudyContainer} />
       <ProtectedRoute path="/search/" component={SearchContainer} />
 
       <Switch>
         <ProtectedRoute path="/deck" component={NavBarLoggedInContainer} />
-
         <AuthRoute exact path="/login" component={HomePageNotLoggedInContainer} />
         <AuthRoute exact path="/signup" component={HomePageNotLoggedInContainer} />
         <Route render={() => <Redirect to="/login" />} />
