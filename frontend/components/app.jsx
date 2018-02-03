@@ -19,31 +19,33 @@ import {
 
 
 //Auth Route is for when you login, what you shouldn't see.
-// <Switch>
 const App = () => (
     <div className="app">
 
 
-      <Route path="/deck" component={NavBarLoggedInContainer} />
+      <Redirect exact to="/login" from="/" />
       <ProtectedRoute path="/deck" component={DeckContainer} />
-      <ProtectedRoute exact path="/deck/view/:deckId" component={DeckShowContainer} />
+      <ProtectedRoute exact path="/deck/:deckId" component={DeckShowContainer} />
 
       <ProtectedRoute path="/deck/new" component={DeckFormContainer} />
-      <ProtectedRoute path="/deck/view/:deckId/new" component={CardFormContainer} />
+      <ProtectedRoute path="/deck/:deckId/new" component={CardFormContainer} />
       <ProtectedRoute path="/study/:deckId/" component={NavBarLoggedInContainer} />
       <ProtectedRoute path="/study/:deckId/" component={StudyContainer} />
       <ProtectedRoute path="/search/" component={SearchContainer} />
 
       <Switch>
-        <Redirect exact to="/login" from="/" />
+        <ProtectedRoute path="/deck" component={NavBarLoggedInContainer} />
+
         <AuthRoute exact path="/login" component={HomePageNotLoggedInContainer} />
         <AuthRoute exact path="/signup" component={HomePageNotLoggedInContainer} />
-        <Route render={() => <Redirect to="/" />} />
+        <Route render={() => <Redirect to="/login" />} />
+
       </Switch>
     </div>
 );
 
-// <Switch>
+
+
 export default App;
 
 

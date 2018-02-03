@@ -23,8 +23,8 @@ class DeckForm extends React.Component {
 
   componentWillReceiveProps(newProps) {
     const { deck, errors } = newProps;
-    if (errors.length > 0) return undefined; 
-    this.props.history.push(`/deck/view/${deck.id}`);
+    if (errors.length > 0) return undefined;
+    this.props.history.push(`/deck/${deck.id}`);
   }
 
   handleUpdating(field) {

@@ -12,7 +12,7 @@ class CardForm extends React.Component {
   componentWillReceiveProps(newProps) {
     const { card, errors, deckId } = newProps;
     if (errors.length > 0) return undefined;
-    this.props.history.push(`/deck/view/${deckId}`);
+    this.props.history.push(`/deck/${deckId}`);
   }
 
   handleSubmit() {
