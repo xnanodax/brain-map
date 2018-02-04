@@ -19,7 +19,7 @@ const CardIndexListItem = ({num, card, deckId, updateCard, deleteCard, errors, c
 
         <div className="text-xsmall">
 
-          <i className="fa fa-times fa-1x" aria-hidden="true" onClick={() => deleteCard(deckId, card.id)}>
+          <i className="fa fa-times fa-1x" aria-hidden="true" onClick={() => deleteCard(card.id)}>
           </i>&nbsp;&nbsp;
           {num}
         </div>
@@ -29,7 +29,7 @@ const CardIndexListItem = ({num, card, deckId, updateCard, deleteCard, errors, c
             endEditing={
               (value) => {
                 card.keyword = value;
-                updateCard(deckId, card).then(()=> clearCardErrors());
+                updateCard(card);
               }
             }
           >
@@ -42,7 +42,7 @@ const CardIndexListItem = ({num, card, deckId, updateCard, deleteCard, errors, c
             endEditing={
               (value) => {
                 card.body = value;
-                updateCard(deckId, card);
+                updateCard(card);
               }
             }
           >

@@ -5,10 +5,10 @@ export const fetchCards = deckId => (
   })
 );
 
-export const fetchCard = (deckId, cardId) => (
+export const fetchCard = (cardId) => (
   $.ajax({
     method: 'GET',
-    url: `/api/decks/${deckId}/cards/${cardId}`,
+    url: `/api/cards/${cardId}`,
   })
 );
 
@@ -20,17 +20,17 @@ export const createCard = (deckId, card) => {
   });
 };
 
-export const updateCard = (deckId, card) => (
+export const updateCard = (card) => (
   $.ajax({
     method: 'PATCH',
-    url: `/api/decks/${deckId}/cards/${card.id}`,
+    url: `/api/cards/${card.id}`,
     data: { card }
   })
 );
 
-export const deleteCard = (deckId, id) => (
+export const deleteCard = (id) => (
   $.ajax({
     method: 'DELETE',
-    url: `/api/decks/${deckId}/cards/${id}`,
+    url: `/api/cards/${id}`,
   })
 );

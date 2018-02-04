@@ -32,7 +32,7 @@ class Api::CardsController < ApplicationController
     if @card && @card.update_attributes(card_params)
       render :show
     elsif @card
-      render json: [@card.id].concat(@card.errors.full_messages), status: 424
+      render json: [@card.id].concat([Time.now]).concat(@card.errors.full_messages), status: 424
     else
       render json: ["can't edit this card! it's not yours."], status: 422
     end

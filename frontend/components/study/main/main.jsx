@@ -50,10 +50,6 @@ class Main extends React.Component {
       });
 
     }
-
-
-
-
   }
 
   revealAns(e) {
@@ -189,20 +185,17 @@ class Main extends React.Component {
           <div className="finished-container">
             <h1>Woohoo!</h1>
             <h1> You finished! </h1>
-              <Link to ="/deck">
+              { deck && <Link to ={`/deck/view/${deck.id}`}>
                 <button className="studyButton">
                   go back!
                 </button>
-              </Link>
+              </Link> }
 
               <Link to ="/search">
                 <button className="studyButton">
                   study other decks
                 </button>
               </Link>
-
-
-              <Confetti active={ () => this.completed() } config={ config }/>
 
           </div>
         ) }

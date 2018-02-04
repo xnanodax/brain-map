@@ -15,12 +15,13 @@ Rails.application.routes.draw do
     resources :users, only: [:create]
     resources :decks, only: [:index, :create, :show, :edit, :update, :destroy] do
       resources :taggings, only: [:index, :create, :show, :destroy]
-      resources :cards, only: [:index, :create, :show, :edit, :update, :destroy]
+      resources :cards, only: [:index, :create]
       resources :studyscore, only: [:index]
       resources :masteries, only: [:index] do
         patch "record", on: :collection
       end
     end
+    resources :cards, only: [:show, :edit, :update, :destroy]
 
     resources :studyscore, only: [] do
       get "fetch", on: :collection

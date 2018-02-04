@@ -45,14 +45,14 @@ export const createCard = (deckId, card) => dispatch => (
     .then(() => dispatch(fetchDecks()))
 );
 
-export const updateCard = (deckId, card) => dispatch => (
-  CardAPIUtil.updateCard(deckId, card)
+export const updateCard = (card) => dispatch => (
+  CardAPIUtil.updateCard(card)
     .then((updatedCard) => dispatch(receiveCard(updatedCard)),
           (errors) => dispatch(receiveCardErrors(errors.responseJSON)))
 );
 
-export const deleteCard = (deckId, cardId) => dispatch => (
-  CardAPIUtil.deleteCard(deckId, cardId)
+export const deleteCard = (cardId) => dispatch => (
+  CardAPIUtil.deleteCard(cardId)
     .then((delCard) => dispatch(removeCard(delCard)),
           (errors) => dispatch(receiveCardErrors(errors.responseJSON)))
     .then(() => dispatch(fetchDecks()))

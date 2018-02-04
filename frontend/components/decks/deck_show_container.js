@@ -20,8 +20,9 @@ const mapStateToProps = (state, ownProps) => {
   const deckId = ownProps.match.params.deckId;
   const deck = state.entities.decks[deckId];
   const numCards = Object.keys(state.entities.cards).length;
-  const errors = state.errors.decks;
-  return { deckId, deck, numCards, errors };
+  const errors = state.errors.decks.slice(1) || [];
+  const timeUpdate = state.errors.decks[0] || null;
+  return { deckId, deck, numCards, errors, timeUpdate };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {

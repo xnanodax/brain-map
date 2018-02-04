@@ -20,7 +20,6 @@ class Api::DecksController < ApplicationController
     @deck = Deck.find_by(id: params[:id])
     if @deck
       @deck.mastery_score(current_user.id)
-
       render :show
     else
       render json: ["this deck does not exist"], status: 422
@@ -33,7 +32,7 @@ class Api::DecksController < ApplicationController
     if @deck && @deck.update_attributes(deck_params)
       render :show
     elsif @deck
-      render json: @deck.errors.full_messages, status: 424
+      render json: [Time.now].concat(@deck.errors.full_messages), status: 424
     else
       render json: ["can't edit this deck! it's not yours."], status: 422
     end
