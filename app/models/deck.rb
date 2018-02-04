@@ -10,7 +10,8 @@
 #
 
 class Deck < ApplicationRecord
-  validates :title, :author_id, presence: true
+  validates :author_id, presence: true
+  validates :title, length: { allow_blank: false }
 
   belongs_to :author,
   primary_key: :id,

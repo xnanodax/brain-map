@@ -11,8 +11,8 @@ const DecksErrorReducer = (state = [], action) => {
   switch(action.type) {
     case RECEIVE_DECKS:
       return [];
-    case RECEIVE_DECK:
-      return [];
+    // case RECEIVE_DECK:
+    //   return [];
     case REMOVE_DECK:
       return [];
     case RECEIVE_DECK_ERRORS:

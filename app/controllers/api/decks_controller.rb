@@ -27,18 +27,13 @@ class Api::DecksController < ApplicationController
     end
   end
 
-  def edit
-    @deck = current_user.decks.find_by(id: params[:id])
-  end
-
   def update
     @deck = current_user.own_decks.find_by(id: params[:id])
 
-    if @deck
-
-
-      @deck.update_attributes(deck_params)
+    if @deck && @deck.update_attributes(deck_params)
       render :show
+    elsif @deck
+      render json: @deck.errors.full_messages, status: 424
     else
       render json: ["can't edit this deck! it's not yours."], status: 422
     end
