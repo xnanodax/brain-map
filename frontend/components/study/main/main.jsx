@@ -162,7 +162,7 @@ class Main extends React.Component {
 
                 <div className="card-text"
                   ref={(el) => {this.text = el;} } >
-                  { displayAns === false ? card.keyword : card.body }
+                  { displayAns === false ? card.question : card.answer }
               </div>
             </div>
           </div>
