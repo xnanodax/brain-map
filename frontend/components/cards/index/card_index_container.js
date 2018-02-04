@@ -15,7 +15,7 @@ import {
 const mapStateToProps = (state, ownProps) => ({
   cards: Object.values(state.entities.cards),
   deckId: ownProps.match.params.deckId,
-  errors: state.errors.cards.slice(2) || [],
+  errors: state.errors.cards.length > 0 ? state.errors.cards.slice(2) : [],
   cardIdError: state.errors.cards[0] || null,
   timeUpdate: state.errors.cards[1] || null
 });

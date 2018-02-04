@@ -18,8 +18,6 @@ class TagIndex extends React.Component {
   componentWillReceiveProps(newProps) {
     const { fetchTaggings, deckId, tags } = this.props;
     const newDeckId = newProps.match.params.deckId;
-    console.warn("======================");
-    console.warn("taggings", "old", this.props, "new", newProps);
     if (deckId !== newDeckId) {
       fetchTaggings(newDeckId); }
   }
