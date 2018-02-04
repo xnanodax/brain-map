@@ -16,10 +16,6 @@ class CardIndex extends React.Component {
 
   componentWillReceiveProps(newProps) {
     const { fetchCards, deckId, clearCardErrors, timeUpdate } = this.props;
-    console.warn("old", this.props.timeUpdate, "new", newProps.timeUpdate);
-
-    console.warn("cards", timeUpdate !== newProps.timeUpdate);
-
     const newDeckId = newProps.match.params.deckId;
     if (deckId !== newDeckId) {
       clearCardErrors();

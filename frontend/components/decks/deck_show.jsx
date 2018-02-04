@@ -14,16 +14,12 @@ class DeckShow extends React.Component {
 
 
   componentWillReceiveProps(newProps) {
-    const { deck, deckId, fetchDeck, clearDeckErrors, timeUpdate } = newProps;
-    console.error("componentWillReceiveProps! outside");
-    console.error("old", this.props, "new", newProps);
-    console.error(timeUpdate !== newProps.timeUpdate);
+    const { deck, deckId, fetchDeck, clearDeckErrors, timeUpdate, errors } = this.props;
     if (newProps.deckId !== deckId) {
       clearDeckErrors();
       fetchDeck(newProps.deckId);
-    } else if (newProps.timeUpdate && timeUpdate !== newProps.timeUpdate) {
-      console.error("componentWillReceiveProps! inside");
-      newProps.fetchDeck(newProps.deckId);
+    } else if (timeUpdate !== newProps.timeUpdate) {
+      fetchDeck(newProps.deckId);
     }
   }
 
