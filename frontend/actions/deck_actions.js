@@ -83,6 +83,7 @@ export const deleteDeck = id => dispatch => (
 export const clearDecks = () => dispatch => (
   dispatch(receiveDecks([]))
 );
+
 export const clearDeckErrors = () => dispatch => (
   dispatch(receiveDeckErrors([]))
 );

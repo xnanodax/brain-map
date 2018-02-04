@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import DeckForm from './deck_form';
-import { createDeck } from './../../../actions/deck_actions';
+import { createDeck, clearDeckErrors } from './../../../actions/deck_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const lastId = Math.max(...Object.keys(state.entities.decks));
@@ -12,6 +12,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   createDeck: (deck) => dispatch(createDeck(deck)),
+  clearDeckErrors: () => dispatch(clearDeckErrors())
 });
 
 export default withRouter(

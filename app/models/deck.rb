@@ -11,7 +11,7 @@
 
 class Deck < ApplicationRecord
   validates :author_id, presence: true
-  validates :title, length: { allow_blank: false }
+  validates :title, length: { allow_blank: false, message: "cannot be blank" }
 
   belongs_to :author,
   primary_key: :id,

@@ -8,8 +8,8 @@ import {
 const CardsErrorReducer = (state = [], action) => {
   Object.freeze(state);
   switch(action.type) {
-    case RECEIVE_CARDS:
-      return [];
+    // case RECEIVE_CARDS:
+    //   return [];
     case RECEIVE_CARD:
       return [];
     case REMOVE_CARD:

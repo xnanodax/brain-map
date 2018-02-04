@@ -3,26 +3,30 @@ import { Link } from 'react-router-dom';
 import CardIndexListItem from './card_index_list_item';
 
 class CardIndex extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { cards: this.props.cards };
-  }
 
   componentDidMount() {
-    const { fetchCards, deckId } = this.props;
+    const { fetchCards, deckId, clearCardErrors } = this.props;
+    clearCardErrors();
     fetchCards(deckId);
   }
 
+  componentWillUnmount() {
+    this.props.clearCardErrors();
+  }
+
   componentWillReceiveProps(newProps) {
-    const { fetchCards, deckId } = this.props;
+    const { fetchCards, deckId, clearCardErrors } = this.props;
     const newDeckId = newProps.match.params.deckId;
     if (deckId !== newDeckId) {
       fetchCards(newDeckId);
+      clearCardErrors();
+    } else if (newProps.errors.length > 0 && newProps.errors.length !== this.props.errors.length) {
+      fetchCards(deckId);
     }
   }
 
   render() {
-    const { cards, deckId, updateCard, deleteCard, createCard } = this.props;
+    const { cards, deckId, updateCard, deleteCard, createCard, errors, cardIdError } = this.props;
 
     const blankCard = { keyword: "tap to edit", body: "tap to edit" };
 
@@ -47,12 +51,14 @@ class CardIndex extends React.Component {
               {
                 cards.map((card, idx) =>
                   <CardIndexListItem
-                    num={idx+1}
                     key={idx}
+                    num={idx+1}
                     card={card}
                     deckId={deckId}
                     updateCard={updateCard}
-                    deleteCard={deleteCard} />)
+                    deleteCard={deleteCard}
+                    errors = {errors}
+                    cardIdError = {cardIdError} />)
               }
             </ul>
 

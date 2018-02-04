@@ -10,26 +10,32 @@ class DeckForm extends React.Component {
   }
 
   handleSubmit(e) {
-    const { createDeck, history } = this.props;
-      e.preventDefault();
-      if (this.state.title === "") {
-        return createDeck(this.state);
-      } else {
-        return createDeck(this.state);
-      }
+    const { createDeck, history, deck } = this.props;
+    e.preventDefault();
+    createDeck(this.state).then((action) => this.props.history.push(`/deck/view/${Object.keys(action.deck)[0]}`));
+
   }
 
+  componentDidMount() {
+    this.props.clearDeckErrors();
+  }
 
-  componentWillReceiveProps(newProps) {
-    const { deck, errors } = newProps;
-    if (errors.length > 0) return undefined;
-    this.props.history.push(`/deck/view/${deck.id}`);
+  componentWillUnmount() {
+    this.props.clearDeckErrors();
   }
 
   handleUpdating(field) {
     return(e) => {
       this.setState({ [field]: e.target.value });
     };
+  }
+
+  renderErrors() {
+    return (
+      <ul className="session-errors">
+        {this.props.errors.map((error,idx) => <li key={idx}>{ error }</li>)}
+      </ul>
+    );
   }
 
   render() {
@@ -42,15 +48,13 @@ class DeckForm extends React.Component {
       <div className="deck-form-container">
 
         <div className="form-header">
-          <h1>Create Deck
-          </h1>
+          <h1>Create Deck</h1>
           <i className="fa fa-times fa-2x"
             aria-hidden="true"
             onClick={() => history.go(-1)}></i>
         </div>
-          <ul className="session-errors">
-            {errors.map((error,idx) => <li key={idx}>{ error }</li>)}
-          </ul>
+        { this.renderErrors() }
+
 
 
         <form onSubmit={(e) => this.handleSubmit(e)}>

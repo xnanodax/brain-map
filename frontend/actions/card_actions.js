@@ -57,3 +57,7 @@ export const deleteCard = (deckId, cardId) => dispatch => (
           (errors) => dispatch(receiveCardErrors(errors.responseJSON)))
     .then(() => dispatch(fetchDecks()))
 );
+
+export const clearCardErrors = () => dispatch => (
+  dispatch(receiveCardErrors([]))
+);

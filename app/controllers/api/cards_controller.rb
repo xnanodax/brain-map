@@ -26,16 +26,13 @@ class Api::CardsController < ApplicationController
     end
   end
 
-  def edit
-    @card = current_user.own_cards.find_by(id: params[:id])
-  end
-
   def update
     @card = current_user.own_cards.find_by(id: params[:id])
 
-    if @card
-      @card.update_attributes(card_params)
+    if @card && @card.update_attributes(card_params)
       render :show
+    elsif @card
+      render json: [@card.id].concat(@card.errors.full_messages), status: 424
     else
       render json: ["can't edit this card! it's not yours."], status: 422
     end

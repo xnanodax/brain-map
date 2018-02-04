@@ -3,10 +3,19 @@ import ClickToEdit from './../../click_to_edit/index.js';
 
 
 
-const CardIndexListItem = ({num, card, deckId, updateCard, deleteCard}) => (
+
+const CardIndexListItem = ({num, card, deckId, updateCard, deleteCard, errors, cardIdError, clearCardErrors}) => (
   <div>
     <div className="container">
+
+        <ul className="session-errors">
+          {cardIdError === card.id && errors.map((error,idx) => <li key={idx}>{ error }</li>)}
+        </ul>
+
+
       <div className="table-row wrapper">
+
+
 
         <div className="text-xsmall">
 
@@ -20,7 +29,7 @@ const CardIndexListItem = ({num, card, deckId, updateCard, deleteCard}) => (
             endEditing={
               (value) => {
                 card.keyword = value;
-                updateCard(deckId, card);
+                updateCard(deckId, card).then(()=> clearCardErrors());
               }
             }
           >

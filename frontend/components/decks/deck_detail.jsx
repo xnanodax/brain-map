@@ -18,13 +18,11 @@ class DeckDetail extends React.Component {
     };
   }
 
-
-
   componentWillReceiveProps(newProps){
+    console.warn("coponent update");
     if (newProps.errors.length > 0 && newProps.errors.length !== this.props.errors.length) {
       newProps.fetchDeck(newProps.deckId);
     }
-
   }
 
 
@@ -105,7 +103,7 @@ class DeckDetail extends React.Component {
                   </Link>
                 </li>
               ) : (
-                <div className="green">Add cards to study!</div>
+                <div className="green-no-hover">Add cards to study!</div>
               ) }
 
               <li>
