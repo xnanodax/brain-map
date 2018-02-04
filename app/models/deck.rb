@@ -59,10 +59,8 @@ class Deck < ApplicationRecord
 
   def mastery_score(user_id)
     if self.cards.count > 0
-      p "---------------"
-      p sum = Deck.fetch_user_score(self.id, user_id).sum(:learning_score)
-      p total_score = (self.cards.count * 5)
-      p "---------------"
+      sum = Deck.fetch_user_score(self.id, user_id).sum(:learning_score)
+      total_score = (self.cards.count * 5)
       sum * 100 / total_score
     else
       0

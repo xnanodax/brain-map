@@ -28,12 +28,12 @@ const CardIndexListItem = ({num, card, deckId, updateCard, deleteCard, errors, c
           <ClickToEdit className = "text-short"
             endEditing={
               (value) => {
-                card.keyword = value;
+                card.question = value;
                 updateCard(card);
               }
             }
           >
-          {card.keyword}
+          {card.question}
           </ClickToEdit>
         </div>
 
@@ -41,12 +41,12 @@ const CardIndexListItem = ({num, card, deckId, updateCard, deleteCard, errors, c
           <ClickToEdit className = "text-long"
             endEditing={
               (value) => {
-                card.body = value;
+                card.answer = value;
                 updateCard(card);
               }
             }
           >
-          {card.body}
+          {card.answer}
           </ClickToEdit>
         </div>
 

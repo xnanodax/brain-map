@@ -13,8 +13,8 @@
 #
 
 class Card < ApplicationRecord
-  validates :author_id, :deck_id, presence: true
-  validates :body, :keyword, length: { allow_blank: false, message: "cannot be blank" }
+  validates :deck_id, presence: true
+  validates :question, :answer, length: { allow_blank: false, message: "cannot be blank" }
 #------------
   belongs_to :deck,
   primary_key: :id,

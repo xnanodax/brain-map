@@ -5,7 +5,6 @@ class Api::CardsController < ApplicationController
 
   def create
     @card = Card.new(card_params)
-    @card.author_id = current_user.id
     @card.deck_id = params[:deck_id]
 
     if @card.save
@@ -50,6 +49,6 @@ class Api::CardsController < ApplicationController
   end
 
   def card_params
-    params.require(:card).permit(:keyword, :body)
+    params.require(:card).permit(:question, :answer)
   end
 end

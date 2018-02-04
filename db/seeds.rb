@@ -8,8 +8,8 @@
 
 # deckDefault1 = Deck.create!({ title: "Tap Here To Edit", author_id: user1.id })
 # deckDefault2 = Deck.create!({ title: "Tap Here To Edit", author_id: user2.id })
-# cardDefault1 = Card.create({ keyword: "tap to edit", body: "tap to edit", author_id: user1.id, deck_id: deckDefault1.id })
-# cardDefault2 = Card.create({ keyword: "tap to edit", body: "tap to edit", author_id: user2.id, deck_id: deckDefault2.id })
+# cardDefault1 = Card.create({ question: "tap to edit", answer: "tap to edit", author_id: user1.id, deck_id: deckDefault1.id })
+# cardDefault2 = Card.create({ question: "tap to edit", answer: "tap to edit", author_id: user2.id, deck_id: deckDefault2.id })
 
 User.destroy_all
 Deck.destroy_all
@@ -42,39 +42,39 @@ deck3 = Deck.create!({ title: "Hiragana", author_id: user2.id })
 
 
 card1 = Card.create!({
-  keyword: ".select", author_id: user1.id, deck_id: deck1.id,
-  body: "Returns an array containing all elements of enum for which the given block returns a true value." })
+  question: ".select", deck_id: deck1.id,
+  answer: "Returns an array containing all elements of enum for which the given block returns a true value." })
 
 card2 = Card.create!({
-  keyword: ".reject", author_id: user1.id, deck_id: deck1.id,
-  body: "Returns an array for all elements of enum for which the given block returns false." })
+  question: ".reject", deck_id: deck1.id,
+  answer: "Returns an array for all elements of enum for which the given block returns false." })
 
 card3 = Card.create!({
-  keyword: ".uniq", author_id: user1.id, deck_id: deck1.id,
-  body: "Returns a new array by removing duplicate values in self." })
+  question: ".uniq", deck_id: deck1.id,
+  answer: "Returns a new array by removing duplicate values in self." })
 # -------
 card4 = Card.create!({
-  keyword: "electron", author_id: user2.id, deck_id: deck2.id,
-  body: "negatively charged particles" })
+  question: "electron", deck_id: deck2.id,
+  answer: "negatively charged particles" })
 
 card5 = Card.create!({
-  keyword: "protons", author_id: user2.id, deck_id: deck2.id,
-  body: "postively charged particles found in the nucleus" })
+  question: "protons", deck_id: deck2.id,
+  answer: "postively charged particles found in the nucleus" })
 
 card6 = Card.create!({
-  keyword: "neutrons", author_id: user2.id, deck_id: deck2.id,
-  body: "neutral charged particles found in the nucleus" })
+  question: "neutrons", deck_id: deck2.id,
+  answer: "neutral charged particles found in the nucleus" })
 
-Card.create!({ keyword: "あ", body: "a", author_id: user2.id, deck_id: deck3.id })
-Card.create!({ keyword: "い", body: "i", author_id: user2.id, deck_id: deck3.id})
-Card.create!({ keyword: "う", body: "u", author_id: user2.id, deck_id: deck3.id})
-Card.create!({ keyword: "え", body: "e", author_id: user2.id, deck_id: deck3.id})
-Card.create!({ keyword: "お", body: "o", author_id: user2.id, deck_id: deck3.id})
-Card.create!({ keyword: "か", body: "ka", author_id: user2.id, deck_id: deck3.id})
-Card.create!({ keyword: "き", body: "ki", author_id: user2.id, deck_id: deck3.id})
-Card.create!({ keyword: "く", body: "ku", author_id: user2.id, deck_id: deck3.id})
-Card.create!({ keyword: "け", body: "ke", author_id: user2.id, deck_id: deck3.id})
-Card.create!({ keyword: "こ", body: "ko", author_id: user2.id, deck_id: deck3.id})
+Card.create!({ question: "あ", answer: "a", deck_id: deck3.id })
+Card.create!({ question: "い", answer: "i", deck_id: deck3.id})
+Card.create!({ question: "う", answer: "u", deck_id: deck3.id})
+Card.create!({ question: "え", answer: "e", deck_id: deck3.id})
+Card.create!({ question: "お", answer: "o", deck_id: deck3.id})
+Card.create!({ question: "か", answer: "ka", deck_id: deck3.id})
+Card.create!({ question: "き", answer: "ki", deck_id: deck3.id})
+Card.create!({ question: "く", answer: "ku", deck_id: deck3.id})
+Card.create!({ question: "け", answer: "ke", deck_id: deck3.id})
+Card.create!({ question: "こ", answer: "ko", deck_id: deck3.id})
 
 
 
