@@ -2,7 +2,6 @@ class Api::DecksController < ApplicationController
 
   def index
     @decks = Deck.all.where(author_id: current_user.id)
-    # @decks = Deck.all
   end
 
   def create
