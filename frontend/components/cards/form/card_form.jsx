@@ -43,10 +43,10 @@ class CardForm extends React.Component {
 
       <div className="form-header">
         <h1>Create Card</h1>
-        <i className="fa fa-times fa-2x" aria-hidden="true" onClick={() => history.go(-1)}></i>
+        <i className="fas fa-times fa-2x green" aria-hidden="true" onClick={() => history.go(-1)}></i>
       </div>
 
-        <ul className="session-errors">
+        <ul className="errors">
           {errors.map((error,idx) => <li key={idx}>{ error }</li>)}
         </ul>
 

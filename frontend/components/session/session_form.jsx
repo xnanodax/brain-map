@@ -71,7 +71,7 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
-    return (<ul className="session-errors">
+    return (<ul className="errors">
       {this.props.errors.map((error,idx) => <li key={idx}>{ error }</li>)}
     </ul>);
   }
@@ -84,7 +84,7 @@ class SessionForm extends React.Component {
 
     if ( formType === "Sign Up") {
       sessionHeader = <h1>{ formType } for free</h1>;
-      bottomLink = <li>Have an account? <Link to="/login" className="green-session">Log In</Link></li>;
+      bottomLink = <li className="text-align-right">Have an account? <Link to="/login" className=".green-dark-hover">Log In</Link></li>;
       disclousure = (<li>
                         <div className="disclosure">
                           By clicking Sign up, I agree to the Terms of Service and Privacy Policy.
@@ -105,7 +105,7 @@ class SessionForm extends React.Component {
       );
     } else {
       sessionHeader = <h1>{ formType }</h1>;
-      bottomLink = <li>Need an account? <Link to="/signup" className="green-session">Sign Up</Link></li>;
+      bottomLink = <li className="text-align-right">Need an account? <Link to="/signup" className="green-dark-hover">Sign Up</Link></li>;
     }
 
     if (displayAns) {
@@ -162,16 +162,16 @@ class SessionForm extends React.Component {
     );
 
     return (
-      <ul className="session-form-container">
-        <div className="intro-ad">
-          <div className="inner-card-container">
+      <div className="session-form-container flexbox-row">
+        <div className="session-form-right flexbox">
+          <div className="session-align flexbox-column">
             <div>
               <div
                 ref={(el) => {this.card = el;} }
                 onClick={(e) => this.play(e)}
-                className="intro-card flip" >
+                className="card flip" >
 
-                  <div className="intro-card-text"
+                  <div className="card-text"
                     ref={(el) => {this.text = el;} } >
                     { cardDisplay }
                 </div>
@@ -181,12 +181,12 @@ class SessionForm extends React.Component {
         </div>
         </div>
 
-        <div className="session-form-outer">
+        <div className="session-form-left">
           <div className="session-form">
             <form onSubmit={this.handleSubmit()} >
               { sessionHeader }
               { this.renderErrors() }
-              <ul className="session-form-login-box">
+              <ul className="session-inputs flexbox-column">
                 { usernameInput }
                 { emailInput }
                 { passwordInput }
@@ -197,7 +197,7 @@ class SessionForm extends React.Component {
             </form>
           </div>
         </div>
-      </ul>
+      </div>
 
     );
   }

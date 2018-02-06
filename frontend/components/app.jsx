@@ -27,10 +27,10 @@ const App = () => (
 
       <ProtectedRoute exact path="/deck/view/:deckId" component={DeckShowContainer} />
       <ProtectedRoute path="/deck/new" component={DeckFormContainer} />
-      <ProtectedRoute path="/study/:deckId" component={StudyContainer} />
+      <ProtectedRoute path="/study" component={NavBarLoggedInContainer} />
 
       <Switch>
-        <ProtectedRoute path="/study" component={NavBarLoggedInContainer} />
+        <ProtectedRoute exact path="/study/:deckId" component={StudyContainer} />
         <ProtectedRoute path="/search" component={SearchContainer} />
 
         <ProtectedRoute path="/deck" component={NavBarLoggedInContainer} />

@@ -27,7 +27,9 @@ class NavBarNotLoggedIn extends React.Component {
     return (
       <div className="top-navbar">
         <nav className="navbar-home">
-          <div className="nav-logo"><Link to="/">brainMap</Link></div>
+          <div className="nav-logo">
+            <Link to="/"><i class="far fa-lightbulb"></i> brainMap</Link>
+          </div>
 
           {
             loggedIn ? (

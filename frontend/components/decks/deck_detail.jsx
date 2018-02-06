@@ -24,7 +24,7 @@ class DeckDetail extends React.Component {
   }
 
   renderErrors() {
-    return (<ul className="session-errors">
+    return (<ul className="errors">
       {this.props.errors.map((error,idx) => <li key={idx}>{ error }</li>)}
     </ul>);
   }
@@ -72,11 +72,12 @@ class DeckDetail extends React.Component {
 
               <div className="deck-show-header-links">
 
-                <i
-                  className="fa fa-trash-o fa-2x"
-                  aria-hidden="true"
-                  onClick = {() => this.setState({displayDeleteConfirm: true})} >
-                </i>
+                <span onClick = {() => this.setState({displayDeleteConfirm: true})}>
+                  <i
+                    className="far fa-trash-alt fa-2x green-no-hover"
+                    aria-hidden="true">
+                  </i>
+                </span>
 
               </div>
             </ul>

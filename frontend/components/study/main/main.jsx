@@ -1,6 +1,6 @@
 import React from 'react';
 import SidebarContainer from '../sidebar/sidebar_container';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import Confetti from 'react-dom-confetti';
 
 const config = {
@@ -187,13 +187,20 @@ class Main extends React.Component {
             <h1> You finished! </h1>
               { deck && <Link to ={`/deck/view/${deck.id}`}>
                 <button className="studyButton">
-                  go back!
+                  return to deck <i class="fas fa-backward"></i>
                 </button>
               </Link> }
 
+              { deck &&
+                [<Link to ={`/study/${deck.id}`}>,
+                <button className="studyButton">
+                  study again <i class="fas fa-undo-alt"></i>
+              </button></Link>]
+               }
+
               <Link to ="/search">
                 <button className="studyButton">
-                  study other decks
+                  find other decks
                 </button>
               </Link>
 

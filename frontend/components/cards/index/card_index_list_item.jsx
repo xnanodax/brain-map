@@ -8,7 +8,7 @@ const CardIndexListItem = ({num, card, deckId, updateCard, deleteCard, errors, c
   <div>
     <div className="container">
 
-        <ul className="session-errors">
+        <ul className="errors">
           {cardIdError === card.id && errors.map((error,idx) => <li key={idx}>{ error }</li>)}
         </ul>
 
@@ -18,9 +18,10 @@ const CardIndexListItem = ({num, card, deckId, updateCard, deleteCard, errors, c
 
 
         <div className="text-xsmall">
-
-          <i className="fa fa-times fa-1x" aria-hidden="true" onClick={() => deleteCard(card.id)}>
-          </i>&nbsp;&nbsp;
+          <span onClick={() => deleteCard(card.id)}>
+            <i className="fas fa-times green-dark-hover" aria-hidden="true">
+            </i>&nbsp;&nbsp;
+          </span>
           {num}
         </div>
 

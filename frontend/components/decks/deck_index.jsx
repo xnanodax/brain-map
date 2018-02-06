@@ -26,7 +26,7 @@ class DeckIndex extends React.Component {
 
                 <div className="deck-header-box-item2">
                   <Link to="/deck/new">
-                   <i className="fa fa-plus fa-2x" aria-hidden="true"></i>
+                   <i className="fa fa-plus fa-2x green-dark-hover" aria-hidden="true"></i>
                   </Link>
                 </div>
 

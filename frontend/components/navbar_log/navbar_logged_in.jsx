@@ -6,7 +6,7 @@ const NavBar = ({ loggedIn, logout, props }) => (
   <nav className="navbar">
     <div className="logo">
       <Link to="/deck">
-          <i className="fa fa-lightbulb-o " aria-hidden="true">
+          <i className="far fa-lightbulb green-dark-hover" aria-hidden="true">
           </i>
       </Link>
     </div>
@@ -17,14 +17,16 @@ const NavBar = ({ loggedIn, logout, props }) => (
       </ul>
 
       <ul className="navbar-icon-list-middle">
-        <Link to="/search"><i className="fa fa-search fa-2x" aria-hidden="true"></i></Link>
-        <Link to="/deck"><i className="fa fa-book fa-2x" aria-hidden="true"></i></Link>
+        <Link to="/search"><i className="fas fa-search fa-2x green-dark-hover" aria-hidden="true"></i></Link>
+        <Link to="/deck"><i className="fas fa-book fa-2x green-dark-hover" aria-hidden="true"></i></Link>
       </ul>
 
 
       <ul className="nav-bar-icon-list-bottom">
-        <i className="fa fa-sign-out fa-2x" aria-hidden="true" onClick={logout}></i>
-      </ul>
+        <span className="cursor" onClick={logout}>
+          <i className="fas fa-sign-out-alt fa-2x gray"></i>
+        </span>
+    </ul>
     </div>
   </nav>
 );

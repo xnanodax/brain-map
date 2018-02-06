@@ -20,22 +20,33 @@ $button-4: #7fae2e;
 $button-5: #00a8d7;
 
 
-.green {
+[class*='green'] {
 	display: inline-block;
 	color: $green;
 }
 
+.green:hover {
+	color: white;
+}
+
+
+.green-dark-hover {
+	display: inline-block;
+}
+
+.green-dark-hover:hover {
+  color: $dark-green;
+	cursor: pointer;
+}
+
 .green-no-hover {
 	display: inline-block;
-	color: $green;
 }
+
+
 .gray{
 	color: $gray;
 }
 .dark-gray{
 	color: $dark-gray;
-}
-
-.green:hover {
-	color: white;
 }

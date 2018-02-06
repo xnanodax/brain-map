@@ -5,7 +5,7 @@ html {
 
 
 
-[class*='flexbox-'] {
+[class*='flexbox'] {
   display: flex;
 }
 
@@ -17,10 +17,16 @@ html {
   flex-direction: row;
 }
 
-
+.errors {
+  color: red;
+}
 
 .hidden {
 	display:none;
+}
+
+.text-align-right{
+	text-align: right;
 }
 
 .app {
@@ -40,6 +46,10 @@ i:hover {
 	cursor: pointer;
 }
 
+.cursor:hover {
+	cursor: pointer;
+}
+
 a {
 	font-weight: bold;
 	color: $dark-gray;
@@ -47,6 +57,7 @@ a {
 
 a:hover {
 	color:$green;
+	transition: color 1s ease;
 }
 
 .logo a{
@@ -83,7 +94,8 @@ button {
 }
 
 button:hover {
-	background: $dark-green;
+	background-color: $dark-green;
+	transition: background-color 0.5s ease;
 }
 
 input {

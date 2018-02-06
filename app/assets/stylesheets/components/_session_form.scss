@@ -1,29 +1,21 @@
 .session-form-container {
-  display: flex;
-  flex-direction: row;
   justify-content: space-evenly;
   width: 60%;
   margin: 0 auto;
   align-items: center;
-  height: 500px;
 }
 
-.intro-ad {
-  width: 600px;
-  // padding-right: 50px;
-  padding: 0px 20px 20px 80px;
-  height: 100%;
-  display:flex;
+.session-form-right {
+  width: 525px;
   justify-content: center;
   align-items: center;
+  padding: 5vw 5vw 5vw 2.5vw;
 }
 
-.inner-card-container {
-  padding-right: 100px;
-  display: flex;
-  flex-direction: column;
+.session-align {
   justify-content: center;
   align-items: center;
+
 }
 
 .intro-ad-small-text {
@@ -36,8 +28,8 @@
   flex-direction: column;
 }
 
-.session-form-outer {
-  padding-left: 10vh;
+.session-form-left {
+  padding-left: 5vw;
   border-left: 1px solid $gray;
 }
 
@@ -53,13 +45,7 @@
   height: 45px;
 }
 
-.session-form button {
-  text-align: center;
-}
-
-.session-form-login-box {
-  display: flex;
-  flex-direction: column;
+.session-inputs {
   justify-content: space-around;
   height: 300px;
 }
@@ -76,36 +62,19 @@
   margin: 0 auto;
 }
 
-.session-errors {
-  color: red;
-}
-
-.intro-card {
+.card {
   top: 20px;
   padding: 20px;
   margin: 20px;
   font-size: 1.5em;
   height: 30vh;
-  width: 40vh;
+  width: 38vh;
   border: 1px solid black;
 }
 
-.intro-card-text {
+.card-text {
   display:flex;
   justify-content: center;
   align-items: center;
   height: 100%;
-}
-
-.position-intro-card{
-  // padding: 15px;
-}
-
-.green-session {
-	display: inline-block;
-	color: $green;
-}
-
-.green-session:hover {
-  color: $darkest-green;
 }

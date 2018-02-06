@@ -33,10 +33,10 @@ class CardIndex extends React.Component {
     return (
       <div>
         <div className="card-header">
-
-          <i className="fa fa-plus"
-            aria-hidden="true"
-            onClick={() => createCard(deckId, blankCard)}></i>
+          <span onClick={() => createCard(deckId, blankCard)}>
+            <i className="fas fa-plus green-dark-hover"
+              aria-hidden="true"></i>
+          </span>
           <h3>Cards:</h3>
         </div>
 
