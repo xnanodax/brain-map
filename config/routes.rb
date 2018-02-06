@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
+
   namespace :api, defaults: { format: :json } do
+    resources :deck_searches, only: [:index]
+
     resource :session, only: [:create, :destroy]
     resources :users, only: [:create]
     resources :decks, only: [:index, :create, :show, :edit, :update, :destroy] do
@@ -12,6 +15,7 @@ Rails.application.routes.draw do
       end
     end
     resources :cards, only: [:show, :edit, :update, :destroy]
+
 
     resources :studyscore, only: [] do
       get "fetch", on: :collection

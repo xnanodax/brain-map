@@ -13,7 +13,6 @@ class DeckForm extends React.Component {
     const { createDeck, history, deck } = this.props;
     e.preventDefault();
     createDeck(this.state).then((action) => this.props.history.push(`/deck/view/${Object.keys(action.deck)[0]}`));
-
   }
 
   componentDidMount() {
@@ -47,30 +46,24 @@ class DeckForm extends React.Component {
     return (
       <div className="deck-form-container">
 
-        <div className="form-header">
+        <div className="flexbox-row form-header">
           <h1>Create Deck</h1>
-          <i className="fa fa-times fa-2x"
-            aria-hidden="true"
-            onClick={() => history.go(-1)}></i>
         </div>
         { this.renderErrors() }
 
 
 
-        <form onSubmit={(e) => this.handleSubmit(e)}>
-          <label>
-            <input autoFocus
-              type="text"
-              placeholder="title"
-              onChange={this.handleUpdating('title')}
-              value={title} />
-
-            <button>
-              Create New
-            </button>
-
-          </label>
+        <form className = "flexbox-column form-spacing" onSubmit={(e) => this.handleSubmit(e)}>
+          <input
+            autoFocus
+            className="search-input"
+            type="text"
+            placeholder="title"
+            onChange={this.handleUpdating('title')}
+            value={title} />
+          <button>Create New</button>
         </form>
+
 
       </div>
     );
@@ -78,5 +71,9 @@ class DeckForm extends React.Component {
   }
 
 }
+//
+// <i className="fa fa-times fa-2x"
+//   aria-hidden="true"
+//   onClick={() => history.go(-1)}></i>
 
 export default DeckForm;

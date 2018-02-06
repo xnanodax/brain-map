@@ -1,18 +1,28 @@
-.deck-form-container {
-  width: 30vh;
-  position: absolute;
-  right: 50vh;
-  top: 25vh;
+.form-spacing {
+  height: 20vh;
+  justify-content:space-around;
 }
 
+.deck-form-container {
+  position: absolute;
+  padding: 25px 50px;
+  left: 350px;
+}
+
+
 .deck-form-container input {
-  width: 30vh;
+  width: 30vw;
+}
+
+.deck-form-container h1 {
+  color: $gray;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  font-size: 2em;
 }
 
 .form-header {
-  display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  width: 30vh;
+  // width: 30vh;
   align-items: center;
 }

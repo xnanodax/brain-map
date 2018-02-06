@@ -18,3 +18,24 @@ $button-2: #ff8a47;
 $button-3: #ffdd00;
 $button-4: #7fae2e;
 $button-5: #00a8d7;
+
+
+.green {
+	display: inline-block;
+	color: $green;
+}
+
+.green-no-hover {
+	display: inline-block;
+	color: $green;
+}
+.gray{
+	color: $gray;
+}
+.dark-gray{
+	color: $dark-gray;
+}
+
+.green:hover {
+	color: white;
+}

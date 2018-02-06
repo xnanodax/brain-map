@@ -14,8 +14,8 @@ class brainMapSearch extends React.Component {
     };
   }
 
-  componentDidUnmount() {
-    console.log("search component unmounted")
+  componentWillUnmount() {
+    console.log("search component unmounted");
   }
 
   handleUpdatingTags(field) {
