@@ -17,7 +17,7 @@ class DeckIndex extends React.Component {
 
     return (
           <div className="deck-index-container">
-            <ul className="deck_index_item_border deck-index-item-outer-title">
+            <ul className="deck-index-item-ul deck-index-item-outer-title">
               <div className="deck-header-box">
                 <div className="deck-header-box-item1">
                   <li className="deck-header-font">Your Decks</li>

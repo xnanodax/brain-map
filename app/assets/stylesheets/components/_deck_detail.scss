@@ -1,11 +1,14 @@
 .deck-show-container {
   position: absolute;
-  left: 400px;
+  left: 360px;
+  padding-left: 40px;
   color: $gray;
   width: 70vw;
   // border-right: 1px solid $light-gray;
   height: 100vh;
   overflow-y: auto;
+  background-color: white;
+  z-index: 20;
 }
 
 .deck-show {
@@ -86,7 +89,7 @@ h1 {
   border-bottom: 2px solid #e0e0e0;
   border-collapse: collapse;
   padding-top: 5px;
-  height: 40px;
+  height: 60px;
 }
 
 .table-row.header {
@@ -111,15 +114,31 @@ h1 {
 .text-short {
   width: 20vw;
 }
-.text-short input {
+.text-short textarea {
   width: 20vw;
+  word-break: break-word;
+
 }
 
 .text-long {
   width: 30vw;
 }
-.text-long input {
+.text-long textarea {
   width: 30vw;
+  height: 40px;
+}
+
+.overflow {
+  // word-break: break-word;
+  // overflow: hidden;
+  // text-overflow: ellipsis;
+  // word-break: keep-all;
+  // -webkit-line-clamp: 1; /* number of lines to show */
+  // line-height: 20px;        /* fallback */
+  // max-height: 40px;       /* fallback */
+  // display: -webkit-box;
+  // -webkit-line-clamp: 2;
+  // -webkit-box-orient: vertical;
 }
 
 .card-container {

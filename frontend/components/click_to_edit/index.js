@@ -74,7 +74,7 @@ const makeContentEditable = WrappedComponent =>
               onBlur={this.getOffEditMode}
               onFocus={this.handleFocus} />
           ) : (
-            <span>{this.state.value}</span>
+            <div className="overflow">{this.state.value}</div>
           )}
         </section>
       );

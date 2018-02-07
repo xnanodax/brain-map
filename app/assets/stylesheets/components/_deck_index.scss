@@ -11,11 +11,38 @@
   box-sizing: border-box;
 }
 
+
+.margin-top {
+  margin-top: 10px;
+}
+
+$font-size: 1em;
+$line-height-ratio: 1;
+$lines-to-show: 2;
+
 .list-title{
   font-weight: bold;
   letter-spacing: 0.09em;
-  padding-bottom: 0.5em;
   text-transform: uppercase;
+  // white-space: nowrap;
+  // overflow: hidden;
+  // text-overflow: ellipsis;
+
+
+  display: block; /* Fallback for non-webkit */
+  display: -webkit-box;
+  max-width: 400px;
+
+  height: $font-size*$line-height-ratio*$lines-to-show; /* Fallback for non-webkit */
+  margin: 0 auto;
+  font-size: $font-size;
+  line-height: $line-height-ratio;
+  -webkit-line-clamp: $lines-to-show;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+
 }
 
 .deck-header-box-item1{
@@ -52,29 +79,27 @@
   height: 120px;
 }
 
-.deck-index-item-outer {
+.deck-index-item-container {
   background: white;
-  // border: solid 1px black;
-  // padding-right: 10px;
-  border-bottom: 1px solid $light-gray;
   height: 120px;
+  border-bottom: 1px solid $light-gray;
 }
 
-.deck-index-item-outer:hover {
+.deck-index-item-container:hover {
   background-color: $green;
-  color: white;
+  color: $white;
   transition: background-color 0.1s;
   transition-timing-function: cubic-bezier(.42,0,1,1);
 }
 
-.deck-index-item-outer:hover .green  {
+.deck-index-item-container:hover .green  {
   background-color: $green;
-  color: white;
+  color: $white;
   transition: background-color 2s ease;
 
 }
 
-.deck_index_item_border {
+.deck-index-item-ul {
   padding: 20px 40px 10px 20px;
 }
 

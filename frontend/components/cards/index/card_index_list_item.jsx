@@ -26,7 +26,7 @@ const CardIndexListItem = ({num, card, deckId, updateCard, deleteCard, errors, c
         </div>
 
         <div className="text-short">
-          <ClickToEdit className = "text-short"
+          <ClickToEdit className = "text-short overflow"
             endEditing={
               (value) => {
                 card.question = value;
@@ -34,12 +34,12 @@ const CardIndexListItem = ({num, card, deckId, updateCard, deleteCard, errors, c
               }
             }
           >
-          {card.question}
+            {card.question}
           </ClickToEdit>
         </div>
 
         <div className="text-long">
-          <ClickToEdit className = "text-long"
+          <ClickToEdit className = "text-long overflow"
             endEditing={
               (value) => {
                 card.answer = value;
@@ -47,7 +47,7 @@ const CardIndexListItem = ({num, card, deckId, updateCard, deleteCard, errors, c
               }
             }
           >
-          {card.answer}
+            {card.answer}
           </ClickToEdit>
         </div>
 
