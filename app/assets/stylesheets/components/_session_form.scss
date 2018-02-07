@@ -7,25 +7,13 @@
 
 .session-form-right {
   width: 525px;
-  justify-content: center;
-  align-items: center;
   padding: 5vw 5vw 5vw 2.5vw;
 }
 
-.session-align {
-  justify-content: center;
-  align-items: center;
-
-}
-
-.intro-ad-small-text {
+.session-card-text {
   padding-top: 20px;
   font-size: 1.3em;
   font-weight: bold;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 }
 
 .session-form-left {
@@ -70,11 +58,4 @@
   height: 30vh;
   width: 38vh;
   border: 1px solid black;
-}
-
-.card-text {
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
 }

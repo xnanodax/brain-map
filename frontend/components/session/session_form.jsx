@@ -21,8 +21,9 @@ class SessionForm extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    if (this.props.match.path !== newProps.match.path) {
-      this.props.clearErrors();
+    const { match, clearErrors} = this.props;
+    if (match.path !== newProps.match.path) {
+      clearErrors();
       this.setState(this.blankState);
     }
   }
@@ -110,13 +111,13 @@ class SessionForm extends React.Component {
 
     if (displayAns) {
       cardDisplay = (
-        <div className="intro-ad-small-text">
+        <div className="session-card-text flexbox-column flex-center">
           Get smarter,&nbsp;<div className="green-no-hover">faster ...</div>
           <div className="gray small">click me!</div>
         </div>
       );
     } else {
-      cardDisplay = (<div className="intro-ad-small-text">
+      cardDisplay = (<div className="session-card-text flexbox-column flex-center">
         ...by studying with <div className="green-no-hover">brainMap's</div> index cards</div>);
     }
 
@@ -163,15 +164,15 @@ class SessionForm extends React.Component {
 
     return (
       <div className="session-form-container flexbox-row">
-        <div className="session-form-right flexbox">
-          <div className="session-align flexbox-column">
+        <div className="session-form-right flexbox flex-center">
+          <div className="flexbox-column flex-center">
             <div>
               <div
                 ref={(el) => {this.card = el;} }
                 onClick={(e) => this.play(e)}
                 className="card flip" >
 
-                  <div className="card-text"
+                  <div className="all-height flexbox flex-center"
                     ref={(el) => {this.text = el;} } >
                     { cardDisplay }
                 </div>

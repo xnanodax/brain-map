@@ -14,19 +14,20 @@ class DeckIndex extends React.Component {
 
   render() {
     const { decks, deckCount } = this.props;
+    const deckWord = deckCount === 1 ? (<p className="inline">Deck</p>) : (<p className="inline">Decks</p>);
 
     return (
           <div className="deck-index-container">
-            <ul className="deck-index-item-ul deck-index-item-outer-title">
-              <div className="deck-header-box">
-                <div className="deck-header-box-item1">
+            <ul className="deck-index-title deck-index-item-ul">
+              <div className="deck-header-box flexbox-row">
+                <ul className="deck-header-box-text flexbox-column">
                   <li className="deck-header-font">Your Decks</li>
-                  <li> { deckCount } { deckCount === 1 ? (<p className="inline">Deck</p>) : (<p className="inline">Decks</p>) }</li>
-                </div>
+                  <li> { deckCount } {deckWord} </li>
+                </ul>
 
-                <div className="deck-header-box-item2">
+                <div>
                   <Link to="/deck/new">
-                   <i className="fa fa-plus fa-2x green-dark-hover" aria-hidden="true"></i>
+                   <i className="fas fa-plus fa-2x green-dark-hover" aria-hidden="true"></i>
                   </Link>
                 </div>
 
@@ -34,11 +35,7 @@ class DeckIndex extends React.Component {
             </ul>
 
             <ul className="gray">
-              {
-                decks.map((deck, idx) =>
-                  <DeckIndexListItem key={idx} deck={deck}/>
-                )
-              }
+              { decks.map((deck) => <DeckIndexListItem key={deck.id} deck={deck}/>) }
             </ul>
           </div>
     );

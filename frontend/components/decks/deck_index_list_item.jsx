@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 const DeckListIndexItem = (props) => {
   const deck = props.deck;
-
   const deckWord = deck.numCards === 1 ? (<p className="inline">Card</p>) : (<p className="inline">Cards</p>);
 
   return (

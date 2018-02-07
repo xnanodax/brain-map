@@ -3,7 +3,9 @@ html {
 	height: 100%;
 }
 
-
+.all-height {
+	height: 100%;
+}
 
 [class*='flexbox'] {
   display: flex;
@@ -15,6 +17,11 @@ html {
 
 .flexbox-row {
   flex-direction: row;
+}
+
+.flex-center {
+	justify-content: center;
+	align-items: center;
 }
 
 .errors {
