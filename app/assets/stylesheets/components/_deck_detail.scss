@@ -129,8 +129,8 @@ h1 {
 }
 
 .overflow {
-  // word-break: break-word;
-  // overflow: hidden;
+  word-break: break-word;
+  overflow: hidden;
   // text-overflow: ellipsis;
   // word-break: keep-all;
   // -webkit-line-clamp: 1; /* number of lines to show */
@@ -139,6 +139,7 @@ h1 {
   // display: -webkit-box;
   // -webkit-line-clamp: 2;
   // -webkit-box-orient: vertical;
+  // width: 50vw;
 }
 
 .card-container {

@@ -17,8 +17,6 @@ import {
   ProtectedRoute
 } from '../utils/route_util';
 
-
-//Auth Route is for when you login, what you shouldn't see.
 const App = () => (
     <div className="app">
       <Redirect exact to="/login" from="/" />
@@ -41,19 +39,4 @@ const App = () => (
       </Switch>
     </div>
 );
-
-
-
 export default App;
-
-
-
-// NOTES
-//ADD
-// UPDATE LINK 19 component={DeckIndex}
-
-
-// make 2 routes
-// route render = {}
-//
-// make a master component

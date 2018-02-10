@@ -21,42 +21,40 @@ const makeContentEditable = WrappedComponent =>
     }
 
     getIntoEditMode() {
-      this.setState({
-        value: this.props.children,
-        onEditMode: true
-      });
-
+      this.setState({value: this.props.children, onEditMode: true});
     }
 
     handleFocus(e) {
       e.target.select();
     }
+
     getOffEditMode() {
+      const { children, endEditing } = this.props;
       this.setState({
-        value: this.props.children,
+        value: children,
         onEditMode: false
       });
-      if (this.props.endEditing) {
-        this.props.endEditing(this.state.value);
+      if (endEditing) {
+        endEditing(this.state.value);
       }
     }
     handleEnterKey(e) {
+      const { children, endEditing } = this.props;
       if (e.keyCode === 13 || e.charCode == 13) {
         this.setState({
-          value: this.props.children,
+          value: children,
           onEditMode: false
         });
-        if (this.props.endEditing) {
-          this.props.endEditing(this.state.value);
+        if (endEditing) {
+          endEditing(this.state.value);
         }
       }
     }
+
     changeValue(e) {
-      this.setState({
-        onEditMode: this.state.onEditMode,
-        value: e.target.value
-      });
+      this.setState({ value: e.target.value, onEditMode: this.state.onEditMode,});
     }
+
     render() {
       const { className } = this.props;
       return (
@@ -87,4 +85,4 @@ const ClickToEdit = makeContentEditable(labelize);
 
 export default ClickToEdit;
 
-//credit goes to https://github.com/chungchiehlun/react-click-to-edit
+//editted from https://github.com/chungchiehlun/react-click-to-edit

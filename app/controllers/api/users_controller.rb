@@ -12,7 +12,7 @@ class Api::UsersController < ApplicationController
 
   def recent_decks
     @recent_decks = current_user.five_recently_played_decks
-
+                    
     if @recent_decks
       render :recent_decks
     else

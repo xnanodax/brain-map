@@ -10,7 +10,7 @@ const DeckListIndexItem = (props) => {
     deck ? (
     <Link to={`/deck/view/${deck.id}`}>
       <li className="deck-index-item-container gray">
-        <ul className="deck-index-item-ul">
+        <ul className="deck-index-item-padding">
           <li className="list-title">{deck.title}</li>
           <li className="margin-top">{deck.numCards} {deckWord}</li>
           <li>Mastery: <div className="green">{deck.mastery_score}%</div></li>
