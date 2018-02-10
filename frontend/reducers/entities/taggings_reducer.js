@@ -2,7 +2,7 @@ import {
   RECEIVE_TAGGINGS,
   RECEIVE_TAGGING,
   REMOVE_TAGGING
-} from './../actions/tagging_action';
+} from '../../actions/tagging_action';
 
 import merge from 'lodash/merge';
 

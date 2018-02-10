@@ -4,17 +4,17 @@ import {
   REMOVE_DECK,
   CLEAR_DECKS,
   RECEIVE_DECK_SEARCH_RESULTS
-} from '../actions/deck_actions';
+} from '../../actions/deck_actions';
 
 import {
   RECEIVE_CARDS,
   RECEIVE_CARD,
   REMOVE_CARD
-} from '../actions/card_actions';
+} from '../../actions/card_actions';
 
 import {
   RECEIVE_SCORE
-} from '../actions/study_actions';
+} from '../../actions/study_actions';
 
 import merge from 'lodash/merge';
 

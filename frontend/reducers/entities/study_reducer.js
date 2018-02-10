@@ -1,7 +1,7 @@
 import {
   RECEIVE_SCORES,
   RECEIVE_SCORE
-} from '../actions/study_actions';
+} from '../../actions/study_actions';
 
 import merge from 'lodash/merge';
 

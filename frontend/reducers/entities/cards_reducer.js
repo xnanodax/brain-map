@@ -2,7 +2,7 @@ import {
   RECEIVE_CARDS,
   RECEIVE_CARD,
   REMOVE_CARD
-} from '../actions/card_actions';
+} from '../../actions/card_actions';
 import merge from 'lodash/merge';
 
 const cardsReducer = (state = {}, action) => {
