@@ -5,7 +5,7 @@ import CardIndexContainer from './../cards/index/card_index_container';
 import TagIndexContainer from './../tags/tag_index_container';
 import ClickToEdit from './../click_to_edit/index.js';
 import ReactConfirmAlert, { confirmAlert } from 'react-confirm-alert';
-
+import Modal from '../modal/modal_container';
 
 class DeckDetail extends React.Component {
   constructor(props) {
@@ -38,7 +38,7 @@ class DeckDetail extends React.Component {
         <div className="confirm-delete">
           {
             this.state.displayDeleteConfirm &&
-            <ReactConfirmAlert
+            <Modal component={ReactConfirmAlert}
               message={`Are you sure to delete?`}
               confirmLabel="Confirm"
               cancelLabel="Cancel"

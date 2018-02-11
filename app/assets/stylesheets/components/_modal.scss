@@ -1,0 +1,18 @@
+.modalStyle {
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  // transform: translate(-50%, -50%);
+  z-index: 9999;
+  background: white;
+}
+
+.backdropStyle {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0px;
+  left: 0px;
+  z-index: 9998;
+  background: rgba(0, 0, 0, 0.3);
+}

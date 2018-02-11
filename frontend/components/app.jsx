@@ -6,10 +6,11 @@ import HomePageNotLoggedInContainer from './homepage/homepage_not_logged_in_cont
 import NavBarLoggedInContainer from './navbar_log/navbar_logged_in_container';
 import DeckContainer from './decks/deck_index_container';
 import DeckShowContainer from './decks/deck_show_container';
-// import DeckFormContainer from './decks/deck_form/deck_form_container';
+import DeckFormContainer from './decks/deck_form/deck_form_container';
 import CardIndexContainer from './cards/index/card_index_container';
 import StudyContainer from './study/study_container';
 import SearchContainer from './search/search_container';
+import Modal from './modal/modal_container';
 
 import {
   AuthRoute,
@@ -22,9 +23,10 @@ const App = () => (
 
       <ProtectedRoute path="/deck" component={DeckContainer} />
 
+      <ProtectedRoute path="/deck/new" component={DeckFormContainer} />
+
       <ProtectedRoute exact path="/deck/view/:deckId" component={DeckShowContainer} />
       <ProtectedRoute path="/study" component={NavBarLoggedInContainer} />
-
       <Switch>
         <ProtectedRoute exact path="/study/:deckId" component={StudyContainer} />
         <ProtectedRoute path="/search" component={SearchContainer} />
@@ -38,5 +40,3 @@ const App = () => (
     </div>
 );
 export default App;
-
-// <ProtectedRoute path="/deck/new" component={DeckFormContainer} />

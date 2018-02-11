@@ -1,20 +1,10 @@
-export const MODAL_OPEN = "MODAL_OPEN";
-export const MODAL_CLOSE = "MODAL_CLOSE";
+export const TOGGLE_MODAL = "TOGGLE_MODAL";
 
-const receiveOpenModal = () => ({
-  type: MODAL_OPEN,
-  payload: true
+
+const receiveModal = () => ({
+  type: TOGGLE_MODAL
 });
 
-const receiveCloseModal = () => ({
-  type: MODAL_CLOSE,
-  payload: false
-});
-
-export const openModal = () => dispatch => (
-  dispatch(receiveOpenModal())
-);
-
-export const closeModal = () => dispatch => (
-  dispatch(receiveCloseModal())
+export const toggleModal = () => dispatch => (
+  dispatch(receiveModal())
 );

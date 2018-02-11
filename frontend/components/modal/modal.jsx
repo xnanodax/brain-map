@@ -1,16 +1,20 @@
-import React from 'React';
-
-class Modal extends 'React.Component' {
+import React from 'react';
+class Modal extends React.Component {
   render() {
     const Component = this.props.component;
-    const { createDeckModalIsOpen } = this.props;
+    const { createDeckModalIsOpen, toggleModal } = this.props;
     return (
       <div>
         { console.warn("Modal", this.props) }
         { createDeckModalIsOpen &&
-          (<div>
-            <Component {...this.props} />
-          </div>)
+          (<React.Fragment>
+            <div className="backdropStyle" onClick={toggleModal}>
+            </div>
+            <div className="modalStyle">
+              <Component {...this.props} />
+            </div>
+          </React.Fragment>
+          )
         }
       </div>
 
@@ -19,5 +23,3 @@ class Modal extends 'React.Component' {
 }
 
 export default Modal;
-
-<Modal component={CardIndexContainer} />
