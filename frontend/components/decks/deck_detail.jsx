@@ -4,7 +4,7 @@ import { BeatLoader } from 'react-spinners';
 import CardIndexContainer from './../cards/index/card_index_container';
 import TagIndexContainer from './../tags/tag_index_container';
 import ClickToEdit from './../click_to_edit/index.js';
-import ReactConfirmAlert, { confirmAlert } from 'react-confirm-alert';
+import DeleteConfirmation from '../delete_confirmation/delete_confirmation';
 import Modal from '../modal/modal_container';
 
 class DeckDetail extends React.Component {
@@ -18,11 +18,6 @@ class DeckDetail extends React.Component {
     };
   }
 
-  handleDeleteAfterRedirect(id) {
-    const { deleteDeck, history } = this.props;
-    return (e) => deleteDeck(id);
-  }
-
   renderErrors() {
     return (<ul className="errors">
       {this.props.errors.map((error,idx) => <li key={idx}>{ error }</li>)}
@@ -30,23 +25,11 @@ class DeckDetail extends React.Component {
   }
 
   render() {
-    const { deckId, deck, updateDeck, numCards, errors, clearDeckErrors } = this.props;
+    const { deckId, deck, updateDeck, numCards, errors, clearDeckErrors, toggleModal, deleteDeck } = this.props;
 
     return (
       <div className="deck-show">
-
-        <div className="confirm-delete">
-          {
-            this.state.displayDeleteConfirm &&
-            <Modal component={ReactConfirmAlert}
-              message={`Are you sure to delete?`}
-              confirmLabel="Confirm"
-              cancelLabel="Cancel"
-              onConfirm={this.handleDeleteAfterRedirect(deckId)}
-              onCancel={() => this.setState({displayDeleteConfirm: false})}
-              />
-            }
-          </div>
+        <Modal component={DeleteConfirmation} toggleAction={toggleModal} deleteAction={deleteDeck} info={deckId}/>
 
         { deck ? (
           <div className="deck-show-item">
@@ -72,7 +55,7 @@ class DeckDetail extends React.Component {
 
               <div className="deck-show-header-links">
 
-                <span onClick = {() => this.setState({displayDeleteConfirm: true})}>
+                <span onClick = {toggleModal}>
                   <i
                     className="far fa-trash-alt fa-2x green-no-hover"
                     aria-hidden="true">
@@ -130,3 +113,16 @@ class DeckDetail extends React.Component {
 }
 
 export default DeckDetail;
+
+// <div className="confirm-delete">
+//   {
+//     this.state.displayDeleteConfirm &&
+//     <Modal component={DeleteConfirmation}
+//       message={`Are you sure to delete?`}
+//       confirmLabel="Confirm"
+//       cancelLabel="Cancel"
+//       onConfirm={this.handleDeleteAfterRedirect(deckId)}
+//       onCancel={() => this.setState({displayDeleteConfirm: false})}
+//       />
+//     }
+//   </div>

@@ -1,22 +1,33 @@
-.deck-index-item-container {
+.unselected-deck-item {
   background: $white;
   height: 120px;
-  border-top: 1px solid $light-gray;
+  border-bottom: 1px solid $light-gray;
   // position: sticky;
   // top: 120px;
 }
 
-.deck-index-item-container:hover {
+.unselected-deck-item:hover {
   background-color: $green;
   color: $white;
   transition: background-color 0.1s;
   transition-timing-function: cubic-bezier(.42,0,1,1);
 }
 
-.deck-index-item-container:hover .green  {
+.selected-deck-item {
   background-color: $green;
   color: $white;
-  transition: background-color 2s ease;
+  height: 120px;
+}
+.selected-deck-item .green{
+  background-color: $green;
+  color: $white;
+}
+
+.unselected-deck-item:hover .green{
+  background-color: $green;
+  color: $white;
+  transition: background-color 0.5s;
+  transition-timing-function: cubic-bezier(.42,0,1,1);
 }
 
 .deck-index-item-padding {

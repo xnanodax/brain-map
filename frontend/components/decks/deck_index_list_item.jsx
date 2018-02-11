@@ -2,14 +2,13 @@ import React from 'react';
 import { BeatLoader } from 'react-spinners';
 import { Link } from 'react-router-dom';
 
-const DeckListIndexItem = (props) => {
-  const deck = props.deck;
+const DeckListIndexItem = ({ deck, currentDeck}) => {
   const deckWord = deck.numCards === 1 ? (<p className="inline">Card</p>) : (<p className="inline">Cards</p>);
-
+  const deckStyle = currentDeck ? "selected-deck-item" : "unselected-deck-item gray";
   return (
     deck ? (
-    <Link to={`/deck/view/${deck.id}`}>
-      <li className="deck-index-item-container gray">
+      <Link to={`/deck/view/${deck.id}`}>
+      <li className={deckStyle}>
         <ul className="deck-index-item-padding">
           <li className="list-title">{deck.title}</li>
           <li className="margin-top">{deck.numCards} {deckWord}</li>
@@ -26,7 +25,5 @@ const DeckListIndexItem = (props) => {
 
 
 };
-
-
 
 export default DeckListIndexItem;

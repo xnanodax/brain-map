@@ -8,9 +8,11 @@ import { toggleModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const decksArr = Object.values(state.entities.decks);
+  const currentDeckId = parseInt(ownProps.match.params.deckId);
   return {
     decks: decksArr.reverse(),
     deckCount: decksArr.length,
+    currentDeckId
   };
 };
 

@@ -16,6 +16,8 @@ import {
   fetchCard
 } from './../../actions/card_actions';
 
+import { toggleModal } from '../../actions/modal_actions';
+
 const mapStateToProps = (state, ownProps) => {
   const deckId = ownProps.match.params.deckId;
   const deck = state.entities.decks[deckId];
@@ -30,7 +32,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     fetchDeck: (id) => dispatch(fetchDeck(id)),
     updateDeck: (deck)=> dispatch(updateDeck(deck)),
     deleteDeck: (deckId) => dispatch(deleteDeck(deckId)).then(() => ownProps.history.push("/deck")),
-    clearDeckErrors: () => dispatch(clearDeckErrors())
+    clearDeckErrors: () => dispatch(clearDeckErrors()),
+    toggleModal: () => dispatch(toggleModal())
    };
 };
 

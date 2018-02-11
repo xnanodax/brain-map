@@ -13,7 +13,7 @@ class DeckIndex extends React.Component {
   }
 
   render() {
-    const { decks, deckCount } = this.props;
+    const { decks, deckCount, currentDeckId } = this.props;
     const deckWord = deckCount === 1 ? (<p className="inline">Deck</p>) : (<p className="inline">Decks</p>);
 
     return (
@@ -34,8 +34,8 @@ class DeckIndex extends React.Component {
               </div>
             </ul>
 
-            <ul className="gray">
-              { decks.map((deck) => <DeckIndexListItem key={deck.id} deck={deck}/>) }
+            <ul className="all_decks">
+              { decks.map((deck) => <DeckIndexListItem key={deck.id} deck={deck} currentDeck={deck.id === currentDeckId}/>) }
             </ul>
           </div>
     );

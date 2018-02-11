@@ -4,8 +4,7 @@ class Modal extends React.Component {
     const Component = this.props.component;
     const { createDeckModalIsOpen, toggleModal } = this.props;
     return (
-      <div>
-        { console.warn("Modal", this.props) }
+      <div id="modal">
         { createDeckModalIsOpen &&
           (<React.Fragment>
             <div className="backdropStyle" onClick={toggleModal}>
