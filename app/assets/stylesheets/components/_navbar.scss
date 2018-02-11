@@ -1,39 +1,27 @@
 .navbar {
-  display: flex;
-  flex-direction: column;
+  position: absolute;
   align-items: center;
   width: 60px;
   height: 100%;
-  position: absolute;
-  padding: 10px;
+  padding: 15px 10px 20px 10px;
   background-color: $lightest-gray;
 }
 
-.navbar a {
-  color: $green;
-}
-
-.navbar-icon-list-top i {
-  display: inline-block;
-  border-radius: 60px;
-  box-shadow: 0px 0px 2px #888;
-  padding: 0.2em 0.3em;
-}
-
-.navbar-icon-list-middle i {
-  display: flex;
-  flex-direction: column;
-  height: 80px;
-}
-
-.navbar-icons-all {
-  padding: 10px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+[class*='navbar-icons'] {
   justify-content: space-between;
 }
 
-.logo i, .nav-bar-icon-list-bottom i {
-  color: $gray;
+.navbar-icons-all {
+  height: 100%;
+}
+
+.navbar-icons-middle {
+  height: 80px;
+}
+
+.navbar-icons-top {
+  // display: inline-block;
+  // border-radius: 60px;
+  // box-shadow: 0px 0px 2px #888;
+  // padding: 0.2em 0.3em;
 }

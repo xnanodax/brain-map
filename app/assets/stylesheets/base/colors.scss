@@ -47,6 +47,10 @@ $button-5: #00a8d7;
 .gray{
 	color: $gray;
 }
+
+.gray:hover {
+	color: $dark-green;
+}
 .dark-gray{
 	color: $dark-gray;
 }

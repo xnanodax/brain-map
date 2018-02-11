@@ -6,10 +6,18 @@
   // top: 120px;
 }
 
+
 .unselected-deck-item:hover {
-  background-color: $green;
+  background-color: $dark-green;
   color: $white;
   transition: background-color 0.1s;
+  transition-timing-function: cubic-bezier(.42,0,1,1);
+}
+
+.unselected-deck-item:hover .green{
+  background-color: $dark-green;
+  color: $white;
+  transition: background-color 0.5s;
   transition-timing-function: cubic-bezier(.42,0,1,1);
 }
 
@@ -18,17 +26,12 @@
   color: $white;
   height: 120px;
 }
+
 .selected-deck-item .green{
   background-color: $green;
   color: $white;
 }
 
-.unselected-deck-item:hover .green{
-  background-color: $green;
-  color: $white;
-  transition: background-color 0.5s;
-  transition-timing-function: cubic-bezier(.42,0,1,1);
-}
 
 .deck-index-item-padding {
   padding: 20px 40px 10px 20px;
