@@ -10,10 +10,11 @@ import DeckFormContainer from './decks/deck_form/deck_form_container';
 import CardIndexContainer from './cards/index/card_index_container';
 import StudyContainer from './study/study_container';
 import SearchContainer from './search/search_container';
-import Modal from './modal/modal_container';
+import DeleteConfirmationContainer from './delete_confirmation/delete_confirmation_container';
 import {
   AuthRoute,
-  ProtectedRoute
+  ProtectedRoute,
+  ModalRoute
 } from '../utils/route_util';
 
 const App = () => (
@@ -25,6 +26,8 @@ const App = () => (
         <ProtectedRoute path="/deck" component={DeckIndexContainer} />
       </Switch>
 
+      <ModalRoute path="/deck/view/:deckId" component={DeleteConfirmationContainer} />
+      
       <ProtectedRoute path="/deck/new" component={DeckFormContainer} />
       <ProtectedRoute exact path="/deck/view/:deckId" component={DeckShowContainer} />
       <ProtectedRoute path="/study" component={NavBarLoggedInContainer} />

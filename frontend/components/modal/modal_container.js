@@ -4,7 +4,7 @@ import Modal from './modal';
 import { toggleModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => ({
-  createDeckModalIsOpen: state.ui.modal
+  modalIsOpen: state.ui.modal
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

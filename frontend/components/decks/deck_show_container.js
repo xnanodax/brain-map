@@ -5,16 +5,9 @@ import DeckShow from './deck_show';
 import {
   fetchDecks,
   fetchDeck,
-  createDeck,
   updateDeck,
-  deleteDeck,
   clearDeckErrors
 } from '../../actions/deck_actions';
-
-import {
-  fetchCards,
-  fetchCard
-} from './../../actions/card_actions';
 
 import { toggleModal } from '../../actions/modal_actions';
 
@@ -31,14 +24,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     fetchDeck: (id) => dispatch(fetchDeck(id)),
     updateDeck: (deck)=> dispatch(updateDeck(deck)),
-    deleteDeck: (deckId) => dispatch(deleteDeck(deckId)).then(() => ownProps.history.push("/deck")),
     clearDeckErrors: () => dispatch(clearDeckErrors()),
     toggleModal: () => dispatch(toggleModal())
    };
 };
 
-export default
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(DeckShow);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(DeckShow));

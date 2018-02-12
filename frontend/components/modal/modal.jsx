@@ -2,12 +2,12 @@ import React from 'react';
 class Modal extends React.Component {
   render() {
     const Component = this.props.component;
-    const { createDeckModalIsOpen, toggleModal } = this.props;
+    const { modalIsOpen, toggleModal } = this.props;
     return (
       <div id="modal">
-        { createDeckModalIsOpen &&
+        { modalIsOpen &&
           (<React.Fragment>
-            <div className="backdropStyle" onClick={toggleModal}>
+            <div className="modal-background" onClick={toggleModal}>
             </div>
             <div className="modalStyle">
               <Component {...this.props} />

@@ -29,7 +29,6 @@ class DeckDetail extends React.Component {
 
     return (
       <div className="deck-show">
-        <Modal component={DeleteConfirmation} toggleAction={toggleModal} deleteAction={deleteDeck} info={deckId}/>
 
         { deck ? (
           <div className="deck-show-item">
@@ -126,3 +125,5 @@ export default DeckDetail;
 //       />
 //     }
 //   </div>
+
+// {/* <Modal component={DeleteConfirmation} toggleAction={toggleModal} deleteAction={deleteDeck} info={deckId}/> */}

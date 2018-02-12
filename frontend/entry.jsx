@@ -24,7 +24,5 @@ document.addEventListener("DOMContentLoaded", () => {
   ReactDOM.render(<Root store={store} />, root);
 });
 
-import { openModal, closeModal, toggleModal } from './actions/modal_actions';
-window.openModal = openModal;
-window.closeModal = closeModal;
+import { toggleModal } from './actions/modal_actions';
 window.toggleModal = toggleModal;
