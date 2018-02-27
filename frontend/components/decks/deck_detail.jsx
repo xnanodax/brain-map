@@ -84,7 +84,7 @@ class DeckDetail extends React.Component {
               <li>
                 <ul className="attributes-side-by-side1">
                   <h3>Mastery:</h3>
-                  <div className="percentageColor">{deck.mastery_score}%</div>
+                  <div className="percentageColor">{deck.masteryScore}%</div>
                 </ul>
               </li>
               <ul className="tag-list">

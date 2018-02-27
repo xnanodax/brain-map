@@ -9,7 +9,7 @@ class Modal extends React.Component {
           (<React.Fragment>
             <div className="modal-background" onClick={toggleModal}>
             </div>
-            <div className="modalStyle">
+            <div className="modal-box">
               <Component {...this.props} />
             </div>
           </React.Fragment>

@@ -43,7 +43,7 @@ class Sidebar extends React.Component {
                     backgroundPadding={0}
                     strokeWidth={6}
                     initialAnimation
-                    percentage={deck.mastery_score} />
+                    percentage={deck.masteryScore} />
                 </div>
                 {currCard}
 

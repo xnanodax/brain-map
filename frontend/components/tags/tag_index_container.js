@@ -18,7 +18,7 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchTaggings: (deckId) => dispatch(fetchTaggings(deckId)),
   createTagging: (deckId, name) => dispatch(createTagging(deckId, name)),
-  deleteTagging: (deckId, name) => dispatch(deleteTagging(deckId, name)),
+  deleteTagging: (deckId, tagId) => dispatch(deleteTagging(deckId, tagId)),
   fetchAllTags: (name) => dispatch(fetchAllTags(name))
 });
 

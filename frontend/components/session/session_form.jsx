@@ -85,7 +85,7 @@ class SessionForm extends React.Component {
 
     if ( formType === "Sign Up") {
       sessionHeader = <h1>{ formType } for free</h1>;
-      bottomLink = <li className="text-align-right">Have an account? <Link to="/login" className=".green-dark-hover">Log In</Link></li>;
+      bottomLink = <li className="text-align-right">Have an account? <Link to="/login" className="green-dark-hover">Log In</Link></li>;
       disclousure = (<li>
                         <div className="disclosure">
                           By clicking Sign up, I agree to the Terms of Service and Privacy Policy.

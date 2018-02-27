@@ -1,10 +1,12 @@
-.modalStyle {
+.modal-box {
   position: absolute;
   top: 50vh;
   left: 50vw;
-  // transform: translate(-50%, -50%);
-  z-index: 9999;
+  transform: translate(-50%, -50%);
+  z-index: 10;
   background: white;
+  border: transparent;
+  border-radius: 15px;
 } 
 
 .modal-background {
@@ -13,6 +15,6 @@
   height: 100vh;
   top: 0px;
   left: 0px;
-  z-index: 9998;
+  z-index: 9;
   background: rgba(0, 0, 0, 0.3);
 }

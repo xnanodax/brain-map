@@ -37,8 +37,11 @@
 
 .deck-header-font{
   font-size: 20px;
-  padding-bottom: 40px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: $gray;
+}
+
+.deck-title-padding{
+  padding-bottom: 40px;
 }

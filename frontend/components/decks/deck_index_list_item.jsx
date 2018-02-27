@@ -12,7 +12,7 @@ const DeckListIndexItem = ({ deck, currentDeck}) => {
         <ul className="deck-index-item-padding">
           <li className="list-title">{deck.title}</li>
           <li className="margin-top">{deck.numCards} {deckWord}</li>
-          <li>Mastery: <div className="green">{deck.mastery_score}%</div></li>
+          <li>Mastery: <div className="green">{deck.masteryScore}%</div></li>
         </ul>
       </li>
     </Link>

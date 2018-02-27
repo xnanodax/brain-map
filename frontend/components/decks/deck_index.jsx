@@ -21,7 +21,7 @@ class DeckIndex extends React.Component {
             <ul className="deck-index-title deck-index-item-padding">
               <div className="deck-header-box flexbox-row">
                 <ul className="deck-header-box-text flexbox-column">
-                  <li className="deck-header-font">Your Decks</li>
+                  <li className="deck-header-font deck-title-padding">Your Decks</li>
                   <li> { deckCount } {deckWord} </li>
                 </ul>
 

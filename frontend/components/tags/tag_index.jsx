@@ -53,7 +53,8 @@ class TagIndex extends React.Component {
                     key={idx}
                     tag={tag}
                     deleteTagging = {deleteTagging}
-                    tag_id={tag.id}
+                    tagId={tag.id}
+                    deckId={deckId}
                     />
                 )
               }

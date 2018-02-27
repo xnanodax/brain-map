@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
+import { deleteTagging } from './actions/tagging_action'
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById('root');
@@ -26,3 +27,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
 import { toggleModal } from './actions/modal_actions';
 window.toggleModal = toggleModal;
+window.deleteTagging = deleteTagging

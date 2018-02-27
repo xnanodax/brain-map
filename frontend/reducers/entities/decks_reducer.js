@@ -36,14 +36,14 @@ const decksReducer = (state = {}, action) => {
     case RECEIVE_CARD:
       newState = merge({}, state);
       cardId = parseInt(Object.keys(action.card)[0]);
-      deckId = action.card[cardId].deck_id;
+      deckId = action.card[cardId].deckId;
       newState[deckId].cards.push(cardId);
       return newState;
     case REMOVE_CARD:
       newState = merge({}, state);
       cardId = action.card.id;
-      deckId = action.card.deck_id;
-      const cardArr = state[action.card.deck_id].cards;
+      deckId = action.card.deckId;
+      const cardArr = state[action.card.deckId].cards;
       const cardIndex = cardArr.indexOf(cardId);
       cardArr.splice(cardIndex, 1);
       return newState;

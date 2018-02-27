@@ -8,30 +8,17 @@
   height: 100vh;
   overflow-y: auto;
   background-color: white;
-  z-index: 20;
+  z-index: 5;
 }
 
 .deck-show {
   padding-top: 25px;
 }
 
-.confirm-delete button{
-  width: 30%;
-  margin-right: 20px;
-}
-
 .deck-show-item-header {
   display: flex;
   flex-direction: row;
   align-items: center;
-}
-
-.confirm-delete {
-  position: absolute;
-  // left: 50vh;
-  width: 300px;
-  float:left;
-  background: $white;
 }
 
 .deck-show-item-header-text {
