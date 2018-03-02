@@ -1,2 +1,2 @@
 json.extract! @tagging, :id
-json.tag_id @tagging.tag, :id
+json.set! :tag_id, @tagging.tag.id
