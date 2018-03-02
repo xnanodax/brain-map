@@ -1,7 +1,7 @@
 class Api::DecksController < ApplicationController
 
   def index
-    @decks = Deck.all.where(author_id: current_user.id)
+    @decks = Deck.all.includes(:cards).where(author_id: current_user.id)
   end
 
   def create

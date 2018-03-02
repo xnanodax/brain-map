@@ -70,21 +70,21 @@ class User < ApplicationRecord
   end
 
   def five_recently_played_decks
-    self.played_decks
-      .select('decks.id, decks.title, MAX("studyscores"."updated_at") as last_updated_card')
-      .joins(:studyscores)
-      .group('decks.id')
-      .order('MAX("studyscores"."updated_at") DESC')
-      .limit(5)
+    # self.played_decks
+    #   .select(:id, :title, 'MAX("studyscores"."updated_at") as last_updated_card')
+    #   .joins(:studyscores)
+    #   .group(:id)
+    #   .order('MAX("studyscores"."updated_at") DESC')
+    #   .limit(5)
   end
 
   def five_most_popular_decks
-    self.own_decks
-    .select("decks.id, decks.title, COUNT(DISTINCT studyscores.tester_id) as num_plays")
-    .joins(:studyscores)
-    .group("decks.id")
-    .order('COUNT(DISTINCT studyscores.tester_id) DESC')
-    .limit(5)
+    # self.own_decks
+    # .select(:id, :title, 'COUNT(DISTINCT studyscores.tester_id) as num_plays')
+    # .joins(:studyscores)
+    # .group(:id)
+    # .order('COUNT(DISTINCT studyscores.tester_id) DESC')
+    # .limit(5)
   end
 
 end

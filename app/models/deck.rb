@@ -39,10 +39,11 @@ class Deck < ApplicationRecord
     through: :cards,
     source: :studyscores
 
-  def self.fetch_user_score(deckId, current_user_id)
-    Deck.find_by(id: deckId)
-        .studyscores
-        .where(tester_id: current_user_id)
+  def self.fetch_user_score(deck_id, current_user_id)
+    # Deck.find_by(id: deck_id)
+    #     .studyscores
+    #     .where(tester_id: current_user_id)
+    Deck.includes(:studyscores).find_by(id: deck_id).studyscores.where(tester_id: current_user_id)
   end
 
   def self.fetch_taggings(id)
@@ -58,9 +59,10 @@ class Deck < ApplicationRecord
   end
 
   def mastery_score(user_id)
-    if self.cards.count > 0
+    card_count = self.cards.count
+    if card_count > 0
       sum = Deck.fetch_user_score(self.id, user_id).sum(:learning_score)
-      total_score = (self.cards.count * 5)
+      total_score = (card_count * 5)
       sum * 100 / total_score
     else
       0
