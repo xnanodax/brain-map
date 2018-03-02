@@ -14,16 +14,14 @@ class Tagging < ApplicationRecord
   validates :tag_id, uniqueness: { scope: :deck_id }
   validates :deck_id, uniqueness: { scope: :tag_id }
   
-#------------
   belongs_to :deck,
-  primary_key: :id,
-  foreign_key: :deck_id,
-  class_name: :Deck
+    primary_key: :id,
+    foreign_key: :deck_id,
+    class_name: :Deck
 
   belongs_to :tag,
-  primary_key: :id,
-  foreign_key: :tag_id,
-  class_name: :Tag
-
+    primary_key: :id,
+    foreign_key: :tag_id,
+    class_name: :Tag
 
 end

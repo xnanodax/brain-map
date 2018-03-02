@@ -21,24 +21,23 @@ class User < ApplicationRecord
   attr_reader :password
 
   has_many :own_decks,
-  primary_key: :id,
-  foreign_key: :author_id,
-  class_name: :Deck
+    primary_key: :id,
+    foreign_key: :author_id,
+    class_name: :Deck
 
   has_many :own_cards,
-  through: :own_decks,
-  source: :cards
+    through: :own_decks,
+    source: :cards
 
-#------------
   has_many :studyscores,
-  primary_key: :id,
-  foreign_key: :tester_id,
-  class_name: :Studyscore
+    primary_key: :id,
+    foreign_key: :tester_id,
+    class_name: :Studyscore,
+    dependent: :destroy
 
   has_many :played_decks,
-  through: :studyscores,
-  source: :deck
-
+    through: :studyscores,
+    source: :deck
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)

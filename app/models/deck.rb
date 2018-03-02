@@ -14,30 +14,30 @@ class Deck < ApplicationRecord
   validates :title, length: { allow_blank: false, message: "cannot be blank" }
 
   belongs_to :author,
-  primary_key: :id,
-  foreign_key: :author_id,
-  class_name: :User
-
+    primary_key: :id,
+    foreign_key: :author_id,
+    class_name: :User
 
   has_many :cards,
-  primary_key: :id,
-  foreign_key: :deck_id,
-  class_name: :Card,
-  dependent: :destroy,
-  inverse_of: :deck
+    primary_key: :id,
+    foreign_key: :deck_id,
+    class_name: :Card,
+    dependent: :destroy,
+    inverse_of: :deck
 
   has_many :taggings,
-  primary_key: :id,
-  foreign_key: :deck_id,
-  class_name: :Tagging
+    primary_key: :id,
+    foreign_key: :deck_id,
+    class_name: :Tagging,
+    dependent: :destroy
 
   has_many :tags,
-  through: :taggings,
-  source: :tag
+    through: :taggings,
+    source: :tag
 
   has_many :studyscores,
-  through: :cards,
-  source: :studyscores
+    through: :cards,
+    source: :studyscores
 
   def self.fetch_user_score(deckId, current_user_id)
     Deck.find_by(id: deckId)

@@ -10,15 +10,16 @@
 
 class Tag < ApplicationRecord
   validates :name, presence: true, uniqueness: true
-#------------
+
   has_many :taggings,
-  primary_key: :id,
-  foreign_key: :tag_id,
-  class_name: :Tagging
+    primary_key: :id,
+    foreign_key: :tag_id,
+    class_name: :Tagging,
+    dependent: :destroy
 
   has_many :decks,
-  through: :taggings,
-  source: :deck
+    through: :taggings,
+    source: :deck
 
   def self.find_name(tag_name)
     Tag.find_by(name: tag_name)
