@@ -1,7 +1,10 @@
 class Api::DecksController < ApplicationController
 
   def index
-    @decks = Deck.all.includes(:cards).where(author_id: current_user.id)
+    @decks = Deck.all
+                .includes(:cards)
+                .includes(:studyscores)
+                .where(author_id: current_user.id)
   end
 
   def create
@@ -16,7 +19,7 @@ class Api::DecksController < ApplicationController
   end
 
   def show
-    @deck = Deck.find_by(id: params[:id])
+    @deck = Deck.find_by(id: params[:id]).includes(:cards)
     if @deck
       @deck.mastery_score(current_user.id)
       render :show

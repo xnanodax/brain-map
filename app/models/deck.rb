@@ -43,7 +43,7 @@ class Deck < ApplicationRecord
     # Deck.find_by(id: deck_id)
     #     .studyscores
     #     .where(tester_id: current_user_id)
-    Deck.includes(:studyscores).find_by(id: deck_id).studyscores.where(tester_id: current_user_id)
+    Deck.find_by(id: deck_id).studyscores.where(tester_id: current_user_id)
   end
 
   def self.fetch_taggings(id)
@@ -54,14 +54,17 @@ class Deck < ApplicationRecord
     param = '%' + query_params.downcase + '%' #i can use sql query like
     if query_params != ""
       @decks = Deck.where('lower(title) LIKE ? ', param).limit(5).to_a
-      @decks.select { |deck| deck.cards.count > 0 }
+      @decks.select { |deck| deck.cards.size > 0 }
     end
   end
 
   def mastery_score(user_id)
-    card_count = self.cards.count
+    card_count = self.cards.size
     if card_count > 0
-      sum = Deck.fetch_user_score(self.id, user_id).sum(:learning_score)
+      sum = 0
+      Deck.fetch_user_score(self.id, user_id).each do |study_score|
+        sum += study_score.learning_score
+      end
       total_score = (card_count * 5)
       sum * 100 / total_score
     else
