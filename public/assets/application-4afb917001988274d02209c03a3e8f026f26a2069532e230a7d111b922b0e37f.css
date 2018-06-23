@@ -1,0 +1,1128 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+/*CSS Reset*/
+/* PHASE 0: Reset */
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
+/* line 3, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/base/reset.scss */
+html, body, header, nav, h1, a,
+ul, li, strong, main, button, i,
+section, img, div, h2, p, form,
+fieldset, label, input, textarea,
+span, article, footer, time, small {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: transparent;
+}
+
+/* line 21, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/base/reset.scss */
+ul {
+  list-style: none;
+}
+
+/* line 25, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/base/reset.scss */
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* line 31, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/base/reset.scss */
+input[type="password"],
+input[type="email"],
+input[type="text"],
+input[type="submit"],
+textarea,
+button {
+  /*
+  Get rid of native styling. Read more here:
+  http://css-tricks.com/almanac/properties/a/appearance/
+  */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* line 46, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/base/reset.scss */
+button,
+input[type="submit"] {
+  cursor: pointer;
+}
+
+/*Core*/
+/* line 23, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/base/colors.scss */
+[class*='green'] {
+  display: inline-block;
+  color: #2dbe60;
+}
+
+/* line 28, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/base/colors.scss */
+.green:hover {
+  color: white;
+}
+
+/* line 33, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/base/colors.scss */
+.green-dark-hover {
+  display: inline-block;
+}
+
+/* line 37, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/base/colors.scss */
+.green-dark-hover:hover {
+  color: #1b7239;
+  cursor: pointer;
+}
+
+/* line 42, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/base/colors.scss */
+.green-no-hover {
+  display: inline-block;
+}
+
+/* line 47, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/base/colors.scss */
+.gray {
+  color: #999;
+}
+
+/* line 51, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/base/colors.scss */
+.gray:hover {
+  color: #1b7239;
+}
+
+/* line 54, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/base/colors.scss */
+.dark-gray {
+  color: #262626;
+}
+
+/* line 7, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/base/fonts.scss */
+.small {
+  font-size: 0.5em;
+}
+
+/* line 1, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/base/layout.scss */
+html {
+  position: relative;
+  height: 100%;
+}
+
+/* line 6, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/base/layout.scss */
+.all-height {
+  height: 100%;
+}
+
+/* line 10, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/base/layout.scss */
+[class*='flexbox'] {
+  display: flex;
+}
+
+/* line 14, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/base/layout.scss */
+.flexbox-column {
+  flex-direction: column;
+}
+
+/* line 18, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/base/layout.scss */
+.flexbox-row {
+  flex-direction: row;
+}
+
+/* line 22, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/base/layout.scss */
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 27, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/base/layout.scss */
+.errors {
+  color: red;
+}
+
+/* line 31, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/base/layout.scss */
+.hidden {
+  display: none;
+}
+
+/* line 35, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/base/layout.scss */
+.text-align-right {
+  text-align: right;
+}
+
+/* line 39, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/base/layout.scss */
+.app {
+  position: relative;
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* line 48, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/base/layout.scss */
+i {
+  color: #2dbe60;
+}
+
+/* line 52, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/base/layout.scss */
+i:hover {
+  cursor: pointer;
+}
+
+/* line 56, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/base/layout.scss */
+.cursor:hover {
+  cursor: pointer;
+}
+
+/* line 60, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/base/layout.scss */
+a {
+  font-weight: bold;
+  color: #262626;
+}
+
+/* line 65, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/base/layout.scss */
+a:hover {
+  color: #2dbe60;
+  transition: color 1s ease;
+}
+
+/* line 70, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/base/layout.scss */
+.logo a {
+  font-family: "Times New Roman";
+  color: #2dbe60;
+  font-size: 50px;
+}
+
+/* line 76, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/base/layout.scss */
+body {
+  width: 100%;
+  margin: 0 auto;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+/* line 84, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/base/layout.scss */
+h1 {
+  font-size: 1.8em;
+  font-weight: bold;
+  padding: 20px 0px 20px 0px;
+}
+
+/* line 90, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/base/layout.scss */
+h3 {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+/* line 95, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/base/layout.scss */
+button {
+  padding: 10px 20px;
+  background: #2dbe60;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* line 103, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/base/layout.scss */
+button:hover {
+  background-color: #1b7239;
+  transition: background-color 0.5s ease;
+}
+
+/* line 108, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/base/layout.scss */
+input {
+  border: 5px transparent;
+  background-color: #f7f7f5;
+  border-radius: 5px;
+  padding: 10px 10px;
+}
+
+/* line 115, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/base/layout.scss */
+input:hover {
+  border-bottom: 2px solid lightblue;
+}
+
+/* line 118, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/base/layout.scss */
+input:focus {
+  border-bottom: 2px solid lightblue;
+}
+
+/*Components*/
+/*
+ * react-circular-progressbar styles
+ *
+ * All of the styles in this file are optional and configurable!
+ */
+/* line 7, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_circle_progress.scss */
+.CircularProgressbar {
+  /*
+   * This fixes an issue where the CircularProgressbar svg has
+   * 0 width inside a "display: flex" container, and thus not visible.
+   *
+   * If you're not using "display: flex", you can remove this style.
+   */
+  width: 100%;
+}
+
+/* line 17, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_circle_progress.scss */
+.CircularProgressbar .CircularProgressbar-path {
+  stroke: #3e98c7;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.5s ease 0s;
+}
+
+/* line 23, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_circle_progress.scss */
+.CircularProgressbar .CircularProgressbar-trail {
+  stroke: #d6d6d6;
+}
+
+/* line 27, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_circle_progress.scss */
+.CircularProgressbar .CircularProgressbar-text {
+  fill: #3e98c7;
+  font-size: 20px;
+  dominant-baseline: middle;
+  text-anchor: middle;
+}
+
+/* line 34, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_circle_progress.scss */
+.CircularProgressbar .CircularProgressbar-background {
+  fill: #d6d6d6;
+}
+
+/*
+ * Sample background styles. Use these with e.g.:
+ *
+ *   <CircularProgressbar
+ *     className="CircularProgressbar-inverted"
+ *     background
+ *     percentage={50}
+ *   />
+ */
+/* line 47, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_circle_progress.scss */
+.CircularProgressbar.CircularProgressbar-inverted .CircularProgressbar-background {
+  fill: #6cd18f;
+}
+
+/* line 51, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_circle_progress.scss */
+.CircularProgressbar.CircularProgressbar-inverted .CircularProgressbar-text {
+  fill: white;
+}
+
+/* line 55, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_circle_progress.scss */
+.CircularProgressbar.CircularProgressbar-inverted .CircularProgressbar-path {
+  stroke: #2dbe60;
+}
+
+/* line 59, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_circle_progress.scss */
+.CircularProgressbar.CircularProgressbar-inverted .CircularProgressbar-trail {
+  stroke: #DEDEDC;
+}
+
+/* line 1, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_deck_detail.scss */
+.deck-show-container {
+  position: absolute;
+  left: 360px;
+  padding-left: 40px;
+  color: #999;
+  width: 70vw;
+  height: 100vh;
+  overflow-y: auto;
+  background-color: white;
+  z-index: 5;
+}
+
+/* line 14, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_deck_detail.scss */
+.deck-show {
+  padding-top: 25px;
+}
+
+/* line 18, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_deck_detail.scss */
+.deck-show-item-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* line 24, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_deck_detail.scss */
+.deck-show-item-header-text {
+  font-size: 2em;
+  padding-bottom: 1em;
+  padding-top: 20px;
+  box-sizing: border-box;
+  width: 50vw;
+  text-decoration: underline;
+}
+
+/* line 34, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_deck_detail.scss */
+.deck-show-item-header-text input {
+  width: 50vw;
+  text-decoration: none;
+}
+
+/* line 39, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_deck_detail.scss */
+.deck-show-header-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 30px;
+}
+
+/* line 46, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_deck_detail.scss */
+.deck-show-attributes-button i {
+  color: white;
+}
+
+/* line 50, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_deck_detail.scss */
+.deck-show-header-links i {
+  padding-left: 10px;
+}
+
+/* line 54, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_deck_detail.scss */
+.attributes-side-by-side1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 125px;
+}
+
+/* line 62, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_deck_detail.scss */
+.deck-show-attributes-button {
+  width: 100px;
+}
+
+/* line 66, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_deck_detail.scss */
+.inline {
+  display: inline-block;
+}
+
+/* line 71, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_deck_detail.scss */
+h1 {
+  color: #262626;
+}
+
+/* line 75, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_deck_detail.scss */
+.table-row {
+  border-bottom: 2px solid #e0e0e0;
+  border-collapse: collapse;
+  padding-top: 5px;
+  height: 60px;
+}
+
+/* line 82, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_deck_detail.scss */
+.table-row.header {
+  font-size: 1.2em;
+  font-weight: bold;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+/* line 90, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_deck_detail.scss */
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 0;
+}
+
+/* line 96, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_deck_detail.scss */
+.text-xsmall {
+  padding-left: 20px;
+  width: 7vw;
+}
+
+/* line 101, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_deck_detail.scss */
+.text-short {
+  width: 20vw;
+}
+
+/* line 104, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_deck_detail.scss */
+.text-short textarea {
+  width: 20vw;
+  word-break: break-word;
+}
+
+/* line 110, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_deck_detail.scss */
+.text-long {
+  width: 30vw;
+}
+
+/* line 113, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_deck_detail.scss */
+.text-long textarea {
+  width: 30vw;
+  height: 40px;
+}
+
+/* line 118, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_deck_detail.scss */
+.overflow {
+  word-break: break-word;
+  overflow: hidden;
+}
+
+/* line 132, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_deck_detail.scss */
+.card-container {
+  width: 60vw;
+}
+
+/* line 136, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_deck_detail.scss */
+.card-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 75px;
+  align-items: center;
+}
+
+/* line 1, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_deck_form.scss */
+.form-spacing {
+  height: 20vh;
+  justify-content: space-around;
+}
+
+/* line 6, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_deck_form.scss */
+.deck-form-container {
+  position: absolute;
+  padding: 25px 50px;
+  left: 350px;
+}
+
+/* line 12, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_deck_form.scss */
+.deck-form-container input {
+  width: 30vw;
+}
+
+/* line 16, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_deck_form.scss */
+.deck-form-container h1 {
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  font-size: 2em;
+}
+
+/* line 23, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_deck_form.scss */
+.form-header {
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* line 1, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_deck_index.scss */
+.deck-index-container {
+  background: #f7f7f5;
+  border-right: 1px solid #DEDEDC;
+  border-left: 1px solid #DEDEDC;
+  position: absolute;
+  left: 60px;
+  height: 100vh;
+  width: 300px;
+  font-size: 15px;
+  color: #999;
+  box-sizing: border-box;
+  overflow: scroll;
+}
+
+/* line 15, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_deck_index.scss */
+.deck-index-container a {
+  font-weight: normal;
+}
+
+/* line 19, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_deck_index.scss */
+.deck-index-title {
+  background: white;
+  border-bottom: 1px solid #DEDEDC;
+  height: 120px;
+  position: sticky;
+  top: 0px;
+}
+
+/* line 27, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_deck_index.scss */
+.deck-header-box {
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+}
+
+/* line 33, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_deck_index.scss */
+.deck-header-box-text {
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* line 38, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_deck_index.scss */
+.deck-header-font {
+  font-size: 20px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #999;
+}
+
+/* line 45, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_deck_index.scss */
+.deck-title-padding {
+  padding-bottom: 40px;
+}
+
+/* line 1, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_deck_index_item.scss */
+.unselected-deck-item {
+  background: #ffffff;
+  height: 120px;
+  border-bottom: 1px solid #DEDEDC;
+}
+
+/* line 10, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_deck_index_item.scss */
+.unselected-deck-item:hover {
+  background-color: #1b7239;
+  color: #ffffff;
+  transition: background-color 0.1s;
+  transition-timing-function: cubic-bezier(0.42, 0, 1, 1);
+}
+
+/* line 17, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_deck_index_item.scss */
+.unselected-deck-item:hover .green {
+  background-color: #1b7239;
+  color: #ffffff;
+  transition: background-color 0.5s;
+  transition-timing-function: cubic-bezier(0.42, 0, 1, 1);
+}
+
+/* line 24, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_deck_index_item.scss */
+.selected-deck-item {
+  background-color: #2dbe60;
+  color: #ffffff;
+  height: 120px;
+}
+
+/* line 30, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_deck_index_item.scss */
+.selected-deck-item .green {
+  background-color: #2dbe60;
+  color: #ffffff;
+}
+
+/* line 36, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_deck_index_item.scss */
+.deck-index-item-padding {
+  padding: 20px 40px 10px 20px;
+}
+
+/* line 40, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_deck_index_item.scss */
+.margin-top {
+  margin-top: 10px;
+}
+
+/* line 51, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_deck_index_item.scss */
+.list-title {
+  font-weight: bold;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  overflow-wrap: break-word;
+  display: block;
+  /* Fallback for non-webkit */
+  display: -webkit-box;
+  max-width: 400px;
+  height: 2em;
+  /* Fallback for non-webkit */
+  margin: 0 auto;
+  font-size: 1em;
+  line-height: 1;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* line 1, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_delete_confirmation.scss */
+.delete-container {
+  width: 400px;
+  height: 300px;
+  padding: 10px 20px 10px 20px;
+}
+
+/* line 7, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_delete_confirmation.scss */
+.delete-x {
+  font-size: 3em;
+  float: right;
+}
+
+/* line 12, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_delete_confirmation.scss */
+.delete-content {
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+  padding-top: 25px;
+}
+
+/* line 19, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_delete_confirmation.scss */
+.delete-header {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 25, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_delete_confirmation.scss */
+.confirm-delete button {
+  width: 20%;
+}
+
+/* line 30, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_delete_confirmation.scss */
+.underline {
+  border-bottom: 1px solid #999;
+}
+
+/* line 34, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_delete_confirmation.scss */
+.delete-buttons {
+  width: 60%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* line 1, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_finished_study_page.scss */
+.finished-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+  height: 500px;
+  padding: 80px;
+}
+
+/* line 11, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_finished_study_page.scss */
+.studyButton {
+  color: white;
+  width: 200px;
+}
+
+/* line 1, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_modal.scss */
+.modal-box {
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  background: white;
+  border: transparent;
+  border-radius: 15px;
+}
+
+/* line 12, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_modal.scss */
+.modal-background {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0px;
+  left: 0px;
+  z-index: 9;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* line 1, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_navbar.scss */
+.navbar {
+  position: absolute;
+  align-items: center;
+  width: 60px;
+  height: 100%;
+  padding: 15px 10px 20px 10px;
+  background-color: #f7f7f5;
+}
+
+/* line 10, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_navbar.scss */
+[class*='navbar-icons'] {
+  justify-content: space-between;
+}
+
+/* line 14, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_navbar.scss */
+.navbar-icons-all {
+  height: 100%;
+}
+
+/* line 18, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_navbar.scss */
+.navbar-icons-middle {
+  height: 80px;
+}
+
+/* line 1, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_navbar_not_logged_in.scss */
+.full-width {
+  height: 70px;
+  border-bottom: 1px solid #DEDEDC;
+}
+
+/* line 6, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_navbar_not_logged_in.scss */
+.top-navbar {
+  margin: 0 auto;
+  width: 70vw;
+}
+
+/* line 11, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_navbar_not_logged_in.scss */
+.navbar-home {
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* line 16, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_navbar_not_logged_in.scss */
+.nav-logo a {
+  color: #2dbe60;
+  font-size: 20px;
+}
+
+/* line 21, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_navbar_not_logged_in.scss */
+.navbar-links {
+  justify-content: space-between;
+  width: 300px;
+  font-size: 15px;
+}
+
+/* line 6, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_search.scss */
+.search-container {
+  position: absolute;
+  padding: 25px 50px;
+  left: 350px;
+  color: #999;
+}
+
+/* line 15, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_search.scss */
+.search-input {
+  width: 550px;
+  font-size: 1.5em;
+}
+
+/* line 20, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_search.scss */
+.search-container h1 {
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  font-size: 2em;
+}
+
+/* line 27, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_search.scss */
+.search-list-item {
+  padding: 20px;
+  border-bottom: 1px solid #999;
+}
+
+/* line 32, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_search.scss */
+.button-search-study {
+  width: 100px;
+  border-radius: 20px;
+  font-size: 20px;
+  padding: 0px;
+  height: 30px;
+}
+
+/* line 40, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_search.scss */
+.button-search-study i {
+  color: white;
+}
+
+/* line 44, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_search.scss */
+.result-spacing {
+  display: flex;
+  flex-direction: row;
+  width: 500px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* line 52, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_search.scss */
+.search-text {
+  font-size: 2em;
+  color: #999;
+}
+
+/* line 1, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_session_form.scss */
+.session-form-container {
+  justify-content: space-evenly;
+  width: 60%;
+  margin: 0 auto;
+  align-items: center;
+}
+
+/* line 8, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_session_form.scss */
+.session-form-right {
+  width: 525px;
+  padding: 5vw 5vw 5vw 2.5vw;
+}
+
+/* line 13, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_session_form.scss */
+.session-card-text {
+  padding-top: 20px;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+/* line 19, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_session_form.scss */
+.session-form-left {
+  padding-left: 5vw;
+  border-left: 1px solid #999;
+}
+
+/* line 24, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_session_form.scss */
+.session-form {
+  width: 400px;
+  padding: 20px 20px 20px 20px;
+}
+
+/* line 30, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_session_form.scss */
+.session-form form input, button {
+  width: 100%;
+  box-sizing: border-box;
+  height: 45px;
+}
+
+/* line 36, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_session_form.scss */
+.session-inputs {
+  justify-content: space-around;
+  height: 300px;
+}
+
+/* line 41, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_session_form.scss */
+.disclosure {
+  color: #999;
+  font-size: 14px;
+}
+
+/* line 46, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_session_form.scss */
+.caption {
+  padding-top: 10px;
+  font-size: 1.1em;
+  color: #262626;
+  margin: 0 auto;
+}
+
+/* line 53, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_session_form.scss */
+.card {
+  top: 20px;
+  padding: 20px;
+  margin: 20px;
+  font-size: 1.5em;
+  height: 30vh;
+  width: 38vh;
+  border: 1px solid black;
+}
+
+/* line 1, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_study_main.scss */
+.study-container {
+  position: absolute;
+  left: 60px;
+  color: #262626;
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media screen and (min-width: 1080px) {
+  /* line 16, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_study_main.scss */
+  .study-container {
+    width: 1400px;
+  }
+}
+/* line 22, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_study_main.scss */
+.study-main {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+/* line 29, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_study_main.scss */
+.transform-text {
+  transform: scaleX(-1);
+}
+
+/* line 33, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_study_main.scss */
+span .index {
+  position: absolute;
+}
+
+/* line 38, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_study_main.scss */
+.relative-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* line 45, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_study_main.scss */
+.button-list {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* line 53, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_study_main.scss */
+.position-card {
+  padding: 40px;
+}
+
+/* line 57, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_study_main.scss */
+button .study-button {
+  width: 10px;
+}
+
+/* line 61, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_study_main.scss */
+.display-card {
+  top: 20px;
+  padding: 80px;
+  margin: 20px;
+  font-size: 1.5em;
+  height: 400px;
+  width: 600px;
+  border: 1px solid black;
+  z-index: -1;
+  -webkit-transition: -webkit-transform 0.35s, z-index 0s 0.2s;
+  -webkit-transform: rotateY(0deg);
+}
+
+/* line 74, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_study_main.scss */
+.card-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 83, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_study_main.scss */
+.button-control {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+}
+
+/* line 93, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_study_main.scss */
+.rotate {
+  -webkit-transform: rotateY(180deg);
+  -webkit-transition: -webkit-transform 0.35s, z-index 0s 0.2s;
+  z-index: -2;
+}
+
+/* line 99, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_study_main.scss */
+.study-button:focus {
+  border-bottom: 2px solid black;
+}
+
+/* line 102, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_study_main.scss */
+.study-button:target {
+  border-bottom: 2px solid black;
+}
+
+/* line 106, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_study_main.scss */
+.score-1 {
+  background-color: #aa0080;
+}
+
+/* line 109, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_study_main.scss */
+.score-2 {
+  background-color: #ff8a47;
+}
+
+/* line 112, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_study_main.scss */
+.score-3 {
+  background-color: #ffdd00;
+}
+
+/* line 116, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_study_main.scss */
+.score-4 {
+  background-color: #7fae2e;
+}
+
+/* line 119, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_study_main.scss */
+.score-5 {
+  background-color: #00a8d7;
+}
+
+/* line 1, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_study_sidebar.scss */
+.study-sidebar-container {
+  background: #262626;
+  height: 100vh;
+  width: 300px;
+  font-size: 20px;
+  color: #DEDEDC;
+  padding: 1em;
+}
+
+/* line 14, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_study_sidebar.scss */
+.relative {
+  position: relative;
+}
+
+/* line 18, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_study_sidebar.scss */
+.inline {
+  display: inline-block;
+  margin: 0px;
+}
+
+/* line 23, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_study_sidebar.scss */
+.study-button {
+  width: 120px;
+  margin-bottom: 75px;
+}
+
+/* line 28, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_study_sidebar.scss */
+.study-button i {
+  color: white;
+}
+
+/* line 32, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_study_sidebar.scss */
+.progress {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 450px;
+}
+
+/* line 41, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_study_sidebar.scss */
+.sidebar-title {
+  color: white;
+}
+
+/* line 1, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_tags.scss */
+.tag_name {
+  font-size: 1.2em;
+  padding-right: 10px;
+  display: inline-block;
+}
+
+/* line 7, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_tags.scss */
+.tag-header {
+  display: flex;
+  width: 250px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+}
+
+/* line 19, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_tags.scss */
+.tag-index-list {
+  padding-left: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 60vw;
+}
+
+/* line 26, /Users/cynthiama/Google Drive/coding-academies/aa_bootcamp/fullStack_v0.1/app/assets/stylesheets/components/_tags.scss */
+.tag-index-list-item {
+  border: 1px solid #DEDEDC;
+  border-radius: 15px;
+  padding: 5px 10px;
+  margin: 3px;
+  display: inline-block;
+}
